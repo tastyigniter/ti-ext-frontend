@@ -50,12 +50,11 @@ class Extension extends \System\Classes\BaseExtension
     {
         return [
             'settings' => [
-                'label'       => 'Slide Show Settings',
-                'description' => 'Manage slide show settings.',
+                'label'       => 'Slider Settings',
+                'description' => 'Manage slider settings.',
                 'icon'        => '',
                 'model'       => 'SamPoyigi\FrontEnd\Models\SliderSettings',
                 'permissions' => ['Module.Slideshow'],
-                'url'         => admin_url('extensions/settings/sampoyigi/frontend'),
             ],
         ];
     }

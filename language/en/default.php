@@ -5,8 +5,8 @@ return [
     'banners' => [
         '_text_title'          => 'Banners',
         'text_tab_general'     => 'General',
-        'text_component_title' => 'Banner Component',
-        'text_component_desc'  => 'Displays banners',
+        'component_title' => 'Banner Component',
+        'component_desc'  => 'Displays banners',
         'text_edit_banner'     => 'Edit Banner',
 
         'column_banner'         => 'Banner',
@@ -30,8 +30,8 @@ return [
     'slider' => [
         '_text_title'          => 'Slider',
         'text_tab_general'     => 'General',
-        'text_component_title' => 'Slider Component',
-        'text_component_desc'  => 'Displays images slider on homepage',
+        'component_title' => 'Slider Component',
+        'component_desc'  => 'Displays images slider on homepage',
 
         'text_tab_slides' => 'Slides',
 
@@ -51,8 +51,8 @@ return [
     'newsletter' => [
         '_text_title'          => 'Newsletter',
         'text_tab_general'     => 'General',
-        'text_component_title' => 'Newsletter Component',
-        'text_component_desc'  => 'Displays the subscribe to newsletter form',
+        'component_title' => 'Newsletter Component',
+        'component_desc'  => 'Displays the subscribe to newsletter form',
 
         'text_subscribe' => 'Subscribe to our newsletter',
 
@@ -66,8 +66,8 @@ return [
     'featured' => [
         '_text_title'          => 'Featured Menu Item',
         'text_tab_general'     => 'General',
-        'text_component_title' => 'Featured Menu Component',
-        'text_component_desc'  => 'Displays list of featured menus on the store front',
+        'component_title' => 'Featured Menu Component',
+        'component_desc'  => 'Displays list of featured menus on the store front',
         'text_subscribe'       => 'Subscribe to our newsletter',
         'text_featured_menus'  => 'Featured Menu',
 
