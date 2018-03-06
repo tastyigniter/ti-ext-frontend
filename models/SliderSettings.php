@@ -12,7 +12,7 @@ class SliderSettings extends Model
     public $settingsCode = 'sampoyigi.slider';
 
     // Reference to field configuration
-    public $settingsFieldsConfig = 'settings_model';
+    public $settingsFieldsConfig = 'slidersettings';
 
     public function getImagesAttribute($value)
     {

@@ -10,8 +10,7 @@ class Newsletter extends \System\Classes\BaseComponent
 
     public function onSubscribe()
     {
-
-        dd($this->input->post('subscribe_email'));
+        dd(post('subscribe_email'));
         $this->lang->load('newsletter/newsletter');
 
         $this->load->library('user_agent');

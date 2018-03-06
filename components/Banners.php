@@ -11,17 +11,17 @@ class Banners extends \System\Classes\BaseComponent
     {
         return [
             'banner_id' => [
-                'label' => 'lang:column_banner',
+                'label' => 'lang:sampoyigi.frontend::default.banners.column_banner',
                 'type'  => 'select',
             ],
             'width'     => [
-                'label'   => 'lang:label_width',
+                'label'   => 'lang:sampoyigi.frontend::default.banners.label_width',
                 'span'    => 'left',
                 'type'    => 'number',
                 'default' => 960,
             ],
             'height'    => [
-                'label'   => 'lang:label_height',
+                'label'   => 'lang:sampoyigi.frontend::default.banners.label_height',
                 'span'    => 'right',
                 'type'    => 'text',
                 'default' => 360,

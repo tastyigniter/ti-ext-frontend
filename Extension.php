@@ -10,6 +10,11 @@ class Extension extends \System\Classes\BaseExtension
                 'name'        => 'lang:sampoyigi.frontend::default.banners.component_title',
                 'description' => 'lang:sampoyigi.frontend::default.banners.component_desc',
             ],
+            'SamPoyigi\FrontEnd\Components\Contact'        => [
+                'code'        => 'contact',
+                'name'        => 'lang:sampoyigi.frontend::default.contact.component_title',
+                'description' => 'lang:sampoyigi.frontend::default.contact.component_desc',
+            ],
             'SamPoyigi\FrontEnd\Components\Slider'        => [
                 'code'        => 'slider',
                 'name'        => 'lang:sampoyigi.frontend::default.slider.component_title',
@@ -49,7 +54,7 @@ class Extension extends \System\Classes\BaseExtension
     public function registerSettings()
     {
         return [
-            'settings' => [
+            'slidersettings' => [
                 'label'       => 'Slider Settings',
                 'description' => 'Manage slider settings.',
                 'icon'        => '',
