@@ -1,6 +1,6 @@
 <?php namespace SamPoyigi\FrontEnd\Components;
 
-use Admin\Models\Image_tool_model;
+use Main\Models\Image_tool_model;
 use SamPoyigi\FrontEnd\Models\SliderSettings;
 
 class Slider extends \System\Classes\BaseComponent

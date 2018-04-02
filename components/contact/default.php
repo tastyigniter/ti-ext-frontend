@@ -2,7 +2,7 @@
         'id'      => 'contact-form',
         'role'    => 'form',
         'method'  => 'POST',
-        'handler' => $__SELF__.'::onSubmit',
+        'data-request' => $__SELF__.'::onSubmit',
     ]
 ); ?>
 <div class="row">
@@ -13,8 +13,8 @@
                 class="form-control"
             >
                 <option><?= lang('sampoyigi.frontend::default.contact.text_select_subject'); ?></option>
-                <?php foreach ($__SELF__->subjects as $key => $subject) { ?>
-                    <option value="<?= $key; ?>"><?= $subject; ?></option>
+                <?php foreach ($__SELF__->subjects as $subject) { ?>
+                    <option value="<?= $subject; ?>"><?= $subject; ?></option>
                 <?php } ?>
             </select>
             <?= form_error('subject', '<span class="text-danger">', '</span>'); ?>
@@ -58,17 +58,6 @@
         placeholder="<?= lang('sampoyigi.frontend::default.contact.label_comment'); ?>"
     ><?= set_value('comment'); ?></textarea>
     <?= form_error('comment', '<span class="text-danger">', '</span>'); ?>
-</div>
-<div class="form-group">
-    <div class="input-group">
-        <span><?= $__SELF__->renderCaptcha(); ?></span>
-        <input
-            type="text"
-            name="captcha"
-            class="form-control"
-            placeholder="<?= lang('sampoyigi.frontend::default.contact.label_captcha'); ?>"/>
-    </div>
-    <?= form_error('captcha', '<span class="text-danger">', '</span>'); ?>
 </div>
 
 <div class="buttons">

@@ -44,11 +44,8 @@ return [
         'label_email'     => 'Email Address:',
         'label_telephone' => 'Telephone:',
         'label_comment'   => 'Comment',
-        'label_captcha'   => 'Type the code shown',
 
         'button_send' => 'SEND',
-
-        'error_captcha' => 'The letters you entered does not match the image.',
 
         'alert_contact_sent' => 'Message Sent successfully, we will get back to you shortly!',
     ],

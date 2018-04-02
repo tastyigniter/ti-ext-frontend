@@ -63,4 +63,11 @@ class Extension extends \System\Classes\BaseExtension
             ],
         ];
     }
+
+    public function registerMailTemplates()
+    {
+        return [
+            'sampoyigi.frontend::mail.contact' => 'Contact form email to admin'
+        ];
+    }
 }

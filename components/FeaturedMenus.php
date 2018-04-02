@@ -1,13 +1,13 @@
 <?php namespace SamPoyigi\FrontEnd\Components;
 
-use SamPoyigi\Featured_menus\Models\FeaturedMenus_model;
+use SamPoyigi\Featured_menus\Models\FeaturedMenus as FeaturedMenusModel;
 
 class FeaturedMenus extends \System\Classes\BaseComponent
 {
     public function defineProperties()
     {
         return [
-            'menus'         => [
+            'items'         => [
                 'label' => 'lang:sampoyigi.frontend::default.featured.label_menus',
                 'type'  => 'selectlist',
                 'mode'  => 'checkbox',
@@ -49,7 +49,7 @@ class FeaturedMenus extends \System\Classes\BaseComponent
 
     public static function getMenusOptions()
     {
-        return FeaturedMenus_model::dropdown('menu_name');
+        return FeaturedMenusModel::dropdown('menu_name');
     }
 
     public function onRun()
@@ -60,15 +60,15 @@ class FeaturedMenus extends \System\Classes\BaseComponent
         $this->page['featuredPerRow'] = $this->property('itemsPerRow', 3);
         $this->page['featuredWidth'] = $this->property('itemWidth', 400);
         $this->page['featuredHeight'] = $this->property('itemHeight', 300);
-        $this->page['featuredMenus'] = $this->loadMenus();
+        $this->page['featuredItems'] = $this->loadItems();
     }
 
-    protected function loadMenus()
+    protected function loadItems()
     {
-        return FeaturedMenus_model::getByIds([
+        return FeaturedMenusModel::getByIds([
             'page'      => '1',
             'pageLimit' => $this->property('limit'),
-            'menu_ids'  => $this->property('menus', []),
+            'menu_ids'  => $this->property('items', []),
         ]);
     }
 }

@@ -1,7 +1,7 @@
 <?php namespace SamPoyigi\FrontEnd\Components;
 
 use Admin\Models\Banners_model;
-use Admin\Models\Image_tool_model;
+use Main\Models\Image_tool_model;
 
 class Banners extends \System\Classes\BaseComponent
 {
@@ -78,6 +78,6 @@ class Banners extends \System\Classes\BaseComponent
                     'height' => $imageHeight,
                 ]),
             ];
-        }, (array)$images);
+        }, $images);
     }
 }
