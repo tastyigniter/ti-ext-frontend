@@ -1,7 +1,7 @@
 <?= form_open(current_url(), [
-        'id'      => 'contact-form',
-        'role'    => 'form',
-        'method'  => 'POST',
+        'id'           => 'contact-form',
+        'role'         => 'form',
+        'method'       => 'POST',
         'data-request' => $__SELF__.'::onSubmit',
     ]
 ); ?>

@@ -1,4 +1,4 @@
-<?php namespace SamPoyigi\Featured_menus\Models;
+<?php namespace SamPoyigi\FrontEnd\Models;
 
 class FeaturedMenus extends \Admin\Models\Menus_model
 {

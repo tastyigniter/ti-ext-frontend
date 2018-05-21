@@ -10,7 +10,7 @@ class Extension extends \System\Classes\BaseExtension
                 'name'        => 'lang:sampoyigi.frontend::default.banners.component_title',
                 'description' => 'lang:sampoyigi.frontend::default.banners.component_desc',
             ],
-            'SamPoyigi\FrontEnd\Components\Contact'        => [
+            'SamPoyigi\FrontEnd\Components\Contact'       => [
                 'code'        => 'contact',
                 'name'        => 'lang:sampoyigi.frontend::default.contact.component_title',
                 'description' => 'lang:sampoyigi.frontend::default.contact.component_desc',
@@ -67,7 +67,7 @@ class Extension extends \System\Classes\BaseExtension
     public function registerMailTemplates()
     {
         return [
-            'sampoyigi.frontend::mail.contact' => 'Contact form email to admin'
+            'sampoyigi.frontend::mail.contact' => 'Contact form email to admin',
         ];
     }
 }

@@ -1,18 +1,18 @@
 <?php namespace SamPoyigi\FrontEnd\Components;
 
-use SamPoyigi\Featured_menus\Models\FeaturedMenus as FeaturedMenusModel;
+use SamPoyigi\FrontEnd\Models\FeaturedMenus as FeaturedMenusModel;
 
 class FeaturedMenus extends \System\Classes\BaseComponent
 {
     public function defineProperties()
     {
         return [
-            'items'         => [
+            'items'       => [
                 'label' => 'lang:sampoyigi.frontend::default.featured.label_menus',
                 'type'  => 'selectlist',
                 'mode'  => 'checkbox',
             ],
-            'limit'         => [
+            'limit'       => [
                 'label'   => 'lang:sampoyigi.frontend::default.featured.label_limit',
                 'span'    => 'left',
                 'type'    => 'number',
@@ -38,7 +38,7 @@ class FeaturedMenus extends \System\Classes\BaseComponent
                 'type'    => 'number',
                 'default' => 400,
             ],
-            'itemHeight'   => [
+            'itemHeight'  => [
                 'label'   => 'lang:sampoyigi.frontend::default.featured.label_dimension_h',
                 'span'    => 'right',
                 'type'    => 'number',
@@ -47,7 +47,7 @@ class FeaturedMenus extends \System\Classes\BaseComponent
         ];
     }
 
-    public static function getMenusOptions()
+    public static function getItemsOptions()
     {
         return FeaturedMenusModel::dropdown('menu_name');
     }

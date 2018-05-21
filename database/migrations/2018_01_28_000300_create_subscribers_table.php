@@ -6,8 +6,7 @@ class CreateSubscribersTable extends Migration
 {
     public function up()
     {
-        Schema::create('sampoyigi_frontend_subscribers', function($table)
-        {
+        Schema::create('sampoyigi_frontend_subscribers', function ($table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('name', 255)->nullable();

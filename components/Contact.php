@@ -6,6 +6,7 @@ use Admin\Traits\ValidatesForm;
 use Exception;
 use Location;
 use Mail;
+use Main\Template\Page;
 use Redirect;
 use System\Classes\BaseComponent;
 
@@ -22,10 +23,15 @@ class Contact extends BaseComponent
         return [
             'redirectPage' => [
                 'label'   => 'Page to redirect to after contact form has been sent successfully',
-                'type'    => 'text',
+                'type'    => 'select',
                 'default' => 'contact',
             ],
         ];
+    }
+
+    public static function getRedirectPageOptions()
+    {
+        return Page::lists('baseFileName', 'baseFileName');
     }
 
     public function onRun()

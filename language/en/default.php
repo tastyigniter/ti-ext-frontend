@@ -3,11 +3,11 @@
 return [
 
     'banners' => [
-        '_text_title'          => 'Banners',
-        'text_tab_general'     => 'General',
-        'component_title' => 'Banner Component',
-        'component_desc'  => 'Displays banners',
-        'text_edit_banner'     => 'Edit Banner',
+        '_text_title'      => 'Banners',
+        'text_tab_general' => 'General',
+        'component_title'  => 'Banner Component',
+        'component_desc'   => 'Displays banners',
+        'text_edit_banner' => 'Edit Banner',
 
         'column_banner'         => 'Banner',
         'column_dimension'      => 'Dimension (W x H)',
@@ -28,8 +28,8 @@ return [
     ],
 
     'contact' => [
-        'component_title' => 'Contact Component',
-        'component_desc'  => 'Displays Contact form',
+        'component_title'       => 'Contact Component',
+        'component_desc'        => 'Displays Contact form',
         'text_heading'          => 'Contact',
         'text_summary'          => 'Feel free to send a message',
         'text_find_us'          => 'Find Us On Map',
@@ -51,10 +51,10 @@ return [
     ],
 
     'slider' => [
-        '_text_title'          => 'Slider',
-        'text_tab_general'     => 'General',
-        'component_title' => 'Slider Component',
-        'component_desc'  => 'Displays images slider on homepage',
+        '_text_title'      => 'Slider',
+        'text_tab_general' => 'General',
+        'component_title'  => 'Slider Component',
+        'component_desc'   => 'Displays images slider on homepage',
 
         'text_tab_slides' => 'Slides',
 
@@ -72,10 +72,10 @@ return [
     ],
 
     'newsletter' => [
-        '_text_title'          => 'Newsletter',
-        'text_tab_general'     => 'General',
-        'component_title' => 'Newsletter Component',
-        'component_desc'  => 'Displays the subscribe to newsletter form',
+        '_text_title'      => 'Newsletter',
+        'text_tab_general' => 'General',
+        'component_title'  => 'Newsletter Component',
+        'component_desc'   => 'Displays the subscribe to newsletter form',
 
         'text_subscribe' => 'Subscribe to our newsletter',
 
@@ -87,12 +87,12 @@ return [
     ],
 
     'featured' => [
-        '_text_title'          => 'Featured Menu Item',
-        'text_tab_general'     => 'General',
-        'component_title' => 'Featured Menu Component',
-        'component_desc'  => 'Displays list of featured menus on the store front',
-        'text_subscribe'       => 'Subscribe to our newsletter',
-        'text_featured_menus'  => 'Featured Menu',
+        '_text_title'         => 'Featured Menu Item',
+        'text_tab_general'    => 'General',
+        'component_title'     => 'Featured Menu Component',
+        'component_desc'      => 'Displays list of featured menus on the store front',
+        'text_subscribe'      => 'Subscribe to our newsletter',
+        'text_featured_menus' => 'Featured Menu',
 
         'column_menu_name'   => 'Menu Name',
         'column_menu_remove' => 'Remove',
