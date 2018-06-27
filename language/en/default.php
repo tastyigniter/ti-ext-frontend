@@ -3,16 +3,27 @@
 return [
 
     'banners' => [
-        '_text_title'      => 'Banners',
-        'text_tab_general' => 'General',
-        'component_title'  => 'Banner Component',
-        'component_desc'   => 'Displays banners',
-        'text_edit_banner' => 'Edit Banner',
+        '_text_title'        => 'Banners',
+        'text_tab_general'   => 'General',
+        'component_title'    => 'Banner Component',
+        'component_desc'     => 'Displays banners',
+        'text_edit_banner'   => 'Edit Banner',
+        'text_title'         => 'Banners',
+        'text_form_name'     => 'Banner',
+        'text_filter_search' => 'Search banner name, description or status.',
+        'text_filter_status' => 'View all status',
+        'text_empty'         => 'There are no banners available.',
+        'text_image'         => 'Image',
+        'text_custom'        => 'Custom',
 
         'column_banner'         => 'Banner',
         'column_dimension'      => 'Dimension (W x H)',
         'column_layout_partial' => 'Layout - Partial Area',
         'column_status'         => 'Status',
+        'column_name'           => 'Name',
+        'column_type'           => 'Type',
+        'column_status'         => 'Status',
+        'column_id'             => 'ID',
 
         'label_banner'         => 'Banner',
         'label_dimension'      => 'Dimension (W x H)',
@@ -20,10 +31,20 @@ return [
         'label_height'         => 'Height',
         'label_status'         => 'Status',
         'label_layout_partial' => 'Layout - Partial Area',
+        'label_name'           => 'Name',
+        'label_type'           => 'Type',
+        'label_click_url'      => 'Click URL',
+        'label_language'       => 'Language',
+        'label_alt_text'       => 'Alternative Text',
+        'label_image'          => 'Image',
+        'label_custom_code'    => 'Custom Code',
 
         'button_banners' => 'Add New Banner',
 
-        'help_layouts'      => 'Choose a layout to add one or more banner(s).',
+        'help_layouts'   => 'Choose a layout to add one or more banner(s).',
+        'help_image'     => 'Choose multiple images to display banner as carousel',
+        'help_click_url' => 'You can use a relative or absolute site URL',
+
         'alert_set_banners' => 'You must first add the banners module to one or more layouts',
     ],
 

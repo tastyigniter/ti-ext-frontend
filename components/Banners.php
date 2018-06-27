@@ -1,6 +1,5 @@
 <?php namespace SamPoyigi\FrontEnd\Components;
 
-use Admin\Models\Banners_model;
 use Main\Models\Image_tool_model;
 
 class Banners extends \System\Classes\BaseComponent
@@ -31,7 +30,7 @@ class Banners extends \System\Classes\BaseComponent
 
     public static function getBannerIdOptions()
     {
-        return Banners_model::isEnabled()->dropdown('name');
+        return Banners::isEnabled()->dropdown('name');
     }
 
     public function onRun()
@@ -44,8 +43,8 @@ class Banners extends \System\Classes\BaseComponent
         if (isset($this->banner))
             return $this->banner;
 
-        $model = Banners_model::isEnabled()
-                              ->where('banner_id', $this->property('banner_id'))->first();
+        $model = Banners::isEnabled()
+                        ->where('banner_id', $this->property('banner_id'))->first();
 
         $banner = new \stdClass;
         $banner->id = 'banner-slideshow-'.uniqid();
@@ -58,7 +57,7 @@ class Banners extends \System\Classes\BaseComponent
         return $this->banner = $banner;
     }
 
-    protected function prepareImages(Banners_model $banner)
+    protected function prepareImages(Banners $banner)
     {
         if ($banner->type == 'custom')
             return $banner->custom_code;

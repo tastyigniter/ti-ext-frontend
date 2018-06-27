@@ -25,10 +25,27 @@ class Extension extends \System\Classes\BaseExtension
                 'name'        => 'lang:sampoyigi.frontend::default.newsletter.component_title',
                 'description' => 'lang:sampoyigi.frontend::default.newsletter.component_desc',
             ],
-            'SamPoyigi\FrontEnd\Components\FeaturedMenus' => [
-                'code'        => 'featuredMenus',
+            'SamPoyigi\FrontEnd\Components\FeaturedItems' => [
+                'code'        => 'featuredItems',
                 'name'        => 'lang:sampoyigi.frontend::default.featured.component_title',
                 'description' => 'lang:sampoyigi.frontend::default.featured.component_desc',
+            ],
+        ];
+    }
+
+    public function registerNavigation()
+    {
+        return [
+            'marketing' => [
+                'child' => [
+                    'banners' => [
+                        'priority'   => 30,
+                        'class'      => 'pages',
+                        'href'       => admin_url('sampoyigi/frontend/banners'),
+                        'title'      => lang('admin::default.menu_banner'),
+                        'permission' => 'Module.BannersModule',
+                    ],
+                ],
             ],
         ];
     }
@@ -44,7 +61,7 @@ class Extension extends \System\Classes\BaseExtension
                 'action'      => ['manage'],
                 'description' => 'Ability to manage homepage slide show module',
             ],
-            'Module.FeaturedMenus' => [
+            'Module.FeaturedItems' => [
                 'action'      => ['manage'],
                 'description' => 'Ability to manage featured menu module',
             ],

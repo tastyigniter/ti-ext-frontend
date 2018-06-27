@@ -10,7 +10,6 @@ class Newsletter extends \System\Classes\BaseComponent
     public function onRun()
     {
         $this->page['subscribeHandler'] = $this->getEventHandler('onSubscribe');
-        $this->page['subscribeCssClass'] = $this->property('cssClass', 'col-sm-6 center-block');
     }
 
     public function onSubscribe()

@@ -11,7 +11,6 @@ return [
                     'data-request'      => 'onSave',
                     'data-request-data' => 'close:1',
                 ],
-                'back'      => ['label' => 'lang:admin::default.button_icon_back', 'class' => 'btn btn-default', 'href' => 'settings'],
             ],
         ],
         'fields'  => [
@@ -61,7 +60,7 @@ return [
             ['effect', 'lang:sampoyigi.frontend::default.slider.label_effect', 'required'],
             ['speed', 'lang:sampoyigi.frontend::default.slider.label_speed', 'integer'],
             ['display', 'lang:sampoyigi.frontend::default.slider.label_display', 'required|integer'],
-            ['images[]', 'lang:sampoyigi.frontend::default.slider.label_slide_image'],
+            ['images.*', 'lang:sampoyigi.frontend::default.slider.label_slide_image'],
         ],
     ],
 ];

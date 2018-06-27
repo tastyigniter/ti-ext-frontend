@@ -16,11 +16,11 @@ class SliderSettings extends Model
 
     public function getImagesAttribute($value)
     {
-        if (!isset($this->attributes['slides']))
-            return [];
-
         if (isset($this->attributes['images']))
             return $this->attributes['images'];
+
+        if (!isset($this->attributes['slides']))
+            return [];
 
         $result = [];
         foreach ($this->attributes['slides'] as $slide) {

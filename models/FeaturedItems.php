@@ -1,20 +1,20 @@
 <?php namespace SamPoyigi\FrontEnd\Models;
 
-class FeaturedMenus extends \Admin\Models\Menus_model
+class FeaturedItems extends \Admin\Models\Menus_model
 {
     public static function getByIds($options = [])
     {
         extract(array_merge([
             'pageLimit' => 20,
             'sort'      => 'menu_priority asc',
-            'menu_ids'  => [],
+            'menuIds'  => [],
         ], $options));
 
-        if (!is_array($menu_ids)) {
-            $menu_ids = [$menu_ids];
+        if (!is_array($menuIds)) {
+            $menuIds = [$menuIds];
         }
 
-        $query = self::whereIn('menu_id', $menu_ids);
+        $query = self::whereIn('menu_id', $menuIds);
 
         if (!is_array($sort)) {
             $sort = [$sort];
