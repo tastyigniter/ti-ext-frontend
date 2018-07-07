@@ -23,17 +23,17 @@ class Banners extends \Admin\Classes\AdminController
         'name'       => 'lang:admin::banners.text_form_name',
         'model'      => 'SamPoyigi\FrontEnd\Models\Banners',
         'create'     => [
-            'title'         => 'lang:admin::default.form.create_title',
+            'title'         => 'lang:admin::lang.form.create_title',
             'redirect'      => 'banners/edit/{banner_id}',
             'redirectClose' => 'banners',
         ],
         'edit'       => [
-            'title'         => 'lang:admin::default.form.edit_title',
+            'title'         => 'lang:admin::lang.form.edit_title',
             'redirect'      => 'banners/edit/{banner_id}',
             'redirectClose' => 'banners',
         ],
         'preview'    => [
-            'title'    => 'lang:admin::default.form.preview_title',
+            'title'    => 'lang:admin::lang.form.preview_title',
             'redirect' => 'banners',
         ],
         'delete'     => [
@@ -61,7 +61,7 @@ class Banners extends \Admin\Classes\AdminController
             ['alt_text', 'lang:admin::banners.label_alt_text', 'required_if:type,image|min:2|max:255'],
             ['image_code', 'lang:admin::banners.label_image', 'required_if:type,image'],
             ['language_id', 'lang:admin::banners.label_language', 'required|integer'],
-            ['status', 'lang:admin::default.label_status', 'required|integer'],
+            ['status', 'lang:admin::lang.label_status', 'required|integer'],
         ];
 
         return $this->validatePasses(post($form->arrayName), $namedRules);

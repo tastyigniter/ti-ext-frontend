@@ -42,7 +42,7 @@ class Extension extends \System\Classes\BaseExtension
                         'priority'   => 30,
                         'class'      => 'pages',
                         'href'       => admin_url('sampoyigi/frontend/banners'),
-                        'title'      => lang('admin::default.menu_banner'),
+                        'title'      => lang('admin::lang.side_menu.banner'),
                         'permission' => 'Module.BannersModule',
                     ],
                 ],
