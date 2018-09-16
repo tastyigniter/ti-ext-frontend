@@ -1,4 +1,4 @@
-<?php namespace SamPoyigi\FrontEnd\Components;
+<?php namespace Igniter\Frontend\Components;
 
 use Admin\Traits\ValidatesForm;
 use SamPoyigi\Featured_menus\Models\Subscriber;
@@ -17,17 +17,17 @@ class Newsletter extends \System\Classes\BaseComponent
         $data = post();
 
         $rules = [
-            ['email', 'lang:sampoyigi.frontend::default.newsletter.label_email', 'required|email8'],
+            ['email', 'lang:igniter.frontend::default.newsletter.label_email', 'required|email8'],
         ];
 
         $this->validate($data, $rules);
 
         if (Subscriber::whereEmail($data['email'])->first()) {
-            flash()->success(lang('sampoyigi.frontend::default.newsletter.alert_success_existing'))->now();
+            flash()->success(lang('igniter.frontend::default.newsletter.alert_success_existing'))->now();
         }
         else {
             Subscriber::create($data);
-            flash()->success(lang('sampoyigi.frontend::default.newsletter.alert_success_subscribed'))->now();
+            flash()->success(lang('igniter.frontend::default.newsletter.alert_success_subscribed'))->now();
         }
 
         $this->pageCycle();

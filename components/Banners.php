@@ -1,4 +1,4 @@
-<?php namespace SamPoyigi\FrontEnd\Components;
+<?php namespace Igniter\Frontend\Components;
 
 use Main\Models\Image_tool_model;
 
@@ -10,19 +10,19 @@ class Banners extends \System\Classes\BaseComponent
     {
         return [
             'banner_id' => [
-                'label' => 'lang:sampoyigi.frontend::default.banners.column_banner',
-                'type'  => 'select',
+                'label' => 'lang:igniter.frontend::default.banners.column_banner',
+                'type' => 'select',
             ],
-            'width'     => [
-                'label'   => 'lang:sampoyigi.frontend::default.banners.label_width',
-                'span'    => 'left',
-                'type'    => 'number',
+            'width' => [
+                'label' => 'lang:igniter.frontend::default.banners.label_width',
+                'span' => 'left',
+                'type' => 'number',
                 'default' => 960,
             ],
-            'height'    => [
-                'label'   => 'lang:sampoyigi.frontend::default.banners.label_height',
-                'span'    => 'right',
-                'type'    => 'text',
+            'height' => [
+                'label' => 'lang:igniter.frontend::default.banners.label_height',
+                'span' => 'right',
+                'type' => 'text',
                 'default' => 360,
             ],
         ];
@@ -69,11 +69,11 @@ class Banners extends \System\Classes\BaseComponent
             $imageWidth = $this->property('height');
 
             return [
-                'name'   => basename($path),
+                'name' => basename($path),
                 'height' => $imageHeight,
-                'width'  => $imageWidth,
-                'url'    => Image_tool_model::resize($path, [
-                    'width'  => $imageWidth,
+                'width' => $imageWidth,
+                'url' => Image_tool_model::resize($path, [
+                    'width' => $imageWidth,
                     'height' => $imageHeight,
                 ]),
             ];

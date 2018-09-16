@@ -1,4 +1,4 @@
-<?php namespace SamPoyigi\FrontEnd\Controllers;
+<?php namespace Igniter\Frontend\Controllers;
 
 use AdminMenu;
 
@@ -11,32 +11,32 @@ class Banners extends \Admin\Classes\AdminController
 
     public $listConfig = [
         'list' => [
-            'model'        => 'SamPoyigi\FrontEnd\Models\Banners',
-            'title'        => 'lang:admin::banners.text_title',
+            'model' => 'Igniter\Frontend\Models\Banners',
+            'title' => 'lang:admin::banners.text_title',
             'emptyMessage' => 'lang:admin::banners.text_empty',
-            'defaultSort'  => ['order_id', 'DESC'],
-            'configFile'   => 'banners',
+            'defaultSort' => ['order_id', 'DESC'],
+            'configFile' => 'banners',
         ],
     ];
 
     public $formConfig = [
-        'name'       => 'lang:admin::banners.text_form_name',
-        'model'      => 'SamPoyigi\FrontEnd\Models\Banners',
-        'create'     => [
-            'title'         => 'lang:admin::lang.form.create_title',
-            'redirect'      => 'banners/edit/{banner_id}',
+        'name' => 'lang:admin::banners.text_form_name',
+        'model' => 'Igniter\Frontend\Models\Banners',
+        'create' => [
+            'title' => 'lang:admin::lang.form.create_title',
+            'redirect' => 'banners/edit/{banner_id}',
             'redirectClose' => 'banners',
         ],
-        'edit'       => [
-            'title'         => 'lang:admin::lang.form.edit_title',
-            'redirect'      => 'banners/edit/{banner_id}',
+        'edit' => [
+            'title' => 'lang:admin::lang.form.edit_title',
+            'redirect' => 'banners/edit/{banner_id}',
             'redirectClose' => 'banners',
         ],
-        'preview'    => [
-            'title'    => 'lang:admin::lang.form.preview_title',
+        'preview' => [
+            'title' => 'lang:admin::lang.form.preview_title',
             'redirect' => 'banners',
         ],
-        'delete'     => [
+        'delete' => [
             'redirect' => 'banners',
         ],
         'configFile' => 'banners',

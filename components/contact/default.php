@@ -1,7 +1,7 @@
 <?= form_open(current_url(), [
-        'id'           => 'contact-form',
-        'role'         => 'form',
-        'method'       => 'POST',
+        'id' => 'contact-form',
+        'role' => 'form',
+        'method' => 'POST',
         'data-request' => $__SELF__.'::onSubmit',
     ]
 ); ?>
@@ -12,7 +12,7 @@
                 name="subject"
                 class="form-control"
             >
-                <option><?= lang('sampoyigi.frontend::default.contact.text_select_subject'); ?></option>
+                <option><?= lang('igniter.frontend::default.contact.text_select_subject'); ?></option>
                 <?php foreach ($__SELF__->subjects as $subject) { ?>
                     <option value="<?= $subject; ?>"><?= $subject; ?></option>
                 <?php } ?>
@@ -25,7 +25,7 @@
                 name="email"
                 class="form-control"
                 value="<?= set_value('email'); ?>"
-                placeholder="<?= lang('sampoyigi.frontend::default.contact.label_email'); ?>"/>
+                placeholder="<?= lang('igniter.frontend::default.contact.label_email'); ?>"/>
             <?= form_error('email', '<span class="text-danger">', '</span>'); ?>
         </div>
     </div>
@@ -36,7 +36,7 @@
                 name="full_name"
                 class="form-control"
                 value="<?= set_value('full_name'); ?>"
-                placeholder="<?= lang('sampoyigi.frontend::default.contact.label_full_name'); ?>"/>
+                placeholder="<?= lang('igniter.frontend::default.contact.label_full_name'); ?>"/>
             <?= form_error('full_name', '<span class="text-danger">', '</span>'); ?>
         </div>
         <div class="form-group">
@@ -45,7 +45,7 @@
                 name="telephone"
                 class="form-control"
                 value="<?= set_value('telephone'); ?>"
-                placeholder="<?= lang('sampoyigi.frontend::default.contact.label_telephone'); ?>"/>
+                placeholder="<?= lang('igniter.frontend::default.contact.label_telephone'); ?>"/>
             <?= form_error('telephone', '<span class="text-danger">', '</span>'); ?>
         </div>
     </div>
@@ -55,7 +55,7 @@
         name="comment"
         class="form-control"
         rows="5"
-        placeholder="<?= lang('sampoyigi.frontend::default.contact.label_comment'); ?>"
+        placeholder="<?= lang('igniter.frontend::default.contact.label_comment'); ?>"
     ><?= set_value('comment'); ?></textarea>
     <?= form_error('comment', '<span class="text-danger">', '</span>'); ?>
 </div>
@@ -64,6 +64,6 @@
     <button
         type="submit"
         class="btn btn-primary btn-block"
-    ><?= lang('sampoyigi.frontend::default.contact.button_send'); ?></button>
+    ><?= lang('igniter.frontend::default.contact.button_send'); ?></button>
 </div>
 <?= form_close(); ?>

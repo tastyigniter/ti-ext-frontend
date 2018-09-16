@@ -1,6 +1,6 @@
 <?php
 
-namespace SamPoyigi\FrontEnd\Models;
+namespace Igniter\Frontend\Models;
 
 use Model;
 
@@ -9,7 +9,7 @@ class SliderSettings extends Model
     public $implement = ['System\Actions\SettingsModel'];
 
     // A unique code
-    public $settingsCode = 'sampoyigi_frontend_slidersettings';
+    public $settingsCode = 'igniter_frontend_slidersettings';
 
     // Reference to field configuration
     public $settingsFieldsConfig = 'slidersettings';

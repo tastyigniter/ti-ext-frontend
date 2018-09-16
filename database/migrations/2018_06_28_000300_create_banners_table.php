@@ -1,6 +1,8 @@
-<?php
+<?php namespace Igniter\FrontEnd\Database\Migrations;
 
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Schema;
 
 class CreateBannersTable extends Migration
 {
@@ -9,7 +11,7 @@ class CreateBannersTable extends Migration
         if (Schema::hasTable('banners'))
             return;
 
-        Schema::create('banners', function ($table) {
+        Schema::create('banners', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('banner_id');
             $table->string('name');

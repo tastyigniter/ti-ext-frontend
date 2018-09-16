@@ -6,7 +6,7 @@ use Model;
 
 class Subscriber extends Model
 {
-    protected $table = 'sampoyigi_frontend_subscribers';
+    protected $table = 'igniter_frontend_subscribers';
 
     protected $primaryKey = 'id';
 

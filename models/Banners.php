@@ -1,4 +1,4 @@
-<?php namespace SamPoyigi\FrontEnd\Models;
+<?php namespace Igniter\Frontend\Models;
 
 use Main\Models\Image_tool_model;
 use Model;
@@ -98,7 +98,7 @@ class Banners extends Model
         return [
             'name' => basename($file_path),
             'path' => $file_path,
-            'url'  => Image_tool_model::resize($file_path, $width, $height),
+            'url' => Image_tool_model::resize($file_path, $width, $height),
         ];
     }
 }

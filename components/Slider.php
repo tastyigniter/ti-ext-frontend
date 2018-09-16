@@ -1,7 +1,7 @@
-<?php namespace SamPoyigi\FrontEnd\Components;
+<?php namespace Igniter\Frontend\Components;
 
+use Igniter\Frontend\Models\SliderSettings;
 use Main\Models\Image_tool_model;
-use SamPoyigi\FrontEnd\Models\SliderSettings;
 
 class Slider extends \System\Classes\BaseComponent
 {
@@ -39,8 +39,8 @@ class Slider extends \System\Classes\BaseComponent
             $caption = (isset($slide['caption'])) ? $slide['caption'] : '';
 
             $slider = [
-                'height'  => $this->page['sliderHeight'],
-                'width'   => $this->page['sliderWidth'],
+                'height' => $this->page['sliderHeight'],
+                'width' => $this->page['sliderWidth'],
                 'caption' => $caption,
             ];
 

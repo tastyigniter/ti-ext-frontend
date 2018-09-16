@@ -1,13 +1,13 @@
 <?php
 $config['list']['filter'] = [
     'search' => [
-        'prompt' => 'lang:sampoyigi.frontend::default.banners.text_filter_search',
-        'mode'   => 'all' // or any, exact
+        'prompt' => 'lang:igniter.frontend::default.banners.text_filter_search',
+        'mode' => 'all' // or any, exact
     ],
     'scopes' => [
         'status' => [
-            'label'      => 'lang:sampoyigi.frontend::default.banners.text_filter_status',
-            'type'       => 'switch',
+            'label' => 'lang:igniter.frontend::default.banners.text_filter_status',
+            'type' => 'switch',
             'conditions' => 'status = :filtered',
         ],
     ],
@@ -18,18 +18,18 @@ $config['list']['toolbar'] = [
         'create' => [
             'label' => 'lang:admin::lang.button_new',
             'class' => 'btn btn-primary',
-            'href'  => 'sampoyigi/frontend/banners/create',
+            'href' => 'igniter/frontend/banners/create',
         ],
         'delete' => [
-            'label'                => 'lang:admin::lang.button_delete',
-            'class'                => 'btn btn-danger',
-            'data-request-form'    => '#list-form',
+            'label' => 'lang:admin::lang.button_delete',
+            'class' => 'btn btn-danger',
+            'data-request-form' => '#list-form',
             'data-request-handler' => 'onDelete',
             'data-request-confirm' => 'lang:admin::lang.alert_warning_confirm',
         ],
         'filter' => [
-            'label'       => 'lang:admin::lang.button_icon_filter',
-            'class'       => 'btn btn-default btn-filter',
+            'label' => 'lang:admin::lang.button_icon_filter',
+            'class' => 'btn btn-default btn-filter',
             'data-toggle' => 'list-filter',
             'data-target' => '.list-filter',
         ],
@@ -37,30 +37,30 @@ $config['list']['toolbar'] = [
 ];
 
 $config['list']['columns'] = [
-    'edit'       => [
-        'type'         => 'button',
+    'edit' => [
+        'type' => 'button',
         'iconCssClass' => 'fa fa-pencil',
-        'attributes'   => [
+        'attributes' => [
             'class' => 'btn btn-edit',
-            'href'  => 'sampoyigi/frontend/banners/edit/{banner_id}',
+            'href' => 'igniter/frontend/banners/edit/{banner_id}',
         ],
     ],
-    'name'       => [
-        'label'      => 'lang:sampoyigi.frontend::default.banners.column_name',
-        'type'       => 'text',
+    'name' => [
+        'label' => 'lang:igniter.frontend::default.banners.column_name',
+        'type' => 'text',
         'searchable' => TRUE,
     ],
     'type_label' => [
-        'label' => 'lang:sampoyigi.frontend::default.banners.column_type',
-        'type'  => 'text',
+        'label' => 'lang:igniter.frontend::default.banners.column_type',
+        'type' => 'text',
     ],
-    'status'     => [
-        'label'      => 'lang:sampoyigi.frontend::default.banners.column_status',
-        'type'       => 'switch',
+    'status' => [
+        'label' => 'lang:igniter.frontend::default.banners.column_status',
+        'type' => 'switch',
         'searchable' => TRUE,
     ],
-    'banner_id'  => [
-        'label'     => 'lang:admin::lang.column_id',
+    'banner_id' => [
+        'label' => 'lang:admin::lang.column_id',
         'invisible' => TRUE,
     ],
 
@@ -68,85 +68,85 @@ $config['list']['columns'] = [
 
 $config['form']['toolbar'] = [
     'buttons' => [
-        'save'      => [
-            'label'             => 'lang:admin::lang.button_save',
-            'context'           => ['create', 'edit'],
-            'class'             => 'btn btn-primary',
-            'data-request'      => 'onSave',
+        'save' => [
+            'label' => 'lang:admin::lang.button_save',
+            'context' => ['create', 'edit'],
+            'class' => 'btn btn-primary',
+            'data-request' => 'onSave',
             'data-request-form' => '#form-widget',
         ],
         'saveClose' => [
-            'label'             => 'lang:admin::lang.button_save_close',
-            'context'           => ['create', 'edit'],
-            'class'             => 'btn btn-default',
-            'data-request'      => 'onSave',
+            'label' => 'lang:admin::lang.button_save_close',
+            'context' => ['create', 'edit'],
+            'class' => 'btn btn-default',
+            'data-request' => 'onSave',
             'data-request-form' => '#form-widget',
             'data-request-data' => 'close:1',
         ],
-        'delete'    => [
-            'label'                => 'lang:admin::lang.button_icon_delete',
-            'context'              => ['edit'],
-            'class'                => 'btn btn-danger',
-            'data-request'         => 'onDelete',
-            'data-request-form'    => '#form-widget',
+        'delete' => [
+            'label' => 'lang:admin::lang.button_icon_delete',
+            'context' => ['edit'],
+            'class' => 'btn btn-danger',
+            'data-request' => 'onDelete',
+            'data-request-form' => '#form-widget',
             'data-request-confirm' => 'lang:admin::lang.alert_warning_confirm',
         ],
     ],
 ];
 
 $config['form']['fields'] = [
-    'name'        => [
-        'label' => 'lang:sampoyigi.frontend::default.banners.label_name',
-        'type'  => 'text',
+    'name' => [
+        'label' => 'lang:igniter.frontend::default.banners.label_name',
+        'type' => 'text',
     ],
-    'type'        => [
-        'label'   => 'lang:sampoyigi.frontend::default.banners.label_type',
-        'type'    => 'radio',
+    'type' => [
+        'label' => 'lang:igniter.frontend::default.banners.label_type',
+        'type' => 'radio',
         'default' => 'image',
         'options' => [
-            'image'  => 'lang:sampoyigi.frontend::default.banners.text_image',
-            'custom' => 'lang:sampoyigi.frontend::default.banners.text_custom',
+            'image' => 'lang:igniter.frontend::default.banners.text_image',
+            'custom' => 'lang:igniter.frontend::default.banners.text_custom',
         ],
     ],
-    'image_code'  => [
-        'label'        => 'lang:sampoyigi.frontend::default.banners.label_image',
-        'type'         => 'mediafinder',
-        'mode'         => 'grid',
-        'commentAbove' => 'lang:sampoyigi.frontend::default.banners.help_image',
-        'isMulti'      => TRUE,
-        'trigger'      => [
-            'action'    => 'hide',
-            'field'     => 'type',
+    'image_code' => [
+        'label' => 'lang:igniter.frontend::default.banners.label_image',
+        'type' => 'mediafinder',
+        'mode' => 'grid',
+        'commentAbove' => 'lang:igniter.frontend::default.banners.help_image',
+        'isMulti' => TRUE,
+        'trigger' => [
+            'action' => 'hide',
+            'field' => 'type',
             'condition' => 'value[custom]',
         ],
     ],
     'custom_code' => [
-        'label'   => 'lang:sampoyigi.frontend::default.banners.label_custom_code',
-        'type'    => 'textarea',
+        'label' => 'lang:igniter.frontend::default.banners.label_custom_code',
+        'type' => 'textarea',
         'trigger' => [
-            'action'    => 'show',
-            'field'     => 'type',
+            'action' => 'show',
+            'field' => 'type',
             'condition' => 'value[custom]',
         ],
     ],
-    'alt_text'    => [
-        'label' => 'lang:sampoyigi.frontend::default.banners.label_alt_text',
-        'type'  => 'text',
+    'alt_text' => [
+        'label' => 'lang:igniter.frontend::default.banners.label_alt_text',
+        'type' => 'text',
     ],
-    'click_url'   => [
-        'label'   => 'lang:sampoyigi.frontend::default.banners.label_click_url',
-        'type'    => 'text',
-        'comment' => 'lang:sampoyigi.frontend::default.banners.help_click_url',
+    'click_url' => [
+        'label' => 'lang:igniter.frontend::default.banners.label_click_url',
+        'type' => 'text',
+        'comment' => 'lang:igniter.frontend::default.banners.help_click_url',
     ],
     'language_id' => [
-        'label'        => 'lang:sampoyigi.frontend::default.banners.label_language',
-        'type'         => 'relation',
+        'label' => 'lang:igniter.frontend::default.banners.label_language',
+        'type' => 'relation',
         'relationFrom' => 'language',
-        'placeholder'  => 'lang:admin::lang.text_please_select',
+        'placeholder' => 'lang:admin::lang.text_please_select',
     ],
-    'status'      => [
-        'label'   => 'lang:admin::lang.label_status',
-        'type'    => 'switch',
+    'status' => [
+        'label' => 'lang:admin::lang.label_status',
+        'type' => 'switch',
         'default' => TRUE,
     ],
 ];

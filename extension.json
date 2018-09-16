@@ -1,12 +1,9 @@
 {
-  "code": "sampoyigi.frontend",
+  "code": "igniter.frontend",
   "name": "FrontEnd",
   "description": "Manage basic components like Slider, Featured Menu Items, Banners and Newsletter",
-  "version": "1.0.0",
+  "version": "1.0.0-beta.2",
   "author": "SamPoyigi",
-  "icon": "fa-plug",
-  "homepage": "https://github.com/sampoyigi/ti-frontend-extension",
-  "tags": {
-    "1.0.0": "Initial tag of frontend extension"
-  }
+  "icon": "fa-store",
+  "homepage": "https://github.com/tastyigniter/ti-ext-frontend"
 }

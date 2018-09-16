@@ -1,27 +1,27 @@
-<?php namespace SamPoyigi\FrontEnd\Components;
+<?php namespace Igniter\Frontend\Components;
 
-use SamPoyigi\FrontEnd\Models\FeaturedItems as FeaturedItemsModel;
+use Igniter\Frontend\Models\FeaturedItems as FeaturedItemsModel;
 
 class FeaturedItems extends \System\Classes\BaseComponent
 {
     public function defineProperties()
     {
         return [
-            'items'       => [
-                'label' => 'lang:sampoyigi.frontend::default.featured.label_menus',
-                'type'  => 'selectlist',
-                'mode'  => 'checkbox',
+            'items' => [
+                'label' => 'lang:igniter.frontend::default.featured.label_menus',
+                'type' => 'selectlist',
+                'mode' => 'checkbox',
             ],
-            'limit'       => [
-                'label'   => 'lang:sampoyigi.frontend::default.featured.label_limit',
-                'span'    => 'left',
-                'type'    => 'number',
+            'limit' => [
+                'label' => 'lang:igniter.frontend::default.featured.label_limit',
+                'span' => 'left',
+                'type' => 'number',
                 'default' => 12,
             ],
             'itemsPerRow' => [
-                'label'   => 'lang:sampoyigi.frontend::default.featured.label_items_per_row',
-                'span'    => 'right',
-                'type'    => 'select',
+                'label' => 'lang:igniter.frontend::default.featured.label_items_per_row',
+                'span' => 'right',
+                'type' => 'select',
                 'default' => 3,
                 'options' => [
                     1 => 'One',
@@ -32,16 +32,16 @@ class FeaturedItems extends \System\Classes\BaseComponent
                     6 => 'Six',
                 ],
             ],
-            'itemWidth'   => [
-                'label'   => 'lang:sampoyigi.frontend::default.featured.label_dimension_w',
-                'span'    => 'left',
-                'type'    => 'number',
+            'itemWidth' => [
+                'label' => 'lang:igniter.frontend::default.featured.label_dimension_w',
+                'span' => 'left',
+                'type' => 'number',
                 'default' => 400,
             ],
-            'itemHeight'  => [
-                'label'   => 'lang:sampoyigi.frontend::default.featured.label_dimension_h',
-                'span'    => 'right',
-                'type'    => 'number',
+            'itemHeight' => [
+                'label' => 'lang:igniter.frontend::default.featured.label_dimension_h',
+                'span' => 'right',
+                'type' => 'number',
                 'default' => 300,
             ],
         ];
@@ -56,7 +56,7 @@ class FeaturedItems extends \System\Classes\BaseComponent
     {
         $this->addCss('css/featured_menus.css', 'featured_menus-css');
 
-        $this->page['featuredTitle'] = $this->property('title', lang('sampoyigi.frontend::default.featured.text_featured_menus'));
+        $this->page['featuredTitle'] = $this->property('title', lang('igniter.frontend::default.featured.text_featured_menus'));
         $this->page['featuredPerRow'] = $this->property('itemsPerRow', 3);
         $this->page['featuredWidth'] = $this->property('itemWidth', 400);
         $this->page['featuredHeight'] = $this->property('itemHeight', 300);
@@ -66,9 +66,9 @@ class FeaturedItems extends \System\Classes\BaseComponent
     protected function loadItems()
     {
         return FeaturedItemsModel::getByIds([
-            'page'      => '1',
+            'page' => '1',
             'pageLimit' => $this->property('limit'),
-            'menuIds'  => $this->property('items', []),
+            'menuIds' => $this->property('items', []),
         ]);
     }
 }

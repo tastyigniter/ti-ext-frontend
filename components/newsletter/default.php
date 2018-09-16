@@ -3,7 +3,7 @@
         <div class="col-lg-6 col-md-8 col-sm-12 m-auto text-center">
             <div id="newsletter-box">
                 <div class="newsletter-subscribe">
-                    <h3 class="mb-4"><?= lang('sampoyigi.frontend::default.newsletter.text_subscribe'); ?></h3>
+                    <h3 class="mb-4"><?= lang('igniter.frontend::default.newsletter.text_subscribe'); ?></h3>
                     <form
                         id="subscribeForm"
                         class="subscribe-form"

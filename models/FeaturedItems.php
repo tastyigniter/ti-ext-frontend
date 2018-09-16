@@ -1,4 +1,4 @@
-<?php namespace SamPoyigi\FrontEnd\Models;
+<?php namespace Igniter\Frontend\Models;
 
 class FeaturedItems extends \Admin\Models\Menus_model
 {
@@ -6,8 +6,8 @@ class FeaturedItems extends \Admin\Models\Menus_model
     {
         extract(array_merge([
             'pageLimit' => 20,
-            'sort'      => 'menu_priority asc',
-            'menuIds'  => [],
+            'sort' => 'menu_priority asc',
+            'menuIds' => [],
         ], $options));
 
         if (!is_array($menuIds)) {
