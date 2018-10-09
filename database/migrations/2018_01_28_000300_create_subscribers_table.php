@@ -8,6 +8,12 @@ class CreateSubscribersTable extends Migration
 {
     public function up()
     {
+        if (Schema::hasTable('sampoyigi_frontend_subscribers'))
+            Schema::rename('sampoyigi_frontend_subscribers', 'igniter_frontend_subscribers');
+
+        if (Schema::hasTable('igniter_frontend_subscribers'))
+            return;
+
         Schema::create('igniter_frontend_subscribers', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
