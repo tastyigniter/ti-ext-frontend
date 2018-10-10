@@ -7,6 +7,10 @@ class FeaturedItems extends \System\Classes\BaseComponent
     public function defineProperties()
     {
         return [
+            'title' => [
+                'label' => 'Title',
+                'type' => 'text',
+            ],
             'items' => [
                 'label' => 'lang:igniter.frontend::default.featured.label_menus',
                 'type' => 'selectlist',
