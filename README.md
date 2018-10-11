@@ -1,6 +1,6 @@
 Add more functionality to your TastyIgniter website with these awesome basic tools.
 
-### Features
+## Features
 - Manage and Show Banners in frontend
 - Manage and Show Featured Menu Items in frontend
 - Manage and Show Newsletter in frontend
@@ -9,11 +9,11 @@ Add more functionality to your TastyIgniter website with these awesome basic too
 
 > When adding components to a page or layout, use the admin user interface to avoid common errors.
 
-#### Admin Panel
+### Admin Panel
 
 In the admin user interface you can manage banners, featured items and images for the slider.
 
-#### Components
+### Components
 
 | Name     | Page variable                | Description                                      |
 | -------- | ---------------------------- | ------------------------------------------------ |
@@ -23,7 +23,7 @@ In the admin user interface you can manage banners, featured items and images fo
 | Newsletter | `<?= component('newsletter') ?>` | Displays newsletter subscribe form               |
 | Slider | `<?= component('slider') ?>` | Displays carousel slider              |
 
-##### Banners Component
+### Banners Component
 
 **Properties**
 
@@ -40,6 +40,7 @@ In the admin user interface you can manage banners, featured items and images fo
 | $banner | The banner to display                                         |
 
 **Example:**
+
 ```
 ---
 '[banners]':
@@ -52,6 +53,7 @@ In the admin user interface you can manage banners, featured items and images fo
 ```
 
 **Example of multiple banners on a single page:**
+
 ```
 ---
 '[banners bannerOne]':
@@ -76,14 +78,16 @@ In the admin user interface you can manage banners, featured items and images fo
 ...
 ```
 
-##### Contact Component
+### Contact Component
 
 **Properties**
+
 | Property                 | Description              | Example Value | Default Value |
 | ------------------------ | ------------------------ | ------------- | ------------- |
 | redirectPage                 | Page path to redirect to after contact form has been sent successfully     |   contact     |   contact      |
 
 **Example:**
+
 ```
 ---
 title: 'Contact'
@@ -96,9 +100,10 @@ permalink: /contact
 ...
 ```
 
-##### Featured Items Component
+### Featured Items Component
 
 **Properties**
+
 | Property                 | Description              | Example Value | Default Value |
 | ------------------------ | ------------------------ | ------------- | ------------- |
 | title                 | Title to display          |        |         |
@@ -119,6 +124,7 @@ permalink: /contact
 | $featuredMenuItems | List of featured items to display                                   |
 
 **Example:**
+
 ```
 ---
 title: 'Home'
@@ -136,7 +142,7 @@ permalink: /
 ...
 ```
 
-##### Newsletter Component
+### Newsletter Component
 
 **Example:**
 ```
@@ -148,7 +154,7 @@ permalink: /
 ...
 ```
 
-##### Slider Component
+### Slider Component
 
 **Example:**
 ```
@@ -160,5 +166,5 @@ permalink: /
 ...
 ```
 
-#### License
+### License
 [The MIT License (MIT)](https://tastyigniter.com/licence/)
