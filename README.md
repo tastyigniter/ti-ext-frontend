@@ -145,6 +145,7 @@ permalink: /
 ### Newsletter Component
 
 **Example:**
+
 ```
 ---
 '[newsletter]': {  }
@@ -157,6 +158,7 @@ permalink: /
 ### Slider Component
 
 **Example:**
+
 ```
 ---
 '[slider]': {  }
