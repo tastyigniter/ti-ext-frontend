@@ -10,12 +10,14 @@
             <?php foreach ($featuredMenuItems as $featuredItem) { ?>
                 <div class="col-sm-<?= round(12 / $featuredPerRow); ?> mb-3 mb-sm-0">
                     <div class="card h-100">
-                        <img
-                            class="card-img-top"
-                            src="<?= $featuredItem->getThumb([
-                                'width'  => $featuredItem,
-                                'height' => $featuredItem,
-                            ]); ?>" alt="<?= $featuredItem['menu_name']; ?>"/>
+                        <?php if ($featuredItem->hasMedia()) { ?>
+                            <img
+                                class="card-img-top"
+                                src="<?= $featuredItem->getThumb([
+                                    'width' => $featuredItem,
+                                    'height' => $featuredItem,
+                                ]); ?>" alt="<?= $featuredItem['menu_name']; ?>"/>
+                        <?php } ?>
                         <div class="card-body">
                             <h4 class="card-title">
                                 <?= $featuredItem['menu_name']; ?>

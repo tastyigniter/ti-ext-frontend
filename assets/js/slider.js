@@ -1,4 +1,4 @@
-$(document).ready(function () {
+$(document).render(function () {
     $('.flexslider').flexslider({
         prevText: '',
         nextText: ''
