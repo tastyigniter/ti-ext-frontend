@@ -35,18 +35,18 @@ class Slider extends \System\Classes\BaseComponent
             if (is_string($slide))
                 $image_src = $slide;
 
-            $image_src = (isset($slide['image_src'])) ? $slide['image_src'] : $image_src;
-            $caption = (isset($slide['caption'])) ? $slide['caption'] : '';
+            $image_src = $slide['image_src'] ?? $image_src;
+            $caption = $slide['caption'] ?? '';
 
-            $slider = [
+            $options = [
                 'height' => $this->page['sliderHeight'],
                 'width' => $this->page['sliderWidth'],
-                'caption' => $caption,
             ];
 
-            $slider['image_src'] = Image_tool_model::resize($image_src, $slider);
-
-            $result[] = $slider;
+            $result[] = array_merge($options, [
+                'caption' => $caption,
+                'image_src' => Image_tool_model::resize($image_src, $options),
+            ]);
         }
 
         return $result;
