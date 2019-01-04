@@ -24,12 +24,12 @@ class Banners extends \Admin\Classes\AdminController
         'model' => 'Igniter\Frontend\Models\Banners',
         'create' => [
             'title' => 'lang:admin::lang.form.create_title',
-            'redirect' => 'banners/edit/{banner_id}',
+            'redirect' => 'igniter/frontend/banners/edit/{banner_id}',
             'redirectClose' => 'banners',
         ],
         'edit' => [
             'title' => 'lang:admin::lang.form.edit_title',
-            'redirect' => 'banners/edit/{banner_id}',
+            'redirect' => 'igniter/frontend/banners/edit/{banner_id}',
             'redirectClose' => 'banners',
         ],
         'preview' => [

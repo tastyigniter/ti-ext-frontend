@@ -55,14 +55,14 @@ class Extension extends \System\Classes\BaseExtension
         return [
             'Module.BannersModule' => [
                 'description' => 'Ability to manage banners module',
-                'action' => ['manage'],
+                'group' => 'module',
             ],
             'Module.Slideshow' => [
-                'action' => ['manage'],
+                'group' => 'module',
                 'description' => 'Ability to manage homepage slide show module',
             ],
             'Module.FeaturedItems' => [
-                'action' => ['manage'],
+                'group' => 'module',
                 'description' => 'Ability to manage featured menu module',
             ],
         ];

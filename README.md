@@ -11,7 +11,8 @@ Add more functionality to your TastyIgniter website with these awesome basic too
 
 ### Admin Panel
 
-In the admin user interface you can manage banners, featured items and images for the slider.
+In the admin user interface you can manage banners, featured items and images for the slider. 
+Manage banners on the **Marketing > Banners** page and slider on the **System > Settings > Slider Settings** page
 
 ### Components
 
