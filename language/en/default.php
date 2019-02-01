@@ -129,4 +129,21 @@ return [
         'help_dimension' => '(Width x Height)',
         'help_items_per_row' => 'The number of items to display per row',
     ],
+
+    'captcha' => [
+        'component_title' => 'Captcha Component',
+        'component_desc' => 'Displays the reCATPCHA widget.',
+
+        'label_api_site_key' => 'Site Key',
+        'label_api_secret_key' => 'Secret Key',
+        'label_version' => 'Version',
+        'label_version_v2' => 'reCAPTCHA v2',
+        'label_version_invisible' => 'reCAPTCHA v2 Invisible',
+        'label_version_v3' => 'reCAPTCHA v3',
+        'label_lang' => 'Language',
+
+        'error_recaptcha' => 'Please confirm you are human!',
+
+        'help_lang' => 'Forces the widget to render in a specific language. Auto - detects the user\'s language if unspecified.',
+    ],
 ];

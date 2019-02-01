@@ -6,6 +6,7 @@ Add more functionality to your TastyIgniter website with these awesome basic too
 - Manage and Show Newsletter in frontend
 - Manage and Show Slider in frontend
 - Contact form
+- Use Google reCAPTCHA in frontend
 
 > When adding components to a page or layout, use the admin user interface to avoid common errors.
 
@@ -13,6 +14,11 @@ Add more functionality to your TastyIgniter website with these awesome basic too
 
 In the admin user interface you can manage banners, featured items and images for the slider. 
 Manage banners on the **Marketing > Banners** page and slider on the **System > Settings > Slider Settings** page
+
+#### Captcha Configuration
+
+In the admin go to **Settings > reCaptcha Settings**. You must enter a `Site Key` and a `Secret Key`. 
+Selecting a language is optional. Please follow the instructions on the settings page to get these keys.
 
 ### Components
 
@@ -23,6 +29,7 @@ Manage banners on the **Marketing > Banners** page and slider on the **System > 
 | FeaturedItems | `<?= component('featuredItems') ?>` | Displays featured menu items               |
 | Newsletter | `<?= component('newsletter') ?>` | Displays newsletter subscribe form               |
 | Slider | `<?= component('slider') ?>` | Displays carousel slider              |
+| Captcha | `<?= component('captcha') ?>` | Displays Google reCAPTCHA             |
 
 ### Banners Component
 
@@ -167,6 +174,40 @@ permalink: /
 ...
 <?= component('slider') ?>
 ...
+```
+
+### Captcha Component
+
+Using the captcha is as easy as possible: simply place the captcha component anywhere between `< form >` and `</form >` on your pages. Of course, you can also use the captcha component on multiple pages.
+
+**Example:**
+
+```
+---
+'[captcha]': {  }
+---
+<form>
+...
+<?= component('captcha') ?>
+...
+</form>
+```
+
+**Verify submitted data**
+
+Add recaptcha to your rules
+
+```
+$validator = Validator::make(request()->all(), [
+    ...
+    'g-recaptcha-response' => 'recaptcha',
+]);
+```
+
+Print form errors
+
+```
+$errors = $validator->errors();
 ```
 
 ### License

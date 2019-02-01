@@ -1,7 +1,19 @@
 <?php namespace Igniter\Frontend;
 
+use Validator;
+
 class Extension extends \System\Classes\BaseExtension
 {
+    public function boot()
+    {
+        $this->addCaptchaValidationRule();
+    }
+
+    public function register()
+    {
+        $this->registerReCaptcha();
+    }
+
     public function registerComponents()
     {
         return [
@@ -29,6 +41,11 @@ class Extension extends \System\Classes\BaseExtension
                 'code' => 'featuredItems',
                 'name' => 'lang:igniter.frontend::default.featured.component_title',
                 'description' => 'lang:igniter.frontend::default.featured.component_desc',
+            ],
+            'Igniter\Frontend\Components\Captcha' => [
+                'code' => 'captcha',
+                'name' => 'lang:igniter.frontend::default.captcha.component_title',
+                'description' => 'lang:igniter.frontend::default.captcha.component_desc',
             ],
         ];
     }
@@ -78,6 +95,12 @@ class Extension extends \System\Classes\BaseExtension
                 'model' => 'Igniter\Frontend\Models\SliderSettings',
                 'permissions' => ['Module.Slideshow'],
             ],
+            'captchasettings' => [
+                'label' => 'reCaptcha Settings',
+                'description' => 'Manage google reCAPTCHA settings.',
+                'icon' => '',
+                'model' => 'Igniter\Frontend\Models\CaptchaSettings',
+            ],
         ];
     }
 
@@ -86,5 +109,27 @@ class Extension extends \System\Classes\BaseExtension
         return [
             'igniter.frontend::mail.contact' => 'Contact form email to admin',
         ];
+    }
+
+    protected function registerReCaptcha()
+    {
+        $this->app->singleton('recaptcha', function ($app) {
+            $settings = Models\CaptchaSettings::instance();
+
+            return new Classes\ReCaptcha(
+                $settings->get('api_secret_key'),
+                $settings->get('version')
+            );
+        });
+    }
+
+    /**
+     * Extends Validator to include a recaptcha type
+     */
+    protected function addCaptchaValidationRule()
+    {
+        Validator::extendImplicit('recaptcha', function ($attribute, $value, $parameters, $validator) {
+            return app('recaptcha')->verifyResponse($value);
+        }, lang('igniter.frontend::default.captcha.error_recaptcha'));
     }
 }
