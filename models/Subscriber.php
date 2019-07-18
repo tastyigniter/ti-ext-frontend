@@ -1,6 +1,6 @@
 <?php
 
-namespace SamPoyigi\Featured_menus\Models;
+namespace Igniter\Frontend\Models;
 
 use Model;
 

@@ -101,6 +101,12 @@ class Extension extends \System\Classes\BaseExtension
                 'icon' => '',
                 'model' => 'Igniter\Frontend\Models\CaptchaSettings',
             ],
+            'mailchimpsettings' => [
+                'label' => 'Mailchimp Settings',
+                'description' => 'Manage Mailchimp API settings.',
+                'icon' => '',
+                'model' => 'Igniter\Frontend\Models\MailchimpSettings',
+            ],
         ];
     }
 

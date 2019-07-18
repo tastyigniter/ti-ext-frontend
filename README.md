@@ -1,12 +1,12 @@
 Add more functionality to your TastyIgniter website with these awesome basic tools.
 
 ## Features
-- Manage and Show Banners in frontend
-- Manage and Show Featured Menu Items in frontend
-- Manage and Show Newsletter in frontend
-- Manage and Show Slider in frontend
+- Place banners on any front-end page
+- Manage and display featured menu items
+- Display a subscribe form to gain subscribers using mailchimp
+- Manage and show an hero slider on any front-end page
 - Contact form
-- Use Google reCAPTCHA in frontend
+- Display Google reCAPTCHA on any front-end page
 
 > When adding components to a page or layout, use the admin user interface to avoid common errors.
 
