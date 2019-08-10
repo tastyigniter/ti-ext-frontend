@@ -1,5 +1,6 @@
 <?php namespace Igniter\Frontend\Components;
 
+use Igniter\Frontend\Models\Banners as BannerModel;
 use Main\Models\Image_tool_model;
 
 class Banners extends \System\Classes\BaseComponent
@@ -43,8 +44,8 @@ class Banners extends \System\Classes\BaseComponent
         if (isset($this->banner))
             return $this->banner;
 
-        $model = Banners::isEnabled()
-                        ->where('banner_id', $this->property('banner_id'))->first();
+        $model = BannerModel::isEnabled()
+                            ->where('banner_id', $this->property('banner_id'))->first();
 
         $banner = new \stdClass;
         $banner->id = 'banner-slideshow-'.uniqid();
