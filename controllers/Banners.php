@@ -14,7 +14,7 @@ class Banners extends \Admin\Classes\AdminController
             'model' => 'Igniter\Frontend\Models\Banners',
             'title' => 'lang:igniter.frontend::default.banners.text_title',
             'emptyMessage' => 'lang:igniter.frontend::default.banners.text_empty',
-            'defaultSort' => ['order_id', 'DESC'],
+            'defaultSort' => ['banner_id', 'DESC'],
             'configFile' => 'banners',
         ],
     ];

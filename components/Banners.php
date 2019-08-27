@@ -31,7 +31,7 @@ class Banners extends \System\Classes\BaseComponent
 
     public static function getBannerIdOptions()
     {
-        return Banners::isEnabled()->dropdown('name');
+        return BannerModel::isEnabled()->dropdown('name');
     }
 
     public function onRun()
@@ -58,7 +58,7 @@ class Banners extends \System\Classes\BaseComponent
         return $this->banner = $banner;
     }
 
-    protected function prepareImages(Banners $banner)
+    protected function prepareImages(BannerModel $banner)
     {
         if ($banner->type == 'custom')
             return $banner->custom_code;

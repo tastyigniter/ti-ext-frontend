@@ -10,7 +10,7 @@ return [
         'text_edit_banner' => 'Edit Banner',
         'text_title' => 'Banners',
         'text_form_name' => 'Banner',
-        'text_filter_search' => 'Search banner name, type or status.',
+        'text_filter_search' => 'Search by name, type or status.',
         'text_filter_status' => 'View all status',
         'text_empty' => 'There are no banners available.',
         'text_image' => 'Image',
