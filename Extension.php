@@ -136,6 +136,6 @@ class Extension extends \System\Classes\BaseExtension
     {
         Validator::extendImplicit('recaptcha', function ($attribute, $value, $parameters, $validator) {
             return app('recaptcha')->verifyResponse($value);
-        }, lang('igniter.frontend::default.captcha.error_recaptcha'));
+        }, 'igniter.frontend::default.captcha.error_recaptcha');
     }
 }

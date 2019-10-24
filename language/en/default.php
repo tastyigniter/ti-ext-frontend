@@ -20,9 +20,6 @@ return [
         'column_dimension' => 'Dimension (W x H)',
         'column_layout_partial' => 'Layout - Partial Area',
         'column_status' => 'Status',
-        'column_name' => 'Name',
-        'column_type' => 'Type',
-        'column_status' => 'Status',
         'column_id' => 'ID',
 
         'label_banner' => 'Banner',
@@ -31,7 +28,6 @@ return [
         'label_height' => 'Height',
         'label_status' => 'Status',
         'label_layout_partial' => 'Layout - Partial Area',
-        'label_name' => 'Name',
         'label_type' => 'Type',
         'label_click_url' => 'Click URL',
         'label_language' => 'Language',

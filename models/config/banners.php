@@ -46,12 +46,12 @@ $config['list']['columns'] = [
         ],
     ],
     'name' => [
-        'label' => 'lang:igniter.frontend::default.banners.column_name',
+        'label' => 'lang:admin::lang.label_name',
         'type' => 'text',
         'searchable' => TRUE,
     ],
     'type_label' => [
-        'label' => 'lang:igniter.frontend::default.banners.column_type',
+        'label' => 'lang:admin::lang.label_type',
         'type' => 'text',
     ],
     'status' => [
@@ -96,7 +96,7 @@ $config['form']['toolbar'] = [
 
 $config['form']['fields'] = [
     'name' => [
-        'label' => 'lang:igniter.frontend::default.banners.label_name',
+        'label' => 'lang:admin::lang.label_name',
         'type' => 'text',
     ],
     'type' => [

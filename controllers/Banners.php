@@ -54,7 +54,7 @@ class Banners extends \Admin\Classes\AdminController
     public function formValidate($model, $form)
     {
         $namedRules = [
-            ['name', 'lang:igniter.frontend::default.banners.label_name', 'required|min:2|max:255'],
+            ['name', 'lang:admin::lang.label_name', 'required|min:2|max:255'],
             ['type', 'lang:igniter.frontend::default.banners.label_type', 'required|alpha|max:8'],
             ['click_url', 'lang:igniter.frontend::default.banners.label_click_url', 'required|min:2|max:255'],
             ['custom_code', 'lang:igniter.frontend::default.banners.label_custom_code', 'required_if:type,custom'],
