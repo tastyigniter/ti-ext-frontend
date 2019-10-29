@@ -34,10 +34,10 @@ class Banners extends \Admin\Classes\AdminController
         ],
         'preview' => [
             'title' => 'lang:admin::lang.form.preview_title',
-            'redirect' => 'banners',
+            'redirect' => 'igniter/frontend/banners',
         ],
         'delete' => [
-            'redirect' => 'banners',
+            'redirect' => 'igniter/frontend/banners',
         ],
         'configFile' => 'banners',
     ];
