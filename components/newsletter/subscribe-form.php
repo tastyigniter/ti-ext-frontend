@@ -10,7 +10,7 @@
                 class="form-control"
                 name="subscribe_email"
             >
-            <span class="input-group-addon">
+            <span class="input-group-append">
                 <button
                     id="subscribeButton"
                     class="btn btn-info"
