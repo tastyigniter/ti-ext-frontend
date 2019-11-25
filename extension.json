@@ -2,7 +2,7 @@
   "code": "igniter.frontend",
   "name": "FrontEnd",
   "description": "Manage basic components like Slider, Featured Menu Items, Banners and Newsletter",
-  "version": "v1.2.3",
+  "version": "v1.2.4",
   "author": "SamPoyigi",
   "icon": "fa-store",
   "homepage": "https://github.com/tastyigniter/ti-ext-frontend"
