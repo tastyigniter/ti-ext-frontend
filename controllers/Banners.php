@@ -15,7 +15,7 @@ class Banners extends \Admin\Classes\AdminController
             'title' => 'lang:igniter.frontend::default.banners.text_title',
             'emptyMessage' => 'lang:igniter.frontend::default.banners.text_empty',
             'defaultSort' => ['banner_id', 'DESC'],
-            'configFile' => 'banners',
+            'configFile' => 'igniter/frontend/banners',
         ],
     ];
 
@@ -25,12 +25,12 @@ class Banners extends \Admin\Classes\AdminController
         'create' => [
             'title' => 'lang:admin::lang.form.create_title',
             'redirect' => 'igniter/frontend/banners/edit/{banner_id}',
-            'redirectClose' => 'banners',
+            'redirectClose' => 'igniter/frontend/banners',
         ],
         'edit' => [
             'title' => 'lang:admin::lang.form.edit_title',
             'redirect' => 'igniter/frontend/banners/edit/{banner_id}',
-            'redirectClose' => 'banners',
+            'redirectClose' => 'igniter/frontend/banners',
         ],
         'preview' => [
             'title' => 'lang:admin::lang.form.preview_title',
