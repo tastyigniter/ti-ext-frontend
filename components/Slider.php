@@ -1,54 +1,98 @@
 <?php namespace Igniter\Frontend\Components;
 
-use Igniter\Frontend\Models\SliderSettings;
-use Main\Models\Image_tool_model;
+use Igniter\Frontend\Models\Slider as SliderModel;
 
 class Slider extends \System\Classes\BaseComponent
 {
-    public function onRun()
+    public $sliderName;
+
+    /**
+     * @var \Illuminate\Support\Collection
+     */
+    protected $sliderThumbs;
+
+    public function defineProperties()
     {
-        $this->addCss('vendor/flexslider/flexslider.css', 'flexslider-css');
-        $this->addCss('css/slider.css', 'slider-css');
-        $this->addJs('vendor/flexslider/jquery.flexslider.js', 'flexslider-js');
-        $this->addJs('js/slider.js', 'slider-js');
-
-        $this->page['sliderId'] = 'slideshow-'.uniqid();
-        $this->page['sliderHeight'] = SliderSettings::get('dimension_h', '360');
-        $this->page['sliderWidth'] = SliderSettings::get('dimension_w', '960');
-        $this->page['sliderEffect'] = SliderSettings::get('effect', 'ease');
-        $this->page['sliderSpeed'] = SliderSettings::get('speed', '500');
-        $this->page['displaySlides'] = SliderSettings::get('display', '1');
-
-        $this->page['slidesImages'] = $this->loadSlides();
+        return [
+            'code' => [
+                'label' => 'lang:igniter.frontend::default.slider.label_slider',
+                'type' => 'select',
+            ],
+            'height' => [
+                'label' => 'lang:igniter.frontend::default.banners.label_height',
+                'span' => 'left',
+                'type' => 'text',
+                'default' => '60vh',
+            ],
+            'effect' => [
+                'label' => 'lang:igniter.frontend::default.slider.label_effect',
+                'span' => 'left',
+                'type' => 'text',
+                'default' => 'ease',
+            ],
+            'delayInterval' => [
+                'label' => 'lang:igniter.frontend::default.slider.label_interval',
+                'span' => 'right',
+                'type' => 'number',
+                'default' => 5000,
+            ],
+            'hideControls' => [
+                'label' => 'lang:igniter.frontend::default.slider.label_hide_controls',
+                'span' => 'left',
+                'type' => 'switch',
+            ],
+            'hideIndicators' => [
+                'label' => 'lang:igniter.frontend::default.slider.label_hide_indicators',
+                'span' => 'left',
+                'type' => 'switch',
+            ],
+            'hideCaptions' => [
+                'label' => 'lang:igniter.frontend::default.slider.label_hide_captions',
+                'span' => 'left',
+                'type' => 'switch',
+            ],
+        ];
     }
 
-    protected function loadSlides()
+    public static function getCodeOptions()
     {
-        $result = [];
-        $slides = SliderSettings::get('images', []);
-        if (empty($slides)) {
-            return $result;
+        return SliderModel::lists('name', 'code')->all();
+    }
+
+    public function onRun()
+    {
+        $this->page['sliderSelectorId'] = 'slider-'.$this->property('code');
+        $this->page['sliderHeight'] = $this->property('height');
+        $this->page['sliderEffect'] = $this->property('effect');
+        $this->page['sliderDelayInterval'] = $this->property('delayInterval');
+        $this->page['showSliderControls'] = !(bool)$this->property('hideControls', FALSE);
+        $this->page['showSliderIndicators'] = !(bool)$this->property('hideIndicators', FALSE);
+        $this->page['showSliderCaptions'] = !(bool)$this->property('hideCaptions', FALSE);
+
+        $this->page['slides'] = $this->slides();
+    }
+
+    public function slides()
+    {
+        if (!is_null($this->sliderThumbs))
+            return $this->sliderThumbs;
+
+        if (!strlen($code = $this->property('code')))
+            return;
+
+        if ($slider = $this->getSlider()) {
+            $this->sliderName = $slider->name;
+            $this->sliderThumbs = $slider->images;
         }
 
-        foreach ($slides as $slide) {
-            $image_src = 'data/no_photo.png';
-            if (is_string($slide))
-                $image_src = $slide;
+        return $this->sliderThumbs;
+    }
 
-            $image_src = $slide['image_src'] ?? $image_src;
-            $caption = $slide['caption'] ?? '';
-
-            $options = [
-                'height' => $this->page['sliderHeight'],
-                'width' => $this->page['sliderWidth'],
-            ];
-
-            $result[] = array_merge($options, [
-                'caption' => $caption,
-                'image_src' => Image_tool_model::resize($image_src, $options),
-            ]);
-        }
-
-        return $result;
+    /**
+     * @return \Igniter\Frontend\Models\Slider
+     */
+    protected function getSlider()
+    {
+        return SliderModel::whereCode($this->property('code'))->first();
     }
 }

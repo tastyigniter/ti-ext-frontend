@@ -62,6 +62,13 @@ class Extension extends \System\Classes\BaseExtension
                         'title' => lang('admin::lang.side_menu.banner'),
                         'permission' => 'Module.BannersModule',
                     ],
+                    'sliders' => [
+                        'priority' => 40,
+                        'class' => 'sliders',
+                        'href' => admin_url('igniter/frontend/sliders'),
+                        'title' => lang('igniter.frontend::default.slider.text_side_menu'),
+                        'permission' => 'Module.Slideshow',
+                    ],
                 ],
             ],
         ];
@@ -88,13 +95,6 @@ class Extension extends \System\Classes\BaseExtension
     public function registerSettings()
     {
         return [
-            'slidersettings' => [
-                'label' => 'Slider Settings',
-                'description' => 'Manage slider settings.',
-                'icon' => '',
-                'model' => 'Igniter\Frontend\Models\SliderSettings',
-                'permissions' => ['Module.Slideshow'],
-            ],
             'captchasettings' => [
                 'label' => 'reCaptcha Settings',
                 'description' => 'Manage google reCAPTCHA settings.',

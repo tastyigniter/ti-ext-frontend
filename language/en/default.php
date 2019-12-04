@@ -68,24 +68,27 @@ return [
     ],
 
     'slider' => [
-        '_text_title' => 'Slider',
+        'text_title' => 'Sliders',
         'text_tab_general' => 'General',
         'component_title' => 'Slider Component',
         'component_desc' => 'Displays images slider on homepage',
+        'text_form_name' => 'Slider',
+        'text_empty' => 'There are no sliders available.',
+        'text_side_menu' => 'Sliders',
 
         'text_tab_slides' => 'Slides',
 
-        'label_display' => 'Display',
-        'label_dimension' => 'Dimension',
-        'label_dimension_h' => 'Dimension Height',
-        'label_dimension_w' => 'Dimension Width',
-        'label_effect' => 'Effects',
-        'label_speed' => 'Transition Speed',
-        'label_slide_name' => 'Slide Name',
-        'label_slide_image' => 'Slide Image',
-        'label_slide_caption' => 'Slide Caption',
+        'column_updated_at' => 'Updated',
 
-        'help_dimension' => '(W x H)',
+        'label_code' => 'Code',
+        'label_slider' => 'Slider code',
+        'label_effect' => 'Effects',
+        'label_interval' => 'Delay interval between slides',
+        'label_caption' => 'Caption',
+        'label_images' => 'Images',
+        'label_hide_controls' => 'Hide Controls',
+        'label_hide_indicators' => 'Hide Indicators',
+        'label_hide_captions' => 'Hide Captions',
     ],
 
     'newsletter' => [
