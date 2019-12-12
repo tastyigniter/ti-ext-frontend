@@ -57,6 +57,7 @@ class Contact extends BaseComponent
             $data = [
                 'full_name' => post('full_name'),
                 'contact_topic' => post('subject'),
+                'contact_email' => post('email'),
                 'contact_telephone' => post('telephone'),
                 'contact_message' => post('comment'),
             ];
