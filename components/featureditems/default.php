@@ -17,12 +17,12 @@
                                     src="<?= $featuredItem->getThumb([
                                         'width' => $featuredItem,
                                         'height' => $featuredItem,
-                                    ]); ?>" alt="<?= $featuredItem['menu_name']; ?>"/>
+                                    ]); ?>" alt="<?= $featuredItem->getBuyableName(); ?>"/>
                             <?php } ?>
                             <div class="card-body">
                                 <h4 class="card-title">
-                                    <?= $featuredItem['menu_name']; ?>
-                                    <small><?= currency_format($featuredItem['menu_price']); ?></small>
+                                    <?= $featuredItem->getBuyableName(); ?>
+                                    <small><?= currency_format($featuredItem->getBuyablePrice()); ?></small>
                                 </h4>
                                 <p class="card-text"><?= $featuredItem['menu_description']; ?></p>
                             </div>

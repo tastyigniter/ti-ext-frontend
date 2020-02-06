@@ -15,7 +15,7 @@ class Banners extends \Admin\Classes\AdminController
             'title' => 'lang:igniter.frontend::default.banners.text_title',
             'emptyMessage' => 'lang:igniter.frontend::default.banners.text_empty',
             'defaultSort' => ['banner_id', 'DESC'],
-            'configFile' => 'igniter/frontend/banners',
+            'configFile' => 'banners',
         ],
     ];
 
@@ -42,7 +42,7 @@ class Banners extends \Admin\Classes\AdminController
         'configFile' => 'banners',
     ];
 
-    protected $requiredPermissions = 'Admin.Banners';
+    protected $requiredPermissions = 'Igniter.FrontEnd.ManageBanners';
 
     public function __construct()
     {

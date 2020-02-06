@@ -42,7 +42,7 @@ class Sliders extends \Admin\Classes\AdminController
         'configFile' => 'slider',
     ];
 
-    protected $requiredPermissions = 'Module.Slideshow';
+    protected $requiredPermissions = 'Igniter.FrontEnd.ManageSlideshow';
 
     public function __construct()
     {

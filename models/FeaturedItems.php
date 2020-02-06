@@ -1,6 +1,8 @@
 <?php namespace Igniter\Frontend\Models;
 
-class FeaturedItems extends \Admin\Models\Menus_model
+use Igniter\Cart\Models\Menus_model;
+
+class FeaturedItems extends Menus_model
 {
     public static function getByIds($options = [])
     {
