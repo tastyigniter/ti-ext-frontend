@@ -62,7 +62,7 @@ class Contact extends BaseComponent
                 'contact_message' => post('comment'),
             ];
 
-            Mail::send('igniter.frontend::mail.contact', $data, function ($message) {
+            Mail::queue('igniter.frontend::mail.contact', $data, function ($message) {
                 $message->to(setting('site_email'), setting('site_name'));
             });
 
