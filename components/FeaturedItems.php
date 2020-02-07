@@ -1,6 +1,6 @@
 <?php namespace Igniter\Frontend\Components;
 
-use Igniter\Frontend\Models\FeaturedItems as FeaturedItemsModel;
+use Igniter\Frontend\Models\Menus_model as FeaturedItemsModel;
 
 class FeaturedItems extends \System\Classes\BaseComponent
 {
