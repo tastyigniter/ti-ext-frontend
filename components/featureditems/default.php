@@ -15,8 +15,8 @@
                                 <img
                                     class="card-img-top"
                                     src="<?= $featuredItem->getThumb([
-                                        'width' => $featuredItem,
-                                        'height' => $featuredItem,
+                                        'width' => $featuredWidth,
+                                        'height' => $featuredHeight,
                                     ]); ?>" alt="<?= $featuredItem->getBuyableName(); ?>"/>
                             <?php } ?>
                             <div class="card-body">
