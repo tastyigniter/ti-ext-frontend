@@ -38,7 +38,7 @@ return [
             ],
             'updated_at' => [
                 'label' => 'igniter.frontend::default.slider.column_updated_at',
-                'type' => 'datesince',
+                'type' => 'timetense',
             ],
         ],
     ],
