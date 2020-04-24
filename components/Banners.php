@@ -47,6 +47,8 @@ class Banners extends \System\Classes\BaseComponent
         $model = BannerModel::isEnabled()
                             ->where('banner_id', $this->property('banner_id'))->first();
 
+        if (!$model) return null;
+
         $banner = new \stdClass;
         $banner->id = 'banner-slideshow-'.uniqid();
         $banner->type = $model->type;
