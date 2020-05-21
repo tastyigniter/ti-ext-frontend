@@ -42,7 +42,7 @@ class Newsletter extends \System\Classes\BaseComponent
         $data = post();
 
         $rules = [
-            ['subscribe_email', 'lang:igniter.frontend::default.newsletter.label_email', 'required|email'],
+            ['subscribe_email', 'lang:igniter.frontend::default.newsletter.label_email', 'required|email:filter'],
         ];
 
         $this->validate($data, $rules);
