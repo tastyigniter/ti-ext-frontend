@@ -3,7 +3,6 @@
 return [
 
     'banners' => [
-        '_text_title' => 'Banners',
         'text_tab_general' => 'General',
         'component_title' => 'Banner Component',
         'component_desc' => 'Displays banners',
@@ -92,7 +91,6 @@ return [
     ],
 
     'newsletter' => [
-        '_text_title' => 'Newsletter',
         'text_tab_general' => 'General',
         'component_title' => 'Newsletter Component',
         'component_desc' => 'Displays the subscribe to newsletter form',
@@ -107,7 +105,6 @@ return [
     ],
 
     'featured' => [
-        '_text_title' => 'Featured Menu Item',
         'text_tab_general' => 'General',
         'component_title' => 'Featured Menu Component',
         'component_desc' => 'Displays list of featured menus on the store front',
