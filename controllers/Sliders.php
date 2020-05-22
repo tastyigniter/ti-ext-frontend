@@ -48,6 +48,6 @@ class Sliders extends \Admin\Classes\AdminController
     {
         parent::__construct();
 
-        AdminMenu::setContext('sliders', 'marketing');
+        AdminMenu::setContext('sliders', 'design');
     }
 }

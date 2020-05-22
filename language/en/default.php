@@ -2,6 +2,8 @@
 
 return [
 
+    'text_side_menu' => 'Banners & Sliders',
+
     'banners' => [
         'text_tab_general' => 'General',
         'component_title' => 'Banner Component',
@@ -73,7 +75,6 @@ return [
         'component_desc' => 'Displays images slider on homepage',
         'text_form_name' => 'Slider',
         'text_empty' => 'There are no sliders available.',
-        'text_side_menu' => 'Sliders',
 
         'text_tab_slides' => 'Slides',
 

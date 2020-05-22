@@ -48,7 +48,7 @@ class Banners extends \Admin\Classes\AdminController
     {
         parent::__construct();
 
-        AdminMenu::setContext('banners', 'marketing');
+        AdminMenu::setContext('banners', 'design');
     }
 
     public function formValidate($model, $form)

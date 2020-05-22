@@ -1,4 +1,4 @@
-<div id="banner-box" class="module-box">
+<div class="module-box">
     <?php if ($banner->isCustom) { ?>
         <?= $banner->value; ?>
     <?php }
