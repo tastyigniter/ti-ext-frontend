@@ -14,7 +14,7 @@
             >
                 <option><?= lang('igniter.frontend::default.contact.text_select_subject'); ?></option>
                 <?php foreach ($__SELF__->subjects as $subject) { ?>
-                    <option value="<?= $subject; ?>"><?= $subject; ?></option>
+                    <option value="<?= lang($subject); ?>"><?= lang($subject); ?></option>
                 <?php } ?>
             </select>
             <?= form_error('subject', '<span class="text-danger">', '</span>'); ?>
