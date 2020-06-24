@@ -34,7 +34,7 @@ class Banners extends \System\Classes\BaseComponent
         return BannerModel::isEnabled()->dropdown('name');
     }
 
-    public function onRun()
+    public function onRender()
     {
         $this->page['banner'] = $this->loadBanner();
     }
