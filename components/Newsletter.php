@@ -2,10 +2,12 @@
 
 use Admin\Traits\ValidatesForm;
 use Event;
+use Exception;
 use Igniter\Flame\Exception\ApplicationException;
 use Igniter\Frontend\Models\MailchimpSettings;
 use Igniter\Frontend\Models\Subscriber;
 use Mailchimp;
+use Redirect;
 
 class Newsletter extends \System\Classes\BaseComponent
 {
@@ -39,35 +41,41 @@ class Newsletter extends \System\Classes\BaseComponent
 
     public function onSubscribe()
     {
-        $data = post();
+		try {
+			$data = post();
 
-        $rules = [
-            ['subscribe_email', 'lang:igniter.frontend::default.newsletter.label_email', 'required|email:filter|max:96'],
-        ];
+			$rules = [
+				['subscribe_email', 'lang:igniter.frontend::default.newsletter.label_email', 'required|email'],
+			];
+			$this->validate($data, $rules);
 
-        $this->validate($data, $rules);
 
-        $subscribe = Subscriber::firstOrNew(['email' => $data['subscribe_email']]);
-        $subscribe->fill($data);
-        $subscribe->save();
+			$subscribe = Subscriber::firstOrNew(['email' => $data['subscribe_email']]);
+			$subscribe->fill($data);
+			$subscribe->save();
 
-        $this->listSubscribe($subscribe, $data);
+			$this->listSubscribe($subscribe, $data);
 
-        Event::fire('igniter.frontend.subscribed', [$subscribe, $data]);
+			Event::fire('igniter.frontend.subscribed', [$subscribe, $data]);
 
-        if (!$subscribe->wasRecentlyCreated) {
-            flash()->success(lang('igniter.frontend::default.newsletter.alert_success_existing'))->now();
+			if (!$subscribe->wasRecentlyCreated) {
+				flash()->success(lang('igniter.frontend::default.newsletter.alert_success_existing'))->now();
+			}
+			else {
+				flash()->success(lang('igniter.frontend::default.newsletter.alert_success_subscribed'))->now();
+			}
+
+			$this->pageCycle();
+
+			return [
+				'#notification' => $this->renderPartial('flash'),
+				'#newsletter-box' => $this->renderPartial('@subscribe-form'),
+			];
         }
-        else {
-            flash()->success(lang('igniter.frontend::default.newsletter.alert_success_subscribed'))->now();
+        catch (Exception $ex) {
+            flash()->warning($ex->getMessage())->important();
+			return Redirect::back()->withInput();
         }
-
-        $this->pageCycle();
-
-        return [
-            '#notification' => $this->renderPartial('flash'),
-            '#newsletter-box' => $this->renderPartial('@subscribe-form'),
-        ];
     }
 
     protected function listSubscribe($subscribe, $data)
