@@ -1,4 +1,6 @@
-<?php namespace Igniter\Frontend\Controllers;
+<?php
+
+namespace Igniter\Frontend\Controllers;
 
 use AdminMenu;
 

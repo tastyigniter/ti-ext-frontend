@@ -1,4 +1,6 @@
-<?php namespace Igniter\FrontEnd\Database\Migrations;
+<?php
+
+namespace Igniter\FrontEnd\Database\Migrations;
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;

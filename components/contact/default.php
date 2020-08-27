@@ -1,9 +1,9 @@
 <?= form_open(current_url(), [
-        'id' => 'contact-form',
-        'role' => 'form',
-        'method' => 'POST',
-        'data-request' => $__SELF__.'::onSubmit',
-    ]
+    'id' => 'contact-form',
+    'role' => 'form',
+    'method' => 'POST',
+    'data-request' => $__SELF__.'::onSubmit',
+]
 ); ?>
 <div class="row">
     <div class="col-sm-6 col-md-6">

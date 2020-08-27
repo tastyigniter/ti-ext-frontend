@@ -57,7 +57,7 @@ class ReCaptcha
      * @param string $response
      * @param string $clientIp
      *
-     * @return boolean
+     * @return bool
      */
     public function verifyResponse($response, $clientIp = null)
     {

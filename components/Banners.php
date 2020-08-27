@@ -1,4 +1,6 @@
-<?php namespace Igniter\Frontend\Components;
+<?php
+
+namespace Igniter\Frontend\Components;
 
 use Igniter\Frontend\Models\Banners as BannerModel;
 use Main\Models\Image_tool_model;
