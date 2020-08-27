@@ -1,4 +1,6 @@
-<?php namespace Igniter\Frontend;
+<?php
+
+namespace Igniter\Frontend;
 
 use Validator;
 

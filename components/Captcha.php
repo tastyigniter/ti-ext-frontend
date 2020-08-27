@@ -1,4 +1,6 @@
-<?php namespace Igniter\Frontend\Components;
+<?php
+
+namespace Igniter\Frontend\Components;
 
 use Igniter\Frontend\Models\CaptchaSettings;
 use System\Classes\BaseComponent;

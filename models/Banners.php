@@ -1,12 +1,12 @@
-<?php namespace Igniter\Frontend\Models;
+<?php
+
+namespace Igniter\Frontend\Models;
 
 use Main\Models\Image_tool_model;
 use Model;
 
 /**
  * Banners Model Class
- *
- * @package Admin
  */
 class Banners extends Model
 {

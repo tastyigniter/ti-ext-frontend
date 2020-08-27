@@ -1,4 +1,6 @@
-<?php namespace Igniter\Frontend\Models;
+<?php
+
+namespace Igniter\Frontend\Models;
 
 class Menus_model extends \Igniter\Cart\Models\Menus_model
 {

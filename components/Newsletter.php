@@ -1,4 +1,6 @@
-<?php namespace Igniter\Frontend\Components;
+<?php
+
+namespace Igniter\Frontend\Components;
 
 use Admin\Traits\ValidatesForm;
 use Event;
