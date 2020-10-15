@@ -45,7 +45,7 @@ return [
     ],
 
     'contact' => [
-        'component_title' => 'Contact Component',
+        'component_title' => 'Contact Form Component',
         'component_desc' => 'Displays Contact form',
         'text_heading' => 'Contact',
         'text_summary' => 'Feel free to send a message',
