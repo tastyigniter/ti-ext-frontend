@@ -8,4 +8,8 @@
 
     <p>The API key pair is unique to the domains and first-level subdomains that you specify. Specifying more than one
         domain could come in handy if you serve your website from multiple top level domains.</p>
+
+    <p class="font-weight-bold mt-3">
+        REMEMBER to add the reCaptcha Component to your theme page or layout
+    </p>
 </div>

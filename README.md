@@ -24,12 +24,12 @@ Selecting a language is optional. Please follow the instructions on the settings
 
 | Name     | Page variable                | Description                                      |
 | -------- | ---------------------------- | ------------------------------------------------ |
-| Banners  | `<?= component('banners') ?>` | Displays banners |
-| Contact | `<?= component('contact') ?>` | Displays Contact form              |
-| FeaturedItems | `<?= component('featuredItems') ?>` | Displays featured menu items               |
-| Newsletter | `<?= component('newsletter') ?>` | Displays newsletter subscribe form               |
-| Slider | `<?= component('slider') ?>` | Displays carousel slider              |
-| Captcha | `<?= component('captcha') ?>` | Displays Google reCAPTCHA             |
+| Banners  | `@component('banners')` | Displays banners |
+| Contact | `@component('contact')` | Displays Contact form              |
+| FeaturedItems | `@component('featuredItems')` | Displays featured menu items               |
+| Newsletter | `@component('newsletter')` | Displays newsletter subscribe form               |
+| Slider | `@component('slider')` | Displays carousel slider              |
+| Captcha | `@component('captcha')` | Displays Google reCAPTCHA             |
 
 ### Banners Component
 
@@ -45,7 +45,7 @@ Selecting a language is optional. Please follow the instructions on the settings
 
 | Variable                  | Description                                                  |
 | ------------------------- | ------------------------------------------------------------ |
-| $banner | The banner to display                                         |
+| `{{ $banner }}` | The banner to display                                         |
 
 **Example:**
 
@@ -56,7 +56,7 @@ Selecting a language is optional. Please follow the instructions on the settings
     height: 360
 ---
 ...
-<?= component('banners') ?>
+@component('banners')
 ...
 ```
 
@@ -80,9 +80,9 @@ Selecting a language is optional. Please follow the instructions on the settings
     height: 360
 ---
 ...
-<?= component('bannerOne') ?>
-<?= component('bannerTwo') ?>
-<?= component('bannerThree') ?>
+@component('bannerOne')
+@component('bannerTwo')
+@component('bannerThree')
 ...
 ```
 
@@ -104,7 +104,7 @@ permalink: /contact
 '[contact]':
 ---
 ...
-<?= component('contact') ?>
+@component('contact')
 ...
 ```
 
@@ -125,11 +125,11 @@ permalink: /contact
 
 | Variable                  | Description                                                  |
 | ------------------------- | ------------------------------------------------------------ |
-| $featuredTitle | Title                                               |
-| $featuredPerRow | Items per row                                               |
-| $featuredWidth | Item width                                              |
-| $featuredHeight | Item height                                                 |
-| $featuredMenuItems | List of featured items to display                                   |
+| `{{ $featuredTitle }}` | Title                                               |
+| `{{ $featuredPerRow }}` | Items per row                                               |
+| `{{ $featuredWidth }}` | Item width                                              |
+| `{{ $featuredHeight }}` | Item height                                                 |
+| `{{ $featuredMenuItems }}` | List of featured items to display                                   |
 
 **Example:**
 
@@ -146,7 +146,7 @@ permalink: /
     itemHeight: 300
 ---
 ...
-<?= component('featuredItems') ?>
+@component('featuredItems')
 ...
 ```
 
@@ -159,7 +159,7 @@ permalink: /
 '[newsletter]': {  }
 ---
 ...
-<?= component('newsletter') ?>
+@component('newsletter')
 ...
 ```
 
@@ -172,7 +172,7 @@ permalink: /
 '[slider]': {  }
 ---
 ...
-<?= component('slider') ?>
+@component('slider')
 ...
 ```
 
@@ -188,7 +188,7 @@ Using the captcha is as easy as possible: simply place the captcha component any
 ---
 <form>
 ...
-<?= component('captcha') ?>
+@component('captcha')
 ...
 </form>
 ```

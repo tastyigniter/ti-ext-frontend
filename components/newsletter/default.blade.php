@@ -1,7 +1,7 @@
 <form
     id="subscribeForm"
     class="subscribe-form"
-    method="POST" data-request="<?= $subscribeHandler ?>">
+    method="POST" data-request="{{ $subscribeHandler }}">
     <div class="input-group subscribe-group">
         <input
             type="text"
