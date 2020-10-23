@@ -46,9 +46,10 @@ return [
             ],
         ],
         'rules' => [
-            ['api_site_key', 'lang:igniter.frontend::default.captcha.label_api_site_key', 'required | string'],
-            ['api_secret_key', 'lang:igniter.frontend::default.captcha.label_api_secret_key', 'required | string'],
-            ['version', 'lang:igniter.frontend::default.captcha.label_version', 'required | in:v2,v3,invisible'],
+            ['api_site_key', 'lang:igniter.frontend::default.captcha.label_api_site_key', 'required|string'],
+            ['api_secret_key', 'lang:igniter.frontend::default.captcha.label_api_secret_key', 'required|string'],
+            ['version', 'lang:igniter.frontend::default.captcha.label_version', 'required|in:v2,v3,invisible'],
+            ['lang', 'lang:igniter.frontend::default.captcha.label_lang', 'required|string'],
         ],
     ],
 ];

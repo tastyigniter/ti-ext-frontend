@@ -28,8 +28,8 @@ return [
             ],
         ],
         'rules' => [
-            ['api_key', 'MailChimp API key', 'required'],
-            ['list_id', 'MailChimp List Id', 'required'],
+            ['api_key', 'MailChimp API key', 'required|string'],
+            ['list_id', 'MailChimp List Id', 'required|string'],
         ],
     ],
 ];
