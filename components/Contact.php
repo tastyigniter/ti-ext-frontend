@@ -25,6 +25,8 @@ class Contact extends BaseComponent
                 'label' => 'Page to redirect to after contact form has been sent successfully',
                 'type' => 'select',
                 'default' => 'contact',
+                'options' => [static::class, 'getThemePageOptions'],
+                'validationRule' => 'required|regex:/^[a-z0-9\-_\/]+$/i',
             ],
         ];
     }

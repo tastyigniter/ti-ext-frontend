@@ -19,39 +19,45 @@ class Slider extends \System\Classes\BaseComponent
             'code' => [
                 'label' => 'lang:igniter.frontend::default.slider.label_slider',
                 'type' => 'select',
+                'validationRule' => 'required|alpha_dash',
             ],
             'height' => [
                 'label' => 'lang:igniter.frontend::default.banners.label_height',
                 'span' => 'left',
                 'type' => 'text',
                 'default' => '60vh',
+                'validationRule' => 'required|string',
             ],
             'effect' => [
                 'label' => 'lang:igniter.frontend::default.slider.label_effect',
-                'span' => 'left',
+                'span' => 'right',
                 'type' => 'text',
                 'default' => 'ease',
+                'validationRule' => 'required|string',
             ],
             'delayInterval' => [
                 'label' => 'lang:igniter.frontend::default.slider.label_interval',
-                'span' => 'right',
+                'span' => 'left',
                 'type' => 'number',
                 'default' => 5000,
             ],
             'hideControls' => [
                 'label' => 'lang:igniter.frontend::default.slider.label_hide_controls',
-                'span' => 'left',
+                'span' => 'right',
                 'type' => 'switch',
+                'validationRule' => 'required|boolean',
             ],
             'hideIndicators' => [
                 'label' => 'lang:igniter.frontend::default.slider.label_hide_indicators',
                 'span' => 'left',
                 'type' => 'switch',
+                'validationRule' => 'required|boolean',
             ],
             'hideCaptions' => [
                 'label' => 'lang:igniter.frontend::default.slider.label_hide_captions',
-                'span' => 'left',
+                'span' => 'right',
                 'type' => 'switch',
+                'validationRule' => 'required|boolean',
             ],
         ];
     }

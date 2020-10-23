@@ -20,16 +20,19 @@ class Newsletter extends \System\Classes\BaseComponent
                 'label' => 'MailChimp List/Audience ID',
                 'type' => 'text',
                 'comment' => 'Overrides the admin settings value',
+                'validationRule' => 'required|string',
             ],
             'doubleOptIn' => [
                 'label' => 'Double Opt-In',
                 'type' => 'switch',
                 'default' => TRUE,
+                'validationRule' => 'required|boolean',
             ],
             'updateExisting' => [
                 'label' => 'Update Existing',
                 'type' => 'switch',
                 'default' => FALSE,
+                'validationRule' => 'required|boolean',
             ],
         ];
     }

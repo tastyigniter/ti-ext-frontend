@@ -12,17 +12,20 @@ class FeaturedItems extends \System\Classes\BaseComponent
             'title' => [
                 'label' => 'Title',
                 'type' => 'text',
+                'validationRule' => 'string',
             ],
             'items' => [
                 'label' => 'lang:igniter.frontend::default.featured.label_menus',
                 'type' => 'selectlist',
                 'mode' => 'checkbox',
+                'validationRule' => 'required|array',
             ],
             'limit' => [
                 'label' => 'lang:igniter.frontend::default.featured.label_limit',
                 'span' => 'left',
                 'type' => 'number',
                 'default' => 12,
+                'validationRule' => 'required|integer',
             ],
             'itemsPerRow' => [
                 'label' => 'lang:igniter.frontend::default.featured.label_items_per_row',
@@ -37,18 +40,21 @@ class FeaturedItems extends \System\Classes\BaseComponent
                     5 => 'Five',
                     6 => 'Six',
                 ],
+                'validationRule' => 'required|integer',
             ],
             'itemWidth' => [
                 'label' => 'lang:igniter.frontend::default.featured.label_dimension_w',
                 'span' => 'left',
                 'type' => 'number',
                 'default' => 400,
+                'validationRule' => 'required|integer',
             ],
             'itemHeight' => [
                 'label' => 'lang:igniter.frontend::default.featured.label_dimension_h',
                 'span' => 'right',
                 'type' => 'number',
                 'default' => 300,
+                'validationRule' => 'required|integer',
             ],
         ];
     }

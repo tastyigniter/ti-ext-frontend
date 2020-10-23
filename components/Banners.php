@@ -15,18 +15,21 @@ class Banners extends \System\Classes\BaseComponent
             'banner_id' => [
                 'label' => 'lang:igniter.frontend::default.banners.column_banner',
                 'type' => 'select',
+                'validationRule' => 'required|integer',
             ],
             'width' => [
                 'label' => 'lang:igniter.frontend::default.banners.label_width',
                 'span' => 'left',
                 'type' => 'number',
                 'default' => 960,
+                'validationRule' => 'required|integer',
             ],
             'height' => [
                 'label' => 'lang:igniter.frontend::default.banners.label_height',
                 'span' => 'right',
                 'type' => 'text',
                 'default' => 360,
+                'validationRule' => 'required|integer',
             ],
         ];
     }
@@ -47,7 +50,7 @@ class Banners extends \System\Classes\BaseComponent
             return $this->banner;
 
         $model = BannerModel::isEnabled()
-                            ->where('banner_id', $this->property('banner_id'))->first();
+            ->where('banner_id', $this->property('banner_id'))->first();
 
         if (!$model) return null;
 
