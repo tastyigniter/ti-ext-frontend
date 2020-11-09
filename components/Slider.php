@@ -85,10 +85,11 @@ class Slider extends \System\Classes\BaseComponent
         if (!is_null($this->sliderThumbs))
             return $this->sliderThumbs;
 
-        if (!strlen($code = $this->property('code')))
-            return [];
+        $code = $this->property('code');
 
-        if ($slider = $this->getSlider()) {
+        $this->sliderThumbs = [];
+
+        if (strlen($code) AND $slider = $this->getSlider()) {
             $this->sliderName = $slider->name;
             $this->sliderThumbs = $slider->images;
         }
