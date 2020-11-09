@@ -26,14 +26,14 @@ class Slider extends \System\Classes\BaseComponent
                 'span' => 'left',
                 'type' => 'text',
                 'default' => '60vh',
-                'validationRule' => 'required|string',
+                'validationRule' => 'string',
             ],
             'effect' => [
                 'label' => 'lang:igniter.frontend::default.slider.label_effect',
                 'span' => 'right',
                 'type' => 'text',
                 'default' => 'ease',
-                'validationRule' => 'required|string',
+                'validationRule' => 'string',
             ],
             'delayInterval' => [
                 'label' => 'lang:igniter.frontend::default.slider.label_interval',

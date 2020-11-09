@@ -47,14 +47,14 @@ class FeaturedItems extends \System\Classes\BaseComponent
                 'span' => 'left',
                 'type' => 'number',
                 'default' => 400,
-                'validationRule' => 'required|integer',
+                'validationRule' => 'integer',
             ],
             'itemHeight' => [
                 'label' => 'lang:igniter.frontend::default.featured.label_dimension_h',
                 'span' => 'right',
                 'type' => 'number',
                 'default' => 300,
-                'validationRule' => 'required|integer',
+                'validationRule' => 'integer',
             ],
         ];
     }
