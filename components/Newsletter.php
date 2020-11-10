@@ -71,7 +71,6 @@ class Newsletter extends \System\Classes\BaseComponent
 
         return [
             '#notification' => $this->renderPartial('flash'),
-            '#newsletter-box' => $this->renderPartial('@subscribe-form'),
         ];
     }
 
