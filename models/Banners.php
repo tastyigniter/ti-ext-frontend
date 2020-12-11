@@ -28,7 +28,7 @@ class Banners extends Model
         ],
     ];
 
-    public $casts = [
+    protected $casts = [
         'image_code' => 'serialize',
         'language_id' => 'integer',
         'status' => 'boolean',
