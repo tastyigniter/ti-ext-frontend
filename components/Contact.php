@@ -7,12 +7,14 @@ use Exception;
 use Location;
 use Mail;
 use Main\Template\Page;
+use Main\Traits\UsesPage;
 use Redirect;
 use System\Classes\BaseComponent;
 
 class Contact extends BaseComponent
 {
     use ValidatesForm;
+    use UsesPage;
 
     public $location;
 
