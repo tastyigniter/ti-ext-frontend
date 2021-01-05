@@ -57,7 +57,7 @@ class CreateSlidersTable extends Migration
     protected function getSlider()
     {
         $existingSlider = DB::table('extension_settings')->select('data')
-                            ->where('item', 'igniter_frontend_slidersettings')->first();
+            ->where('item', 'igniter_frontend_slidersettings')->first();
         if (!$existingSlider)
             return [
                 'name' => 'Homepage slider',
