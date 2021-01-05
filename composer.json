@@ -3,7 +3,6 @@
   "type": "igniter-extension",
   "description": "Manage basic components like Slider, Featured Menu Items, Banners and Newsletter",
   "require": {
-    "php": ">=7.1",
     "mailchimp/mailchimp": "^2.0"
   },
   "config": {
