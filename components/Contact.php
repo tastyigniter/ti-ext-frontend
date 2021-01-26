@@ -40,7 +40,7 @@ class Contact extends BaseComponent
 
     public function onRun()
     {
-        $this->location = Location::current();
+        $this->location = Location::getDefault();
 
         $this->subjects = [
             'igniter.frontend::default.contact.text_general_enquiry',
