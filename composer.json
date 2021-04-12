@@ -1,6 +1,6 @@
 {
   "name": "igniter/frontend",
-  "type": "igniter-extension",
+  "type": "tastyigniter-extension",
   "description": "Manage basic components like Slider, Featured Menu Items, Banners and Newsletter",
   "require": {
     "mailchimp/mailchimp": "^2.0"
