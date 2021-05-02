@@ -28,11 +28,13 @@ class Banners extends \Admin\Classes\AdminController
             'title' => 'lang:admin::lang.form.create_title',
             'redirect' => 'igniter/frontend/banners/edit/{banner_id}',
             'redirectClose' => 'igniter/frontend/banners',
+            'redirectNew' => 'igniter/frontend/banners/create',
         ],
         'edit' => [
             'title' => 'lang:admin::lang.form.edit_title',
             'redirect' => 'igniter/frontend/banners/edit/{banner_id}',
             'redirectClose' => 'igniter/frontend/banners',
+            'redirectNew' => 'igniter/frontend/banners/create',
         ],
         'preview' => [
             'title' => 'lang:admin::lang.form.preview_title',
