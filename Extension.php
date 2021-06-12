@@ -93,14 +93,14 @@ class Extension extends \System\Classes\BaseExtension
             'captchasettings' => [
                 'label' => 'reCaptcha Settings',
                 'description' => 'Manage google reCAPTCHA settings.',
-                'icon' => '',
+                'icon' => 'fa fa-gear',
                 'model' => 'Igniter\Frontend\Models\CaptchaSettings',
                 'permissions' => ['Igniter.FrontEnd.ManageSettings'],
             ],
             'mailchimpsettings' => [
                 'label' => 'Mailchimp Settings',
                 'description' => 'Manage Mailchimp API settings.',
-                'icon' => '',
+                'icon' => 'fa fa-gear',
                 'model' => 'Igniter\Frontend\Models\MailchimpSettings',
                 'permissions' => ['Igniter.FrontEnd.ManageSettings'],
             ],
