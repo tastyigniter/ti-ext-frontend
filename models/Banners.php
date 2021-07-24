@@ -2,8 +2,8 @@
 
 namespace Igniter\Frontend\Models;
 
+use Igniter\Flame\Database\Model;
 use Main\Models\Image_tool_model;
-use Model;
 
 /**
  * Banners Model Class

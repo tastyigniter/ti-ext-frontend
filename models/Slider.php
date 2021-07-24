@@ -3,8 +3,8 @@
 namespace Igniter\Frontend\Models;
 
 use Igniter\Flame\Database\Attach\HasMedia;
+use Igniter\Flame\Database\Model;
 use Igniter\Flame\Database\Traits\Validation;
-use Model;
 
 /**
  * Slider Model

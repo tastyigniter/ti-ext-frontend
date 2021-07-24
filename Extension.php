@@ -2,7 +2,7 @@
 
 namespace Igniter\Frontend;
 
-use Validator;
+use Illuminate\Support\Facades\Validator;
 
 class Extension extends \System\Classes\BaseExtension
 {

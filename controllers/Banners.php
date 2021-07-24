@@ -2,7 +2,7 @@
 
 namespace Igniter\Frontend\Controllers;
 
-use AdminMenu;
+use Admin\Facades\AdminMenu;
 
 class Banners extends \Admin\Classes\AdminController
 {

@@ -2,7 +2,7 @@
 
 namespace Igniter\Frontend\Controllers;
 
-use AdminMenu;
+use Admin\Facades\AdminMenu;
 
 class Sliders extends \Admin\Classes\AdminController
 {

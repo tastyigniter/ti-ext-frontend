@@ -2,7 +2,7 @@
 
 namespace Igniter\Frontend\Models;
 
-use Model;
+use Igniter\Flame\Database\Model;
 
 class Subscriber extends Model
 {

@@ -4,11 +4,11 @@ namespace Igniter\Frontend\Components;
 
 use Admin\Traits\ValidatesForm;
 use Exception;
-use Location;
-use Mail;
+use Igniter\Local\Facades\Location;
+use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Redirect;
 use Main\Template\Page;
 use Main\Traits\UsesPage;
-use Redirect;
 use System\Classes\BaseComponent;
 
 class Contact extends BaseComponent

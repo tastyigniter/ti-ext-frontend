@@ -3,10 +3,10 @@
 namespace Igniter\Frontend\Components;
 
 use Admin\Traits\ValidatesForm;
-use Event;
 use Igniter\Flame\Exception\ApplicationException;
 use Igniter\Frontend\Models\MailchimpSettings;
 use Igniter\Frontend\Models\Subscriber;
+use Illuminate\Support\Facades\Event;
 use Mailchimp;
 
 class Newsletter extends \System\Classes\BaseComponent
