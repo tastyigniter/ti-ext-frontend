@@ -5,7 +5,7 @@
   "version": "v1.5.1",
   "author": "SamPoyigi",
   "icon": {
-    "class": "fa fa-store",
+    "image": "icon.svg",
     "color": "#664500",
     "backgroundColor": "#FECC4D"
   },
