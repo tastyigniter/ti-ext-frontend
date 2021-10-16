@@ -20,19 +20,38 @@ $config['list']['toolbar'] = [
             'class' => 'btn btn-primary',
             'href' => 'igniter/frontend/banners/create',
         ],
-        'delete' => [
-            'label' => 'lang:admin::lang.button_delete',
-            'class' => 'btn btn-danger',
-            'data-request' => 'onDelete',
-            'data-request-form' => '#list-form',
-            'data-request-confirm' => 'lang:admin::lang.alert_warning_confirm',
-        ],
         'sliders' => [
             'label' => lang('igniter.frontend::default.slider.text_title'),
             'class' => 'btn btn-default',
             'href' => 'igniter/frontend/sliders',
             'permission' => 'Igniter.FrontEnd.ManageSlideshow',
         ],
+    ],
+];
+
+$config['list']['bulkActions'] = [
+    'status' => [
+        'label' => 'lang:admin::lang.list.actions.label_status',
+        'type' => 'dropdown',
+        'class' => 'btn btn-light',
+        'statusColumn' => 'status',
+        'menuItems' => [
+            'enable' => [
+                'label' => 'lang:admin::lang.list.actions.label_enable',
+                'type' => 'button',
+                'class' => 'dropdown-item',
+            ],
+            'disable' => [
+                'label' => 'lang:admin::lang.list.actions.label_disable',
+                'type' => 'button',
+                'class' => 'dropdown-item text-danger',
+            ],
+        ],
+    ],
+    'delete' => [
+        'label' => 'lang:admin::lang.button_delete',
+        'class' => 'btn btn-light text-danger',
+        'data-request-confirm' => 'lang:admin::lang.alert_warning_confirm',
     ],
 ];
 

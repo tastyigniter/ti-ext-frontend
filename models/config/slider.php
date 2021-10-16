@@ -10,20 +10,18 @@ return [
                     'class' => 'btn btn-primary',
                     'href' => 'igniter/frontend/sliders/create',
                 ],
-                'delete' => [
-                    'label' => 'lang:admin::lang.button_delete',
-                    'class' => 'btn btn-danger',
-                    'data-attach-loading' => '',
-                    'data-request-form' => '#list-form',
-                    'data-request' => 'onDelete',
-                    'data-request-data' => "_method:'DELETE'",
-                    'data-request-confirm' => 'lang:admin::lang.alert_warning_confirm',
-                ],
                 'banners' => [
                     'label' => lang('igniter.frontend::default.banners.text_title'),
                     'class' => 'btn btn-default',
                     'href' => 'igniter/frontend/banners',
                 ],
+            ],
+        ],
+        'bulkActions' => [
+            'delete' => [
+                'label' => 'lang:admin::lang.button_delete',
+                'class' => 'btn btn-light text-danger',
+                'data-request-confirm' => 'lang:admin::lang.alert_warning_confirm',
             ],
         ],
         'columns' => [
