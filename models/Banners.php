@@ -13,7 +13,7 @@ class Banners extends Model
     /**
      * @var string The database table name
      */
-    protected $table = 'banners';
+    protected $table = 'igniter_frontend_banners';
 
     /**
      * @var string The database table primary key
