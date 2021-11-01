@@ -27,7 +27,7 @@
                     alt="{{ $slide->getCustomProperty('title') }}"
                 />
 
-                @if ($showSliderCaptions AND strlen($slide->getCustomProperty('description')))
+                @if ($showSliderCaptions && strlen($slide->getCustomProperty('description')))
                     <div class="carousel-caption d-none d-md-block">
                         <h5>{{ $slide->getCustomProperty('title') }}</h5>
                         <p>{{ $slide->getCustomProperty('description') }}</p>
@@ -36,7 +36,7 @@
             </div>
         @endforeach
     </div>
-    @if ($showSliderControls AND count($__SELF__->slides()) > 1)
+    @if ($showSliderControls && count($__SELF__->slides()) > 1)
         <a
             class="carousel-control-prev"
             href="#{{ $sliderSelectorId }}"
