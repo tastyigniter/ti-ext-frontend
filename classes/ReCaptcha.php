@@ -73,7 +73,7 @@ class ReCaptcha
 
         $parsedResponse = json_decode($httpResponse->getBody(), TRUE);
 
-        return isset($parsedResponse['success']) AND $parsedResponse['success'] === TRUE;
+        return isset($parsedResponse['success']) && $parsedResponse['success'] === TRUE;
     }
 
     protected function buildRequestQuery($response, $clientIp)

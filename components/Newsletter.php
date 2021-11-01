@@ -85,7 +85,7 @@ class Newsletter extends \System\Classes\BaseComponent
         $email = ['email' => $subscribe->email];
 
         $mergeVars = null;
-        if (isset($data['merge']) AND is_array($data['merge']) AND count($data['merge']))
+        if (isset($data['merge']) && is_array($data['merge']) && count($data['merge']))
             $mergeVars = $data['merge'];
 
         try {
