@@ -4,8 +4,6 @@ namespace Igniter\Frontend\Models;
 
 class Menus_model extends \Igniter\Cart\Models\Menus_model
 {
-    protected $primaryKey = 'menu_id';
-
     public static function getByIds($options = [])
     {
         extract(array_merge([
