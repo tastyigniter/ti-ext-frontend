@@ -61,7 +61,7 @@ class FeaturedItems extends \System\Classes\BaseComponent
 
     public static function getItemsOptions()
     {
-        return FeaturedItemsModel::dropdown('menu_name');
+        return FeaturedItemsModel::isEnabled()->dropdown('menu_name');
     }
 
     public function onRun()
