@@ -7,8 +7,8 @@ use Admin\Facades\AdminMenu;
 class Sliders extends \Admin\Classes\AdminController
 {
     public $implement = [
-        'Admin\Actions\ListController',
-        'Admin\Actions\FormController',
+        \Admin\Actions\ListController::class,
+        \Admin\Actions\FormController::class,
     ];
 
     public $listConfig = [

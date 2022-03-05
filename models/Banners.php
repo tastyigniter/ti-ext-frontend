@@ -24,7 +24,7 @@ class Banners extends Model
 
     public $relation = [
         'belongsTo' => [
-            'language' => 'System\Models\Languages_model',
+            'language' => \System\Models\Languages_model::class,
         ],
     ];
 
