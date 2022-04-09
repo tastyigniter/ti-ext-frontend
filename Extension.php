@@ -19,32 +19,32 @@ class Extension extends \System\Classes\BaseExtension
     public function registerComponents()
     {
         return [
-            'Igniter\Frontend\Components\Banners' => [
+            \Igniter\Frontend\Components\Banners::class => [
                 'code' => 'banners',
                 'name' => 'lang:igniter.frontend::default.banners.component_title',
                 'description' => 'lang:igniter.frontend::default.banners.component_desc',
             ],
-            'Igniter\Frontend\Components\Contact' => [
+            \Igniter\Frontend\Components\Contact::class => [
                 'code' => 'contact',
                 'name' => 'lang:igniter.frontend::default.contact.component_title',
                 'description' => 'lang:igniter.frontend::default.contact.component_desc',
             ],
-            'Igniter\Frontend\Components\Slider' => [
+            \Igniter\Frontend\Components\Slider::class => [
                 'code' => 'slider',
                 'name' => 'lang:igniter.frontend::default.slider.component_title',
                 'description' => 'lang:igniter.frontend::default.slider.component_desc',
             ],
-            'Igniter\Frontend\Components\Newsletter' => [
+            \Igniter\Frontend\Components\Newsletter::class => [
                 'code' => 'newsletter',
                 'name' => 'lang:igniter.frontend::default.newsletter.component_title',
                 'description' => 'lang:igniter.frontend::default.newsletter.component_desc',
             ],
-            'Igniter\Frontend\Components\FeaturedItems' => [
+            \Igniter\Frontend\Components\FeaturedItems::class => [
                 'code' => 'featuredItems',
                 'name' => 'lang:igniter.frontend::default.featured.component_title',
                 'description' => 'lang:igniter.frontend::default.featured.component_desc',
             ],
-            'Igniter\Frontend\Components\Captcha' => [
+            \Igniter\Frontend\Components\Captcha::class => [
                 'code' => 'captcha',
                 'name' => 'lang:igniter.frontend::default.captcha.component_title',
                 'description' => 'lang:igniter.frontend::default.captcha.component_desc',
@@ -94,14 +94,14 @@ class Extension extends \System\Classes\BaseExtension
                 'label' => 'reCaptcha Settings',
                 'description' => 'Manage google reCAPTCHA settings.',
                 'icon' => 'fa fa-gear',
-                'model' => 'Igniter\Frontend\Models\CaptchaSettings',
+                'model' => \Igniter\Frontend\Models\CaptchaSettings::class,
                 'permissions' => ['Igniter.FrontEnd.ManageSettings'],
             ],
             'mailchimpsettings' => [
                 'label' => 'Mailchimp Settings',
                 'description' => 'Manage Mailchimp API settings.',
                 'icon' => 'fa fa-gear',
-                'model' => 'Igniter\Frontend\Models\MailchimpSettings',
+                'model' => \Igniter\Frontend\Models\MailchimpSettings::class,
                 'permissions' => ['Igniter.FrontEnd.ManageSettings'],
             ],
         ];

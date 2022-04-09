@@ -13,7 +13,7 @@ class Banners extends \Admin\Classes\AdminController
 
     public $listConfig = [
         'list' => [
-            'model' => 'Igniter\Frontend\Models\Banners',
+            'model' => \Igniter\Frontend\Models\Banners::class,
             'title' => 'lang:igniter.frontend::default.banners.text_title',
             'emptyMessage' => 'lang:igniter.frontend::default.banners.text_empty',
             'defaultSort' => ['banner_id', 'DESC'],
@@ -23,7 +23,7 @@ class Banners extends \Admin\Classes\AdminController
 
     public $formConfig = [
         'name' => 'lang:igniter.frontend::default.banners.text_form_name',
-        'model' => 'Igniter\Frontend\Models\Banners',
+        'model' => \Igniter\Frontend\Models\Banners::class,
         'create' => [
             'title' => 'lang:admin::lang.form.create_title',
             'redirect' => 'igniter/frontend/banners/edit/{banner_id}',

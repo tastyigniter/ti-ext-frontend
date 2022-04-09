@@ -13,7 +13,7 @@ class Sliders extends \Admin\Classes\AdminController
 
     public $listConfig = [
         'list' => [
-            'model' => 'Igniter\Frontend\Models\Slider',
+            'model' => \Igniter\Frontend\Models\Slider::class,
             'title' => 'lang:igniter.frontend::default.slider.text_title',
             'emptyMessage' => 'lang:igniter.frontend::default.slider.text_empty',
             'defaultSort' => ['id', 'DESC'],
@@ -23,7 +23,7 @@ class Sliders extends \Admin\Classes\AdminController
 
     public $formConfig = [
         'name' => 'lang:igniter.frontend::default.slider.text_form_name',
-        'model' => 'Igniter\Frontend\Models\Slider',
+        'model' => \Igniter\Frontend\Models\Slider::class,
         'create' => [
             'title' => 'lang:admin::lang.form.create_title',
             'redirect' => 'igniter/frontend/sliders/edit/{id}',
