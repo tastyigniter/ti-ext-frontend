@@ -1,11 +1,7 @@
 @if (count($featuredMenuItems))
     <div id="featured-menu-box" class="module-box py-5">
         <div class="container text-center">
-            <div class="row">
-                <div class="col-12">
-                    <h2 class="display-5 mb-3">{{ $featuredTitle }}</h2>
-                </div>
-            </div>
+            <h2 class="mb-3">{{ $featuredTitle }}</h2>
 
             <div class="row">
                 @foreach ($featuredMenuItems as $featuredItem)

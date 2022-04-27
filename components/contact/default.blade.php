@@ -9,7 +9,7 @@
         <div class="form-group">
             <select
                 name="subject"
-                class="form-control"
+                class="form-select"
             >
                 <option>@lang('igniter.frontend::default.contact.text_select_subject')</option>
                 @foreach ($__SELF__->subjects as $subject)

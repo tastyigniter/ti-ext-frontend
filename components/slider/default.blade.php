@@ -1,18 +1,19 @@
 <div
     id="{{ $sliderSelectorId }}"
-    class="carousel slide"
-    data-ride="carousel"
+    class="carousel slide carousel-fade"
+    data-bs-ride="carousel"
 >
     @if ($showSliderIndicators)
-        <ol class="carousel-indicators">
+        <div class="carousel-indicators">
             @foreach ($__SELF__->slides() as $slide)
-                <li
+                <button
+                    type="button"
                     class="{{ $loop->first ? 'active' : '' }}"
-                    data-target="#{{ $sliderSelectorId }}"
-                    data-slide-to="{{ $sliderSelectorId }}"
-                ></li>
+                    data-bs-target="#{{ $sliderSelectorId }}"
+                    data-bs-slide-to="{{ $loop->index }}"
+                ></button>
             @endforeach
-        </ol>
+        </div>
     @endif
 
     <div class="carousel-inner">
@@ -37,17 +38,17 @@
         @endforeach
     </div>
     @if ($showSliderControls && count($__SELF__->slides()) > 1)
-        <a
+        <button
+            type="button"
             class="carousel-control-prev"
-            href="#{{ $sliderSelectorId }}"
-            role="button"
-            data-slide="prev"
-        ><span class="carousel-control-prev-icon" aria-hidden="true"></span></a>
-        <a
+            data-bs-target="#{{ $sliderSelectorId }}"
+            data-bs-slide="prev"
+        ><span class="carousel-control-prev-icon" aria-hidden="true"></span><span class="visually-hidden">Previous</span></button>
+        <button
+            type="button"
             class="carousel-control-next"
-            href="#{{ $sliderSelectorId }}"
-            role="button"
-            data-slide="next"
-        ><span class="carousel-control-next-icon" aria-hidden="true"></span></a>
+            data-bs-target="#{{ $sliderSelectorId }}"
+            data-bs-slide="next"
+        ><span class="carousel-control-next-icon" aria-hidden="true"></span><span class="visually-hidden">Next</span></button>
     @endif
 </div>

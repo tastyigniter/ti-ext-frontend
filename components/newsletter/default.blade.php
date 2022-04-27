@@ -8,11 +8,9 @@
             class="form-control"
             name="subscribe_email"
         >
-        <span class="input-group-append">
-            <button
-                id="subscribeButton"
-                class="btn btn-info"
-            ><i class="fa fa-paper-plane"></i></button>
-        </span>
+        <button
+            id="subscribeButton"
+            class="btn btn-info"
+        ><i class="fa fa-paper-plane"></i></button>
     </div>
 </form>

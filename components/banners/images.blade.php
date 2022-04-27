@@ -9,19 +9,19 @@
                 <img
                     alt="{{ $banner->altText }}"
                     src="{{ $image['url'] }}"
-                    class="thumb img-responsive"
+                    class="thumb img-fluid"
                 />
             </a>
         </div>
     @endforeach
 @else
     <div class="thumbnail">
-        <div id="{{ $banner->id }}" class="carousel slide" data-ride="carousel">
+        <div id="{{ $banner->id }}" class="carousel slide" data-bs-ride="carousel">
             <ol class="carousel-indicators">
                 @for ($i = 0; $i < count($banner->value); $i++)
                     <li
-                        data-target="#{{ $banner->id }}"
-                        data-slide-to="{{ $i }}"
+                        data-bs-target="#{{ $banner->id }}"
+                        data-bs-slide-to="{{ $i }}"
                         class="{{ $i === 0 ? 'active' : '' }}"
                     ></li>
                 @endfor
@@ -36,7 +36,7 @@
                     >
                         <a href="{{ $banner->clickUrl }}">
                             <img
-                                class="img-responsive"
+                                class="img-fluid"
                                 alt="{{ $banner->altText }}"
                                 src="{{ $image['url'] }}"
                             />
@@ -48,11 +48,11 @@
             <a
                 class="left carousel-control"
                 href="#{{ $banner->id }}"
-                data-slide="prev"><span class="fa fa-chevron-left"></span></a>
+                data-bs-slide="prev"><span class="fa fa-chevron-left"></span></a>
             <a
                 class="right carousel-control"
                 href="#{{ $banner->id }}"
-                data-slide="next"><span class="fa fa-chevron-right"></span></a>
+                data-bs-slide="next"><span class="fa fa-chevron-right"></span></a>
         </div>
     </div>
 @endif
