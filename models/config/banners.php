@@ -67,7 +67,7 @@ $config['list']['columns'] = [
     'name' => [
         'label' => 'lang:admin::lang.label_name',
         'type' => 'text',
-        'searchable' => TRUE,
+        'searchable' => true,
     ],
     'type_label' => [
         'label' => 'lang:admin::lang.label_type',
@@ -76,11 +76,11 @@ $config['list']['columns'] = [
     'status' => [
         'label' => 'lang:igniter.frontend::default.banners.column_status',
         'type' => 'switch',
-        'searchable' => TRUE,
+        'searchable' => true,
     ],
     'banner_id' => [
         'label' => 'lang:admin::lang.column_id',
-        'invisible' => TRUE,
+        'invisible' => true,
     ],
 
 ];
@@ -130,7 +130,7 @@ $config['form']['fields'] = [
         'type' => 'mediafinder',
         'mode' => 'grid',
         'commentAbove' => 'lang:igniter.frontend::default.banners.help_image',
-        'isMulti' => TRUE,
+        'isMulti' => true,
         'trigger' => [
             'action' => 'hide',
             'field' => 'type',
@@ -164,7 +164,7 @@ $config['form']['fields'] = [
     'status' => [
         'label' => 'lang:admin::lang.label_status',
         'type' => 'switch',
-        'default' => TRUE,
+        'default' => true,
     ],
 ];
 

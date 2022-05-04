@@ -83,8 +83,8 @@ return [
             'images' => [
                 'label' => 'igniter.frontend::default.slider.label_images',
                 'type' => 'mediafinder',
-                'useAttachment' => TRUE,
-                'isMulti' => TRUE,
+                'useAttachment' => true,
+                'isMulti' => true,
             ],
         ],
     ],

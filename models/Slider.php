@@ -24,7 +24,7 @@ class Slider extends Model
      */
     protected $guarded = [];
 
-    public $timestamps = TRUE;
+    public $timestamps = true;
 
     public $rules = [
         ['name', 'admin::lang.label_name', 'required|string'],
@@ -32,7 +32,7 @@ class Slider extends Model
     ];
 
     public $mediable = [
-        'images' => ['multiple' => TRUE],
+        'images' => ['multiple' => true],
     ];
 
     public function getMorphClass()

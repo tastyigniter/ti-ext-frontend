@@ -25,13 +25,13 @@ class Newsletter extends \System\Classes\BaseComponent
             'doubleOptIn' => [
                 'label' => 'Double Opt-In',
                 'type' => 'switch',
-                'default' => TRUE,
+                'default' => true,
                 'validationRule' => 'required|boolean',
             ],
             'updateExisting' => [
                 'label' => 'Update Existing',
                 'type' => 'switch',
-                'default' => FALSE,
+                'default' => false,
                 'validationRule' => 'required|boolean',
             ],
         ];
@@ -80,8 +80,8 @@ class Newsletter extends \System\Classes\BaseComponent
             return;
 
         $listId = $this->property('listId', MailChimpSettings::get('list_id'));
-        $doubleOptIn = (bool)$this->property('doubleOptIn', TRUE);
-        $updateExisting = (bool)$this->property('updateExisting', FALSE);
+        $doubleOptIn = (bool)$this->property('doubleOptIn', true);
+        $updateExisting = (bool)$this->property('updateExisting', false);
         $email = ['email' => $subscribe->email];
 
         $mergeVars = null;
