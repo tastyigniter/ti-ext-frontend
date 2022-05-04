@@ -73,9 +73,9 @@ class Slider extends \System\Classes\BaseComponent
         $this->page['sliderHeight'] = $this->property('height');
         $this->page['sliderEffect'] = $this->property('effect');
         $this->page['sliderDelayInterval'] = $this->property('delayInterval');
-        $this->page['showSliderControls'] = !(bool)$this->property('hideControls', FALSE);
-        $this->page['showSliderIndicators'] = !(bool)$this->property('hideIndicators', FALSE);
-        $this->page['showSliderCaptions'] = !(bool)$this->property('hideCaptions', FALSE);
+        $this->page['showSliderControls'] = !(bool)$this->property('hideControls', false);
+        $this->page['showSliderIndicators'] = !(bool)$this->property('hideIndicators', false);
+        $this->page['showSliderCaptions'] = !(bool)$this->property('hideCaptions', false);
 
         $this->page['slides'] = $this->slides();
     }

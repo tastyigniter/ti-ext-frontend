@@ -62,7 +62,7 @@ class ReCaptcha
     public function verifyResponse($response, $clientIp = null)
     {
         if (empty($response))
-            return FALSE;
+            return false;
 
         if (is_null($clientIp))
             $clientIp = request()->getClientIp();
@@ -71,9 +71,9 @@ class ReCaptcha
             'form_params' => $this->buildRequestQuery($response, $clientIp),
         ]);
 
-        $parsedResponse = json_decode($httpResponse->getBody(), TRUE);
+        $parsedResponse = json_decode($httpResponse->getBody(), true);
 
-        return isset($parsedResponse['success']) && $parsedResponse['success'] === TRUE;
+        return isset($parsedResponse['success']) && $parsedResponse['success'] === true;
     }
 
     protected function buildRequestQuery($response, $clientIp)
