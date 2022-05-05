@@ -29,9 +29,13 @@ class AddForeignKeyConstraintsToTables extends Migration
 
     public function down()
     {
-        Schema::table('igniter_frontend_banners', function (Blueprint $table) {
-            $table->dropForeign(['language_id']);
-        });
+        try {
+            Schema::table('igniter_frontend_banners', function (Blueprint $table) {
+                $table->dropForeign(['language_id']);
+            });
+        }
+        catch (\Exception $e) {
+        }
     }
 
     protected function hasLanguageIdForeignKey()
