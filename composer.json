@@ -12,6 +12,11 @@
   "require": {
     "mailchimp/mailchimp": "^2.0"
   },
+  "autoload": {
+    "psr-4": {
+      "Igniter\\Frontend\\": "src/"
+    }
+  },
   "extra": {
     "tastyigniter-extension": {
       "code": "igniter.frontend",
