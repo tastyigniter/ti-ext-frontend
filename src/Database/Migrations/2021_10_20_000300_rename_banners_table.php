@@ -11,7 +11,8 @@ return new class extends Migration {
         if (Schema::hasTable('igniter_frontend_banners'))
             return;
 
-        Schema::rename('banners', 'igniter_frontend_banners');
+        if (Schema::hasTable('banners'))
+            Schema::rename('banners', 'igniter_frontend_banners');
     }
 
     public function down()

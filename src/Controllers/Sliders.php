@@ -7,8 +7,8 @@ use Igniter\Admin\Facades\AdminMenu;
 class Sliders extends \Igniter\Admin\Classes\AdminController
 {
     public $implement = [
-        \Igniter\Admin\Actions\ListController::class,
-        \Igniter\Admin\Actions\FormController::class,
+        \Igniter\Admin\Http\Actions\ListController::class,
+        \Igniter\Admin\Http\Actions\FormController::class,
     ];
 
     public $listConfig = [
