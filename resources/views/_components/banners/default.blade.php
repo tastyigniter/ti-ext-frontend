@@ -3,7 +3,7 @@
         @if ($banner->isCustom)
             {!! $banner->value !!}
         @else
-            @partial('@images', ['banner' => $banner])
+            @themePartial('@images', ['banner' => $banner])
         @endif
     @endif
 </div>

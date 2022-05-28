@@ -1,6 +1,6 @@
 <?php
 
-namespace Igniter\Frontend\Controllers;
+namespace Igniter\Frontend\Http\Controllers;
 
 use Igniter\Admin\Facades\AdminMenu;
 
