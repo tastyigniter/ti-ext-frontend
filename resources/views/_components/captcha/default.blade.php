@@ -1,5 +1,5 @@
 @if ($captchaSettings->version !== 'v2')
-    @partial('@invisible')
+    @themePartial('@invisible')
 @else
     <div class="g-recaptcha" data-sitekey="{{ $captchaSettings->api_site_key }}"></div>
     {!! form_error('g-recaptcha-response', '<span class="text-danger">', '</span>') !!}
