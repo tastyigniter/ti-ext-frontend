@@ -10,7 +10,9 @@
     }
   ],
   "require": {
-    "mailchimp/mailchimp": "^2.0"
+    "tastyigniter/flame": "v4.x-dev",
+    "tastyigniter/ti-ext-cart": "v4.x-dev",
+    "drewm/mailchimp-api": "^2.4"
   },
   "autoload": {
     "psr-4": {
@@ -26,10 +28,7 @@
         "color": "#664500",
         "backgroundColor": "#FECC4D"
       },
-      "homepage": "https://tastyigniter.com/marketplace/item/igniter-frontend",
-      "require": {
-        "igniter.cart": "*"
-      }
+      "homepage": "https://tastyigniter.com/marketplace/item/igniter-frontend"
     }
   }
 }

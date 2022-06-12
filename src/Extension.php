@@ -2,6 +2,8 @@
 
 namespace Igniter\Frontend;
 
+use DrewM\MailChimp\MailChimp;
+use Igniter\Frontend\Models\MailchimpSettings;
 use Illuminate\Support\Facades\Validator;
 
 class Extension extends \Igniter\System\Classes\BaseExtension
@@ -14,6 +16,10 @@ class Extension extends \Igniter\System\Classes\BaseExtension
     public function register()
     {
         $this->registerReCaptcha();
+
+        $this->app->singleton(MailChimp::class, function () {
+            return new MailChimp(MailChimpSettings::get('api_key'));
+        });
     }
 
     public function registerComponents()
