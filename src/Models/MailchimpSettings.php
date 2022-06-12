@@ -11,4 +11,9 @@ class MailchimpSettings extends Model
     public $settingsCode = 'igniter_frontend_mailchimpsettings';
 
     public $settingsFieldsConfig = 'mailchimpsettings';
+
+    public static function isConfigured()
+    {
+        return (strlen(self::get('api_key', '')) && strlen(self::get('list_id', '')));
+    }
 }

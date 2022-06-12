@@ -2,12 +2,14 @@
 
 namespace Igniter\Frontend\Components;
 
+use DrewM\MailChimp\MailChimp;
+use Exception;
 use Igniter\Admin\Traits\ValidatesForm;
 use Igniter\Flame\Exception\ApplicationException;
 use Igniter\Frontend\Models\MailchimpSettings;
 use Igniter\Frontend\Models\Subscriber;
 use Illuminate\Support\Facades\Event;
-use Mailchimp;
+use Illuminate\Support\Facades\Log;
 
 class Newsletter extends \Igniter\System\Classes\BaseComponent
 {
@@ -21,18 +23,6 @@ class Newsletter extends \Igniter\System\Classes\BaseComponent
                 'type' => 'text',
                 'comment' => 'Overrides the admin settings value',
                 'validationRule' => 'required|string',
-            ],
-            'doubleOptIn' => [
-                'label' => 'Double Opt-In',
-                'type' => 'switch',
-                'default' => true,
-                'validationRule' => 'required|boolean',
-            ],
-            'updateExisting' => [
-                'label' => 'Update Existing',
-                'type' => 'switch',
-                'default' => false,
-                'validationRule' => 'required|boolean',
             ],
         ];
     }
@@ -76,25 +66,28 @@ class Newsletter extends \Igniter\System\Classes\BaseComponent
 
     protected function listSubscribe($subscribe, $data)
     {
-        if (!strlen($apiKey = MailChimpSettings::get('api_key')))
-            return;
+        if (!MailChimpSettings::isConfigured())
+            throw new ApplicationException('MailChimp List ID is missing. Enter your mailchimp api key and list ID from the admin settings page');
 
-        $listId = $this->property('listId', MailChimpSettings::get('list_id'));
-        $doubleOptIn = (bool)$this->property('doubleOptIn', true);
-        $updateExisting = (bool)$this->property('updateExisting', false);
-        $email = ['email' => $subscribe->email];
+        $options = [
+            'email_address' => $subscribe->email,
+            'status' => 'subscribed',
+            'email_type' => 'html',
+        ];
 
-        $mergeVars = null;
         if (isset($data['merge']) && is_array($data['merge']) && count($data['merge']))
-            $mergeVars = $data['merge'];
+            $options['merge_fields'] = $data['merge'];
 
         try {
-            $mailchimp = new Mailchimp($apiKey);
-            $mailchimp->lists->subscribe(
-                $listId, $email, $mergeVars, 'html', $doubleOptIn, $updateExisting
-            );
+            $listId = $this->property('listId', MailChimpSettings::get('list_id'));
+
+            $response = resolve(MailChimp::class)->post("lists/$listId/members", $options);
+
+            $errorMessage = array_get($response, 'detail', '');
+            if (strlen($errorMessage) && array_get($response, 'status') !== 200)
+                Log::error($response);
         }
-        catch (\MailChimp_Error $e) {
+        catch (Exception $e) {
             throw new ApplicationException('MailChimp returned the following error: '.$e->getMessage());
         }
     }
