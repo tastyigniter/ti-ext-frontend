@@ -3,7 +3,6 @@
 namespace Igniter\Frontend\Database\Migrations;
 
 use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 class AddForeignKeyConstraintsToTables extends Migration
@@ -12,30 +11,33 @@ class AddForeignKeyConstraintsToTables extends Migration
     {
         Schema::disableForeignKeyConstraints();
 
-        if ($this->hasLanguageIdForeignKey())
-            return;
+        // Commented out so foreign keys are not added on new installations.
+        // For existing installations, another migration has been added to drop all foreign keys.
 
-        Schema::table('igniter_frontend_banners', function (Blueprint $table) {
-            $table->foreignId('language_id')->nullable()->change();
-            $table->foreign('language_id')
-                ->references('language_id')
-                ->on('languages')
-                ->nullOnDelete()
-                ->cascadeOnUpdate();
-        });
+//        if ($this->hasLanguageIdForeignKey())
+//            return;
+//
+//        Schema::table('igniter_frontend_banners', function (Blueprint $table) {
+//            $table->foreignId('language_id')->nullable()->change();
+//            $table->foreign('language_id')
+//                ->references('language_id')
+//                ->on('languages')
+//                ->nullOnDelete()
+//                ->cascadeOnUpdate();
+//        });
 
         Schema::enableForeignKeyConstraints();
     }
 
     public function down()
     {
-        try {
-            Schema::table('igniter_frontend_banners', function (Blueprint $table) {
-                $table->dropForeign(['language_id']);
-            });
-        }
-        catch (\Exception $e) {
-        }
+//        try {
+//            Schema::table('igniter_frontend_banners', function (Blueprint $table) {
+//                $table->dropForeign(['language_id']);
+//            });
+//        }
+//        catch (\Exception $e) {
+//        }
     }
 
     protected function hasLanguageIdForeignKey()
