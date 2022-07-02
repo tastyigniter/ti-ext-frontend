@@ -14,8 +14,8 @@ class DropForeignKeyConstraints extends Migration
         Schema::disableForeignKeyConstraints();
 
         Schema::table('igniter_frontend_banners', function (Blueprint $table) {
-            $table->dropForeign(['language_id']);
-            $table->dropIndex(DB::getTablePrefix().'igniter_frontend_banners_language_id_foreign');
+            $table->dropForeignKeyIfExists('language_id');
+            $table->dropIndexIfExists(DB::getTablePrefix().'igniter_frontend_banners_language_id_foreign');
         });
 
         Schema::enableForeignKeyConstraints();
