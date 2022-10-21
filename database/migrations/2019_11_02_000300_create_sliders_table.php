@@ -64,7 +64,7 @@ class CreateSlidersTable extends Migration
                 'code' => 'home-slider',
                 'data' => [
                     'images' => [
-                        extension_path('igniter/frontend/assets/images/slide.png'),
+                        dirname(__DIR__, 2).'/assets/images/slide.png',
                     ],
                 ],
             ];
@@ -79,7 +79,7 @@ class CreateSlidersTable extends Migration
                 $path = uploads_path($path);
 
             if (!file_exists($path))
-                $path = extension_path('igniter/frontend/assets/images/slide.png');
+                $path = dirname(__DIR__, 2).'/assets/images/slide.png';
 
             $media = $model->newMediaInstance();
             $media->addFromFile($path, $tagName);
