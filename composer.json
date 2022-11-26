@@ -1,6 +1,6 @@
 {
   "name": "tastyigniter/ti-ext-frontend",
-  "type": "tastyigniter-extension",
+  "type": "tastyigniter-package",
   "description": "Manage basic components like Slider, Featured Menu Items, Banners and Newsletter",
   "license": "MIT",
   "authors": [
