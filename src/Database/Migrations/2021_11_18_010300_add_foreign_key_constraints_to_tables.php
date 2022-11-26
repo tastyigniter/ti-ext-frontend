@@ -30,7 +30,7 @@ return new class extends Migration {
     {
         try {
             Schema::table('igniter_frontend_banners', function (Blueprint $table) {
-                $table->dropForeign(['language_id']);
+                $table->dropForeignKeyIfExists('language_id');
             });
         }
         catch (\Exception $e) {
