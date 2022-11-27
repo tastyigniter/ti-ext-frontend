@@ -1,7 +1,5 @@
 <?php
 
-namespace Igniter\FrontEnd\Database\Migrations;
-
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Support\Facades\Schema;
 
@@ -17,5 +15,6 @@ return new class extends Migration {
 
     public function down()
     {
+        Schema::dropIfExists('igniter_frontend_banners');
     }
 };
