@@ -1,7 +1,5 @@
 <?php
 
-namespace Igniter\FrontEnd\Database\Migrations;
-
 use Igniter\Frontend\Models\Slider;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
