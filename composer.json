@@ -10,7 +10,6 @@
     }
   ],
   "require": {
-    "tastyigniter/flame": "v4.x-dev",
     "tastyigniter/ti-ext-cart": "v4.x-dev",
     "drewm/mailchimp-api": "^2.4"
   },
