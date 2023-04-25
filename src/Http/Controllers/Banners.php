@@ -52,7 +52,7 @@ class Banners extends \Igniter\Admin\Classes\AdminController
     {
         parent::__construct();
 
-        AdminMenu::setContext('banners', 'design');
+        AdminMenu::setContext('sliders', 'design');
     }
 
     public function formValidate($model, $form)

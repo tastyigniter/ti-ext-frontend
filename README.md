@@ -24,4 +24,5 @@ security vulnerabilities.
 
 ### License
 
-TastyIgniter Frontend extension is open-sourced software licensed under the [MIT license](LICENSE).
+TastyIgniter Frontend extension is open-sourced software licensed under
+the [MIT license](https://github.com/tastyigniter/ti-ext-frontend/LICENSE.md).

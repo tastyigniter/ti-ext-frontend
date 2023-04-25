@@ -63,10 +63,10 @@ class Extension extends \Igniter\System\Classes\BaseExtension
         return [
             'design' => [
                 'child' => [
-                    'banners' => [
+                    'sliders' => [
                         'priority' => 30,
-                        'class' => 'banners',
-                        'href' => admin_url('igniter/frontend/banners'),
+                        'class' => 'sliders',
+                        'href' => admin_url('igniter/frontend/sliders'),
                         'title' => lang('igniter.frontend::default.text_side_menu'),
                         'permission' => ['Igniter.FrontEnd.ManageBanners', 'Igniter.FrontEnd.ManageSlideshow'],
                     ],

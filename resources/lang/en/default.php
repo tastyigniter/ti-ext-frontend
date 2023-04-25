@@ -2,7 +2,7 @@
 
 return [
 
-    'text_side_menu' => 'Banners & Sliders',
+    'text_side_menu' => 'Sliders & Banners',
 
     'banners' => [
         'text_tab_general' => 'General',

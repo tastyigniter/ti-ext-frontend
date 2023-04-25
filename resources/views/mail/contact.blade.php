@@ -1,4 +1,4 @@
-subject = "Contact on {site_name}"
+subject = "Contact on {{$site_name}}"
 ==
 Hi there,
 
@@ -6,13 +6,13 @@ Someone just contacted you!
 
 Here is your form:
 
-Name: {full_name}
-Subject: {contact_topic}
-E-mail: {contact_email}
-Telephone: {contact_telephone}
-Message: {contact_message}
+Name: {{$full_name}}
+Subject: {{$contact_topic}}
+E-mail: {{$contact_email}}
+Telephone: {{$contact_telephone}}
+Message: {{$contact_message}}
 
-This inquiry was sent from {site_name}.
+This inquiry was sent from {{$site_name}}.
 ==
 Hi Admin,
 
@@ -22,10 +22,10 @@ Here is your form.
 
 | | |
 | -------- | -------- |
-| **From**     | {full_name}     |
-| **Subject**     | {contact_topic}     |
-| **E-mail**     | {contact_email}     |
-| **Telephone**     | {contact_telephone}     |
-| **Message**     | {contact_message}     |
+| **From**     | {{$full_name}}     |
+| **Subject**     | {{$contact_topic}}     |
+| **E-mail**     | {{$contact_email}}     |
+| **Telephone**     | {{$contact_telephone}}     |
+| **Message**     | {{$contact_message}}     |
 
-<br>This inquiry was sent from {site_name}.
+<br>This inquiry was sent from {{$site_name}}.
