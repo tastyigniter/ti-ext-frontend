@@ -46,13 +46,16 @@ class Banners extends \Igniter\System\Classes\BaseComponent
 
     protected function loadBanner()
     {
-        if (isset($this->banner))
+        if (isset($this->banner)) {
             return $this->banner;
+        }
 
         $model = BannerModel::isEnabled()
             ->where('banner_id', $this->property('banner_id'))->first();
 
-        if (!$model) return null;
+        if (!$model) {
+            return null;
+        }
 
         $banner = new \stdClass;
         $banner->id = 'banner-slideshow-'.uniqid();
@@ -67,8 +70,9 @@ class Banners extends \Igniter\System\Classes\BaseComponent
 
     protected function prepareImages(BannerModel $banner)
     {
-        if ($banner->type == 'custom')
+        if ($banner->type == 'custom') {
             return $banner->custom_code;
+        }
 
         $images = array_filter($banner->image_code);
 

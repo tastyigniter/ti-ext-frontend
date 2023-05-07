@@ -4,14 +4,17 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration {
+return new class extends Migration
+{
     public function up()
     {
-        if (Schema::hasTable('sampoyigi_frontend_subscribers'))
+        if (Schema::hasTable('sampoyigi_frontend_subscribers')) {
             Schema::rename('sampoyigi_frontend_subscribers', 'igniter_frontend_subscribers');
+        }
 
-        if (Schema::hasTable('igniter_frontend_subscribers'))
+        if (Schema::hasTable('igniter_frontend_subscribers')) {
             return;
+        }
 
         Schema::create('igniter_frontend_subscribers', function (Blueprint $table) {
             $table->engine = 'InnoDB';

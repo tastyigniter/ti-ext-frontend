@@ -52,8 +52,7 @@ class Newsletter extends \Igniter\System\Classes\BaseComponent
 
         if (!$subscribe->wasRecentlyCreated) {
             flash()->success(lang('igniter.frontend::default.newsletter.alert_success_existing'))->now();
-        }
-        else {
+        } else {
             flash()->success(lang('igniter.frontend::default.newsletter.alert_success_subscribed'))->now();
         }
 
@@ -66,8 +65,9 @@ class Newsletter extends \Igniter\System\Classes\BaseComponent
 
     protected function listSubscribe($subscribe, $data)
     {
-        if (!MailChimpSettings::isConfigured())
+        if (!MailChimpSettings::isConfigured()) {
             throw new ApplicationException('MailChimp List ID is missing. Enter your mailchimp api key and list ID from the admin settings page');
+        }
 
         $options = [
             'email_address' => $subscribe->email,
@@ -75,8 +75,9 @@ class Newsletter extends \Igniter\System\Classes\BaseComponent
             'email_type' => 'html',
         ];
 
-        if (isset($data['merge']) && is_array($data['merge']) && count($data['merge']))
+        if (isset($data['merge']) && is_array($data['merge']) && count($data['merge'])) {
             $options['merge_fields'] = $data['merge'];
+        }
 
         try {
             $listId = $this->property('listId', MailChimpSettings::get('list_id'));
@@ -84,10 +85,10 @@ class Newsletter extends \Igniter\System\Classes\BaseComponent
             $response = resolve(MailChimp::class)->post("lists/$listId/members", $options);
 
             $errorMessage = array_get($response, 'detail', '');
-            if (strlen($errorMessage) && array_get($response, 'status') !== 200)
+            if (strlen($errorMessage) && array_get($response, 'status') !== 200) {
                 Log::error($response);
-        }
-        catch (Exception $e) {
+            }
+        } catch (Exception $e) {
             throw new ApplicationException('MailChimp returned the following error: '.$e->getMessage());
         }
     }

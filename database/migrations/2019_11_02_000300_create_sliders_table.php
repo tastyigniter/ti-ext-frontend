@@ -7,8 +7,8 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration {
-
+return new class extends Migration
+{
     public function up()
     {
         Schema::create('igniter_frontend_sliders', function (Blueprint $table) {
@@ -32,16 +32,18 @@ return new class extends Migration {
     {
         $slider = $this->getSlider();
         $data = array_get((array)$slider, 'data');
-        if (!is_array($data))
+        if (!is_array($data)) {
             $data = unserialize($data);
+        }
 
         $model = Slider::create([
             'name' => array_get($slider, 'name', 'Homepage slider'),
             'code' => array_get($slider, 'code', 'home-slider'),
         ]);
 
-        if (!$items = array_get($data, 'images', []))
+        if (!$items = array_get($data, 'images', [])) {
             return;
+        }
 
         optional($model->images)->each(function ($media) {
             $media->delete();
@@ -56,7 +58,7 @@ return new class extends Migration {
     {
         $existingSlider = DB::table('extension_settings')->select('data')
             ->where('item', 'igniter_frontend_slidersettings')->first();
-        if (!$existingSlider)
+        if (!$existingSlider) {
             return [
                 'name' => 'Homepage slider',
                 'code' => 'home-slider',
@@ -66,6 +68,7 @@ return new class extends Migration {
                     ],
                 ],
             ];
+        }
 
         return $existingSlider;
     }
@@ -73,19 +76,20 @@ return new class extends Migration {
     protected function createMediaAttachment($path, $model, $tagName)
     {
         try {
-            if (!starts_with($path, base_path()))
+            if (!starts_with($path, base_path())) {
                 $path = uploads_path($path);
+            }
 
-            if (!file_exists($path))
+            if (!file_exists($path)) {
                 $path = dirname(__DIR__, 2).'/assets/images/slide.png';
+            }
 
             $media = $model->newMediaInstance();
             $media->addFromFile($path, $tagName);
 
             $media->save();
             $model->media()->save($media);
-        }
-        catch (\Exception $ex) {
+        } catch (\Exception $ex) {
             Log::error($ex);
         }
     }
