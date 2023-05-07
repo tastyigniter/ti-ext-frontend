@@ -14,6 +14,6 @@ class MailchimpSettings extends Model
 
     public static function isConfigured()
     {
-        return (strlen(self::get('api_key', '')) && strlen(self::get('list_id', '')));
+        return strlen(self::get('api_key', '')) && strlen(self::get('list_id', ''));
     }
 }

@@ -65,13 +65,15 @@ class Banners extends Model
     {
         $defaults = ['name' => 'no_photo.png', 'path' => 'data/no_photo.png', 'url' => $options['no_photo']];
 
-        if (empty($this->image_code))
+        if (empty($this->image_code)) {
             return $defaults;
+        }
 
         $image = unserialize($this->image_code);
 
-        if (empty($image['path']))
+        if (empty($image['path'])) {
             return $defaults;
+        }
 
         return $this->getThumbArray($image['path'], 120, 120);
     }
@@ -80,13 +82,15 @@ class Banners extends Model
     {
         $defaults = [];
 
-        if (empty($this->image_code))
+        if (empty($this->image_code)) {
             return $defaults;
+        }
 
         $image = unserialize($this->image_code);
 
-        if (!is_array($image['paths']))
+        if (!is_array($image['paths'])) {
             return $defaults;
+        }
 
         foreach ($image['paths'] as $path) {
             $images[] = $this->getThumbArray($path, 120, 120);

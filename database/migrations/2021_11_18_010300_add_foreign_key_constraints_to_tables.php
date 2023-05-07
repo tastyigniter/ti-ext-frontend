@@ -4,13 +4,15 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration {
+return new class extends Migration
+{
     public function up()
     {
         Schema::disableForeignKeyConstraints();
 
-        if ($this->hasLanguageIdForeignKey())
+        if ($this->hasLanguageIdForeignKey()) {
             return;
+        }
 
         Schema::table('igniter_frontend_banners', function (Blueprint $table) {
             $table->foreignId('language_id')->nullable()->change();
@@ -30,8 +32,7 @@ return new class extends Migration {
             Schema::table('igniter_frontend_banners', function (Blueprint $table) {
                 $table->dropForeignKeyIfExists('language_id');
             });
-        }
-        catch (\Exception $e) {
+        } catch (\Exception $e) {
         }
     }
 

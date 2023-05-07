@@ -82,8 +82,9 @@ class Slider extends \Igniter\System\Classes\BaseComponent
 
     public function slides()
     {
-        if (!is_null($this->sliderThumbs))
+        if (!is_null($this->sliderThumbs)) {
             return $this->sliderThumbs;
+        }
 
         $code = $this->property('code');
 

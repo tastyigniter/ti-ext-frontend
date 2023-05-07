@@ -78,10 +78,10 @@ class Contact extends BaseComponent
 
             $redirectUrl = $this->controller->pageUrl($this->property('redirectPage'));
 
-            if ($redirectUrl = get('redirect', $redirectUrl))
+            if ($redirectUrl = get('redirect', $redirectUrl)) {
                 return Redirect::to($redirectUrl);
-        }
-        catch (Exception $ex) {
+            }
+        } catch (Exception $ex) {
             flash()->warning($ex->getMessage());
 
             return Redirect::back()->withInput();
