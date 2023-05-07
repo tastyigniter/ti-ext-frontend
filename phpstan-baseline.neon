@@ -1,0 +1,166 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Access to an undefined property Illuminate\\\\Database\\\\Eloquent\\\\Model\\:\\:\\$images\\.$#"
+			count: 1
+			path: database/migrations/2019_11_02_000300_create_sliders_table.php
+
+		-
+			message: "#^Call to an undefined method Illuminate\\\\Database\\\\Schema\\\\Blueprint\\:\\:dropForeignKeyIfExists\\(\\)\\.$#"
+			count: 1
+			path: database/migrations/2021_11_18_010300_add_foreign_key_constraints_to_tables.php
+
+		-
+			message: "#^Call to an undefined method Illuminate\\\\Database\\\\Schema\\\\Blueprint\\:\\:dropForeignKeyIfExists\\(\\)\\.$#"
+			count: 1
+			path: database/migrations/2022_06_30_010000_drop_foreign_key_constraints.php
+
+		-
+			message: "#^Call to an undefined method Illuminate\\\\Database\\\\Schema\\\\Blueprint\\:\\:dropIndexIfExists\\(\\)\\.$#"
+			count: 1
+			path: database/migrations/2022_06_30_010000_drop_foreign_key_constraints.php
+
+		-
+			message: "#^Access to an undefined property Igniter\\\\Frontend\\\\Models\\\\Banners\\:\\:\\$custom_code\\.$#"
+			count: 1
+			path: src/Components/Banners.php
+
+		-
+			message: "#^Access to an undefined property Igniter\\\\Frontend\\\\Models\\\\Banners\\:\\:\\$image_code\\.$#"
+			count: 1
+			path: src/Components/Banners.php
+
+		-
+			message: "#^Access to an undefined property Igniter\\\\Frontend\\\\Models\\\\Banners\\:\\:\\$type\\.$#"
+			count: 1
+			path: src/Components/Banners.php
+
+		-
+			message: "#^Call to an undefined static method Igniter\\\\Frontend\\\\Models\\\\Banners\\:\\:isEnabled\\(\\)\\.$#"
+			count: 2
+			path: src/Components/Banners.php
+
+		-
+			message: "#^Call to static method resize\\(\\) on an unknown class Igniter\\\\Main\\\\Models\\\\Image_tool_model\\.$#"
+			count: 1
+			path: src/Components/Banners.php
+
+		-
+			message: "#^Call to an undefined static method Igniter\\\\Frontend\\\\Models\\\\CaptchaSettings\\:\\:instance\\(\\)\\.$#"
+			count: 1
+			path: src/Components/Captcha.php
+
+		-
+			message: "#^Call to an undefined static method Igniter\\\\Local\\\\Facades\\\\Location\\:\\:getDefault\\(\\)\\.$#"
+			count: 1
+			path: src/Components/Contact.php
+
+		-
+			message: "#^Call to an undefined static method Igniter\\\\Main\\\\Template\\\\Page\\:\\:lists\\(\\)\\.$#"
+			count: 1
+			path: src/Components/Contact.php
+
+		-
+			message: "#^Call to an undefined static method Illuminate\\\\Support\\\\Facades\\\\Mail\\:\\:queueTemplate\\(\\)\\.$#"
+			count: 1
+			path: src/Components/Contact.php
+
+		-
+			message: "#^Call to an undefined static method Igniter\\\\Frontend\\\\Models\\\\Menu\\:\\:isEnabled\\(\\)\\.$#"
+			count: 1
+			path: src/Components/FeaturedItems.php
+
+		-
+			message: "#^Call to an undefined method Igniter\\\\Frontend\\\\Components\\\\Newsletter\\:\\:pageCycle\\(\\)\\.$#"
+			count: 1
+			path: src/Components/Newsletter.php
+
+		-
+			message: "#^Call to an undefined static method Igniter\\\\Frontend\\\\Models\\\\MailchimpSettings\\:\\:get\\(\\)\\.$#"
+			count: 1
+			path: src/Components/Newsletter.php
+
+		-
+			message: "#^Call to an undefined static method Igniter\\\\Frontend\\\\Models\\\\Subscriber\\:\\:firstOrNew\\(\\)\\.$#"
+			count: 1
+			path: src/Components/Newsletter.php
+
+		-
+			message: "#^Call to an undefined static method Illuminate\\\\Support\\\\Facades\\\\Event\\:\\:fire\\(\\)\\.$#"
+			count: 1
+			path: src/Components/Newsletter.php
+
+		-
+			message: "#^Call to an undefined static method Igniter\\\\Frontend\\\\Models\\\\Slider\\:\\:lists\\(\\)\\.$#"
+			count: 1
+			path: src/Components/Slider.php
+
+		-
+			message: "#^Call to an undefined static method Igniter\\\\Frontend\\\\Models\\\\Slider\\:\\:whereCode\\(\\)\\.$#"
+			count: 1
+			path: src/Components/Slider.php
+
+		-
+			message: "#^Call to an undefined static method Igniter\\\\Frontend\\\\Models\\\\CaptchaSettings\\:\\:instance\\(\\)\\.$#"
+			count: 1
+			path: src/Extension.php
+
+		-
+			message: "#^Call to an undefined static method Igniter\\\\Frontend\\\\Models\\\\MailchimpSettings\\:\\:get\\(\\)\\.$#"
+			count: 1
+			path: src/Extension.php
+
+		-
+			message: "#^Call to an undefined static method Igniter\\\\Admin\\\\Facades\\\\AdminMenu\\:\\:setContext\\(\\)\\.$#"
+			count: 1
+			path: src/Http/Controllers/Banners.php
+
+		-
+			message: "#^Call to an undefined static method Igniter\\\\Admin\\\\Facades\\\\AdminMenu\\:\\:setContext\\(\\)\\.$#"
+			count: 1
+			path: src/Http/Controllers/Sliders.php
+
+		-
+			message: "#^Access to an undefined property Igniter\\\\Frontend\\\\Models\\\\Banners\\:\\:\\$type\\.$#"
+			count: 1
+			path: src/Models/Banners.php
+
+		-
+			message: "#^Call to an undefined method Igniter\\\\Frontend\\\\Models\\\\Banners\\:\\:dropdown\\(\\)\\.$#"
+			count: 1
+			path: src/Models/Banners.php
+
+		-
+			message: "#^Call to static method resize\\(\\) on an unknown class Igniter\\\\Main\\\\Models\\\\Image_tool_model\\.$#"
+			count: 1
+			path: src/Models/Banners.php
+
+		-
+			message: "#^Variable \\$images might not be defined\\.$#"
+			count: 1
+			path: src/Models/Banners.php
+
+		-
+			message: "#^Call to an undefined static method Igniter\\\\Frontend\\\\Models\\\\MailchimpSettings\\:\\:get\\(\\)\\.$#"
+			count: 2
+			path: src/Models/MailchimpSettings.php
+
+		-
+			message: "#^Call to an undefined static method Igniter\\\\Frontend\\\\Models\\\\Menu\\:\\:whereIn\\(\\)\\.$#"
+			count: 1
+			path: src/Models/Menu.php
+
+		-
+			message: "#^Variable \\$menuIds might not be defined\\.$#"
+			count: 1
+			path: src/Models/Menu.php
+
+		-
+			message: "#^Variable \\$pageLimit might not be defined\\.$#"
+			count: 1
+			path: src/Models/Menu.php
+
+		-
+			message: "#^Variable \\$sort might not be defined\\.$#"
+			count: 1
+			path: src/Models/Menu.php

@@ -1,52 +1,60 @@
 {
-    "name": "tastyigniter/ti-ext-frontend",
-    "type": "tastyigniter-package",
-    "description": "Manage basic components like Slider, Featured Menu Items, Banners and Newsletter",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Sam Poyigi",
-            "email": "sam@sampoyigi.com"
-        }
-    ],
-    "require": {
-        "tastyigniter/ti-ext-cart": "v4.x-dev as 4.0",
-        "drewm/mailchimp-api": "^2.4"
-    },
-    "autoload": {
-        "psr-4": {
-            "Igniter\\Frontend\\": "src/"
-        }
-    },
-    "extra": {
-        "tastyigniter-extension": {
-            "code": "igniter.frontend",
-            "name": "FrontEnd",
-            "icon": {
-                "image": "icon.svg",
-                "color": "#664500",
-                "backgroundColor": "#FECC4D"
-            },
-            "homepage": "https://tastyigniter.com/marketplace/item/igniter-frontend"
-        }
-    },
-    "require-dev": {
-        "laravel/pint": "^1.2",
-        "nunomaduro/larastan": "^2.4.0",
-        "pestphp/pest-plugin-laravel": "^2.0",
-        "pestphp/pest": "^2.5",
-        "orchestra/testbench": "^8.5"
-    },
-    "config": {
-        "allow-plugins": {
-            "pestphp/pest-plugin": true
-        },
-        "sort-packages": true
-    },
-    "scripts": {
-        "test": "vendor/bin/pest",
-        "test-coverage": "vendor/bin/pest --coverage",
-        "format": "vendor/bin/pint",
-        "static": "vendor/bin/phpstan analyse --ansi --memory-limit 1056M"
-    }
+	"name": "tastyigniter/ti-ext-frontend",
+	"type": "tastyigniter-package",
+	"description": "Manage basic components like Slider, Featured Menu Items, Banners and Newsletter",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Sam Poyigi",
+			"email": "sam@sampoyigi.com"
+		}
+	],
+	"require-dev": {
+		"laravel/pint": "^1.2",
+		"nunomaduro/larastan": "^2.4.0",
+		"orchestra/testbench": "^8.5",
+		"pestphp/pest-plugin-laravel": "^2.0",
+		"tastyigniter/core": "dev-master"
+	},
+	"autoload": {
+		"psr-4": {
+			"Igniter\\Frontend\\": "src/"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Igniter\\Frontend\\Tests\\": "tests/"
+		}
+	},
+	"extra": {
+		"tastyigniter-extension": {
+			"code": "igniter.frontend",
+			"name": "FrontEnd",
+			"icon": {
+				"image": "icon.svg",
+				"color": "#664500",
+				"backgroundColor": "#FECC4D"
+			},
+			"homepage": "https://tastyigniter.com/marketplace/item/igniter-frontend"
+		}
+	},
+	"scripts": {
+		"test": "vendor/bin/pest",
+		"test-coverage": "vendor/bin/pest --coverage",
+		"format": "vendor/bin/pint",
+		"static": "vendor/bin/phpstan analyse --ansi --memory-limit 1056M"
+	},
+	"config": {
+		"allow-plugins": {
+			"pestphp/pest-plugin": true,
+			"php-http/discovery": true,
+			"composer/installers": true
+		},
+		"sort-packages": true
+	},
+	"minimum-stability": "dev",
+	"require": {
+		"tastyigniter/ti-ext-cart": "v4.x-dev as 4.0",
+		"drewm/mailchimp-api": "^2.4"
+	}
 }
