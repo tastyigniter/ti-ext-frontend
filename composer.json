@@ -9,6 +9,10 @@
 			"email": "sam@sampoyigi.com"
 		}
 	],
+	"require": {
+		"tastyigniter/ti-ext-cart": "v4.x-dev as 4.0",
+		"drewm/mailchimp-api": "^2.4"
+	},
 	"require-dev": {
 		"laravel/pint": "^1.2",
 		"nunomaduro/larastan": "^2.4.0",
@@ -52,9 +56,5 @@
 		},
 		"sort-packages": true
 	},
-	"minimum-stability": "dev",
-	"require": {
-		"tastyigniter/ti-ext-cart": "v4.x-dev as 4.0",
-		"drewm/mailchimp-api": "^2.4"
-	}
+	"minimum-stability": "dev"
 }
