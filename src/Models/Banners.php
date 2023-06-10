@@ -3,7 +3,8 @@
 namespace Igniter\Frontend\Models;
 
 use Igniter\Flame\Database\Model;
-use Igniter\Main\Models\Image_tool_model;
+use Igniter\Main\Helpers\ImageHelper;
+use Igniter\System\Models\Concerns\Switchable;
 
 /**
  * Banners Model Class
@@ -97,7 +98,7 @@ class Banners extends Model
         return [
             'name' => basename($file_path),
             'path' => $file_path,
-            'url' => Image_tool_model::resize($file_path, $width, $height),
+            'url' => ImageHelper::resize($file_path, $width, $height),
         ];
     }
 }

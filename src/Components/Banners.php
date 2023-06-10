@@ -3,7 +3,7 @@
 namespace Igniter\Frontend\Components;
 
 use Igniter\Frontend\Models\Banners as BannerModel;
-use Igniter\Main\Models\Image_tool_model;
+use Igniter\Main\Helpers\ImageHelper;
 
 class Banners extends \Igniter\System\Classes\BaseComponent
 {
@@ -84,7 +84,7 @@ class Banners extends \Igniter\System\Classes\BaseComponent
                 'name' => basename($path),
                 'height' => $imageHeight,
                 'width' => $imageWidth,
-                'url' => Image_tool_model::resize($path, [
+                'url' => ImageHelper::resize($path, [
                     'width' => $imageWidth,
                     'height' => $imageHeight,
                 ]),
