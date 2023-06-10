@@ -31,6 +31,6 @@ class Menu extends \Igniter\Cart\Models\Menu
             $query->orderBy($sortField, $sortDirection);
         }
 
-        return $query->isEnabled()->take($pageLimit)->get();
+        return $query->whereIsEnabled()->take($pageLimit)->get();
     }
 }

@@ -10,6 +10,8 @@ use Igniter\Main\Models\Image_tool_model;
  */
 class Banners extends Model
 {
+    use Switchable;
+
     /**
      * @var string The database table name
      */
@@ -41,15 +43,6 @@ class Banners extends Model
     public function getTypeLabelAttribute()
     {
         return ucwords($this->type);
-    }
-
-    //
-    // Scopes
-    //
-
-    public function scopeIsEnabled($query)
-    {
-        return $query->where('status', 1);
     }
 
     //
