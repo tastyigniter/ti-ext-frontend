@@ -16,7 +16,7 @@ class Menu extends \Igniter\Cart\Models\Menu
             $menuIds = [$menuIds];
         }
 
-        $query = self::with('locations')->whereIn('menu_id', $menuIds);
+        $query = self::whereIn('menu_id', $menuIds);
 
         if (!is_array($sort)) {
             $sort = [$sort];
@@ -31,6 +31,6 @@ class Menu extends \Igniter\Cart\Models\Menu
             $query->orderBy($sortField, $sortDirection);
         }
 
-        return $query->take($pageLimit)->get();
+        return $query->whereIsEnabled()->take($pageLimit)->get();
     }
 }

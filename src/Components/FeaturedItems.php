@@ -61,7 +61,7 @@ class FeaturedItems extends \Igniter\System\Classes\BaseComponent
 
     public static function getItemsOptions()
     {
-        return FeaturedItemsModel::isEnabled()->dropdown('menu_name');
+        return FeaturedItemsModel::whereIsEnabled()->dropdown('menu_name');
     }
 
     public function onRun()

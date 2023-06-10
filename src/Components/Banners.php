@@ -36,7 +36,7 @@ class Banners extends \Igniter\System\Classes\BaseComponent
 
     public static function getBannerIdOptions()
     {
-        return BannerModel::isEnabled()->dropdown('name');
+        return BannerModel::whereIsEnabled()->dropdown('name');
     }
 
     public function onRender()
