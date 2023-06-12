@@ -1,7 +1,7 @@
 parameters:
 	ignoreErrors:
 		-
-			message: "#^Access to an undefined property Illuminate\\\\Database\\\\Eloquent\\\\Model\\:\\:\\$images\\.$#"
+			message: "#^Call to an undefined static method Igniter\\\\Frontend\\\\Models\\\\Slider\\:\\:create\\(\\)\\.$#"
 			count: 1
 			path: database/migrations/2019_11_02_000300_create_sliders_table.php
 
@@ -36,12 +36,17 @@ parameters:
 			path: src/Components/Banners.php
 
 		-
-			message: "#^Call to an undefined static method Igniter\\\\Frontend\\\\Models\\\\Banners\\:\\:isEnabled\\(\\)\\.$#"
-			count: 2
+			message: "#^Call to an undefined static method Igniter\\\\Frontend\\\\Models\\\\Banners\\:\\:whereIsEnabled\\(\\)\\.$#"
+			count: 1
 			path: src/Components/Banners.php
 
 		-
-			message: "#^Call to static method resize\\(\\) on an unknown class Igniter\\\\Main\\\\Models\\\\Image_tool_model\\.$#"
+			message: "#^Cannot call method where\\(\\) on bool\\.$#"
+			count: 1
+			path: src/Components/Banners.php
+
+		-
+			message: "#^Static call to instance method Igniter\\\\Frontend\\\\Models\\\\Banners\\:\\:isEnabled\\(\\)\\.$#"
 			count: 1
 			path: src/Components/Banners.php
 
@@ -66,7 +71,7 @@ parameters:
 			path: src/Components/Contact.php
 
 		-
-			message: "#^Call to an undefined static method Igniter\\\\Frontend\\\\Models\\\\Menu\\:\\:isEnabled\\(\\)\\.$#"
+			message: "#^Call to an undefined static method Igniter\\\\Frontend\\\\Models\\\\Menu\\:\\:whereIsEnabled\\(\\)\\.$#"
 			count: 1
 			path: src/Components/FeaturedItems.php
 
@@ -127,11 +132,6 @@ parameters:
 
 		-
 			message: "#^Call to an undefined method Igniter\\\\Frontend\\\\Models\\\\Banners\\:\\:dropdown\\(\\)\\.$#"
-			count: 1
-			path: src/Models/Banners.php
-
-		-
-			message: "#^Call to static method resize\\(\\) on an unknown class Igniter\\\\Main\\\\Models\\\\Image_tool_model\\.$#"
 			count: 1
 			path: src/Models/Banners.php
 
