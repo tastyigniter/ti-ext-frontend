@@ -50,7 +50,7 @@ class Banners extends \Igniter\System\Classes\BaseComponent
             return $this->banner;
         }
 
-        $model = BannerModel::isEnabled()
+        $model = BannerModel::query()->isEnabled()
             ->where('banner_id', $this->property('banner_id'))->first();
 
         if (!$model) {
