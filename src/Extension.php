@@ -80,14 +80,14 @@ class Extension extends \Igniter\System\Classes\BaseExtension
         return [
             'Igniter.FrontEnd.ManageSettings' => [
                 'description' => 'Configure google recaptcha and mailchimp settings',
-                'group' => 'module',
+                'group' => 'admin',
             ],
             'Igniter.FrontEnd.ManageBanners' => [
                 'description' => 'Create, modify and delete front-end banners',
-                'group' => 'module',
+                'group' => 'admin',
             ],
             'Igniter.FrontEnd.ManageSlideshow' => [
-                'group' => 'module',
+                'group' => 'admin',
                 'description' => 'Create, modify and delete front-end sliders',
             ],
         ];
