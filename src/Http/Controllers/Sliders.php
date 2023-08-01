@@ -38,7 +38,7 @@ class Sliders extends \Igniter\Admin\Classes\AdminController
         ],
         'preview' => [
             'title' => 'lang:admin::lang.form.preview_title',
-            'redirect' => 'igniter/frontend/sliders',
+            'back' => 'igniter/frontend/sliders',
         ],
         'delete' => [
             'redirect' => 'igniter/frontend/sliders',
