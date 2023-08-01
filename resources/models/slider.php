@@ -48,11 +48,6 @@ return [
     'form' => [
         'toolbar' => [
             'buttons' => [
-                'back' => [
-                    'label' => 'lang:admin::lang.button_icon_back',
-                    'class' => 'btn btn-outline-secondary',
-                    'href' => 'igniter/frontend/sliders',
-                ],
                 'save' => [
                     'label' => 'lang:admin::lang.button_save',
                     'context' => ['create', 'edit'],

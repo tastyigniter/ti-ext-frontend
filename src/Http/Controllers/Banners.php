@@ -38,7 +38,7 @@ class Banners extends \Igniter\Admin\Classes\AdminController
         ],
         'preview' => [
             'title' => 'lang:admin::lang.form.preview_title',
-            'redirect' => 'igniter/frontend/banners',
+            'back' => 'igniter/frontend/banners',
         ],
         'delete' => [
             'redirect' => 'igniter/frontend/banners',
