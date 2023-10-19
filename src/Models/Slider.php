@@ -11,8 +11,8 @@ use Igniter\Flame\Database\Traits\Validation;
  */
 class Slider extends Model
 {
-    use Validation;
     use HasMedia;
+    use Validation;
 
     /**
      * @var string The database table used by the model.
