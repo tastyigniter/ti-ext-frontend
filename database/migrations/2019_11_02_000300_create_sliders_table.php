@@ -7,8 +7,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     public function up()
     {
         Schema::create('igniter_frontend_sliders', function (Blueprint $table) {
@@ -64,7 +63,7 @@ return new class extends Migration
                 'code' => 'home-slider',
                 'data' => [
                     'images' => [
-                        dirname(__DIR__, 2).'/assets/images/slide.png',
+                        dirname(__DIR__, 2).'/resources/images/slide.png',
                     ],
                 ],
             ];
@@ -81,7 +80,7 @@ return new class extends Migration
             }
 
             if (!file_exists($path)) {
-                $path = dirname(__DIR__, 2).'/assets/images/slide.png';
+                $path = dirname(__DIR__, 2).'/resources/images/slide.png';
             }
 
             $media = $model->newMediaInstance();
