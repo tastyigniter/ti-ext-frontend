@@ -12,8 +12,8 @@ use Illuminate\Support\Facades\Redirect;
 
 class Contact extends BaseComponent
 {
-    use ValidatesForm;
     use UsesPage;
+    use ValidatesForm;
 
     public $location;
 
