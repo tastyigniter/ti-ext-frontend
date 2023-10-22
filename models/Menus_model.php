@@ -16,7 +16,7 @@ class Menus_model extends \Igniter\Cart\Models\Menus_model
             $menuIds = [$menuIds];
         }
 
-        $query = self::whereIn('menu_id', $menuIds);
+        $query = self::with('locations')->whereIn('menu_id', $menuIds);
 
         if (!is_array($sort)) {
             $sort = [$sort];
