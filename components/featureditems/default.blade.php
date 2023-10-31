@@ -8,7 +8,7 @@
                     <div class="col-sm-{{ round(12 / $featuredPerRow) }} mb-3 mb-sm-0">
                         <a
                             class="text-decoration-none text-reset"
-                            href="{{page_url('local/menus', ['location' => $featuredItem->locations->first()->permalink_slug])}}?menuId={{ $featuredItem->getBuyableIdentifier() }}"
+                            href="{{page_url('local/menus', ['location' => optional($featuredItem->locations->first())->permalink_slug])}}?menuId={{ $featuredItem->getBuyableIdentifier() }}"
                         >
                             <div class="card h-100">
                                 @if ($featuredItem->hasMedia())
