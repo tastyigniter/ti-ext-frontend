@@ -4,8 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
-{
+return new class extends Migration {
     public function up()
     {
         Schema::disableForeignKeyConstraints();
@@ -14,13 +13,15 @@ return new class extends Migration
             return;
         }
 
-        Schema::table('igniter_frontend_banners', function (Blueprint $table) {
-            $table->foreignId('language_id')->nullable()->change();
-            $table->foreign('language_id')
-                ->references('language_id')
-                ->on('languages')
-                ->nullOnDelete()
-                ->cascadeOnUpdate();
+        rescue(function () {
+            Schema::table('igniter_frontend_banners', function (Blueprint $table) {
+                $table->foreignId('language_id')->nullable()->change();
+                $table->foreign('language_id')
+                    ->references('language_id')
+                    ->on('languages')
+                    ->nullOnDelete()
+                    ->cascadeOnUpdate();
+            });
         });
 
         Schema::enableForeignKeyConstraints();
