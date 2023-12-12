@@ -36,17 +36,12 @@ parameters:
 			path: src/Components/Banners.php
 
 		-
+			message: "#^Call to an undefined method Illuminate\\\\Database\\\\Eloquent\\\\Builder\\:\\:isEnabled\\(\\)\\.$#"
+			count: 1
+			path: src/Components/Banners.php
+
+		-
 			message: "#^Call to an undefined static method Igniter\\\\Frontend\\\\Models\\\\Banners\\:\\:whereIsEnabled\\(\\)\\.$#"
-			count: 1
-			path: src/Components/Banners.php
-
-		-
-			message: "#^Cannot call method where\\(\\) on bool\\.$#"
-			count: 1
-			path: src/Components/Banners.php
-
-		-
-			message: "#^Static call to instance method Igniter\\\\Frontend\\\\Models\\\\Banners\\:\\:isEnabled\\(\\)\\.$#"
 			count: 1
 			path: src/Components/Banners.php
 
