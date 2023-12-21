@@ -1,4 +1,4 @@
-<div class="alert alert-info" role="alert">
+<div class="bg-light p-3 rounded border shadow-sm" role="alert">
     <p>To use reCAPTCHA, you need to <a href="http://www.google.com/recaptcha/admin" target="_blank">sign up for an API
             key pair</a> for your site. The key pair consists of a site key and secret. The site key is used to <a
             href="https://developers.google.com/recaptcha/docs/display" target="_blank">display the widget</a> on your

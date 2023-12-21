@@ -16,7 +16,7 @@ return [
         'fields' => [
             'setup' => [
                 'type' => 'partial',
-                'path' => '$/igniter/frontend/views/captcha/setup',
+                'path' => 'igniter.frontend::captcha.setup',
             ],
             'api_site_key' => [
                 'label' => 'lang:igniter.frontend::default.captcha.label_api_site_key',
