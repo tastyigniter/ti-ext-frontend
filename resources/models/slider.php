@@ -80,6 +80,7 @@ return [
                 'type' => 'mediafinder',
                 'useAttachment' => true,
                 'isMulti' => true,
+                'context' => ['edit'],
             ],
         ],
     ],
