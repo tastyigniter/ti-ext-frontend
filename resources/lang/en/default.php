@@ -6,8 +6,6 @@ return [
 
     'banners' => [
         'text_tab_general' => 'General',
-        'component_title' => 'Banner Component',
-        'component_desc' => 'Displays banners',
         'text_edit_banner' => 'Edit Banner',
         'text_title' => 'Banners',
         'text_form_name' => 'Banner',
@@ -45,8 +43,6 @@ return [
     ],
 
     'contact' => [
-        'component_title' => 'Contact Form Component',
-        'component_desc' => 'Displays Contact form',
         'text_heading' => 'Contact',
         'text_summary' => 'Feel free to send a message',
         'text_find_us' => 'Find Us On Map',
@@ -70,8 +66,6 @@ return [
     'slider' => [
         'text_title' => 'Sliders',
         'text_tab_general' => 'General',
-        'component_title' => 'Slider Component',
-        'component_desc' => 'Displays images slider on homepage',
         'text_form_name' => 'Slider',
         'text_empty' => 'There are no sliders available.',
 
@@ -92,8 +86,6 @@ return [
 
     'newsletter' => [
         'text_tab_general' => 'General',
-        'component_title' => 'Newsletter Component',
-        'component_desc' => 'Displays the subscribe to newsletter form',
 
         'text_subscribe' => 'Subscribe to our newsletter',
 
@@ -106,8 +98,6 @@ return [
 
     'featured' => [
         'text_tab_general' => 'General',
-        'component_title' => 'Featured Menu Component',
-        'component_desc' => 'Displays list of featured menus on the store front',
         'text_subscribe' => 'Subscribe to our newsletter',
         'text_featured_menus' => 'Featured Menu',
 
@@ -127,9 +117,6 @@ return [
     ],
 
     'captcha' => [
-        'component_title' => 'Captcha Component',
-        'component_desc' => 'Displays the reCATPCHA widget.',
-
         'label_api_site_key' => 'Site Key',
         'label_api_secret_key' => 'Secret Key',
         'label_version' => 'Version',
