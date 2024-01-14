@@ -6,11 +6,11 @@ use Igniter\Flame\Database\Model;
 
 class MailchimpSettings extends Model
 {
-    public $implement = [\Igniter\System\Actions\SettingsModel::class];
+    public array $implement = [\Igniter\System\Actions\SettingsModel::class];
 
-    public $settingsCode = 'igniter_frontend_mailchimpsettings';
+    public string $settingsCode = 'igniter_frontend_mailchimpsettings';
 
-    public $settingsFieldsConfig = 'mailchimpsettings';
+    public string $settingsFieldsConfig = 'mailchimpsettings';
 
     public static function isConfigured()
     {

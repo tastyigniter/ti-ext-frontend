@@ -6,11 +6,11 @@ use Igniter\Flame\Database\Model;
 
 class CaptchaSettings extends Model
 {
-    public $implement = [\Igniter\System\Actions\SettingsModel::class];
+    public array $implement = [\Igniter\System\Actions\SettingsModel::class];
 
     // A unique code
-    public $settingsCode = 'igniter_frontend_captchasettings';
+    public string $settingsCode = 'igniter_frontend_captchasettings';
 
     // Reference to field configuration
-    public $settingsFieldsConfig = 'captchasettings';
+    public string $settingsFieldsConfig = 'captchasettings';
 }
