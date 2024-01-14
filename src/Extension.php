@@ -22,7 +22,7 @@ class Extension extends \Igniter\System\Classes\BaseExtension
         });
     }
 
-    public function registerNavigation()
+    public function registerNavigation(): array
     {
         return [
             'design' => [
@@ -39,7 +39,7 @@ class Extension extends \Igniter\System\Classes\BaseExtension
         ];
     }
 
-    public function registerPermissions()
+    public function registerPermissions(): array
     {
         return [
             'Igniter.FrontEnd.ManageSettings' => [
@@ -57,7 +57,7 @@ class Extension extends \Igniter\System\Classes\BaseExtension
         ];
     }
 
-    public function registerSettings()
+    public function registerSettings(): array
     {
         return [
             'captchasettings' => [
@@ -77,7 +77,7 @@ class Extension extends \Igniter\System\Classes\BaseExtension
         ];
     }
 
-    public function registerMailTemplates()
+    public function registerMailTemplates(): array
     {
         return [
             'igniter.frontend::mail.contact' => 'Contact form email to admin',

@@ -6,12 +6,12 @@ use Igniter\Admin\Facades\AdminMenu;
 
 class Banners extends \Igniter\Admin\Classes\AdminController
 {
-    public $implement = [
+    public array $implement = [
         \Igniter\Admin\Http\Actions\ListController::class,
         \Igniter\Admin\Http\Actions\FormController::class,
     ];
 
-    public $listConfig = [
+    public array $listConfig = [
         'list' => [
             'model' => \Igniter\Frontend\Models\Banners::class,
             'title' => 'lang:igniter.frontend::default.banners.text_title',
@@ -21,7 +21,7 @@ class Banners extends \Igniter\Admin\Classes\AdminController
         ],
     ];
 
-    public $formConfig = [
+    public array $formConfig = [
         'name' => 'lang:igniter.frontend::default.banners.text_form_name',
         'model' => \Igniter\Frontend\Models\Banners::class,
         'create' => [
@@ -46,7 +46,7 @@ class Banners extends \Igniter\Admin\Classes\AdminController
         'configFile' => 'banners',
     ];
 
-    protected $requiredPermissions = 'Igniter.FrontEnd.ManageBanners';
+    protected null|string|array $requiredPermissions = 'Igniter.FrontEnd.ManageBanners';
 
     public function __construct()
     {

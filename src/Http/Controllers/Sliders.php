@@ -6,12 +6,12 @@ use Igniter\Admin\Facades\AdminMenu;
 
 class Sliders extends \Igniter\Admin\Classes\AdminController
 {
-    public $implement = [
+    public array $implement = [
         \Igniter\Admin\Http\Actions\ListController::class,
         \Igniter\Admin\Http\Actions\FormController::class,
     ];
 
-    public $listConfig = [
+    public array $listConfig = [
         'list' => [
             'model' => \Igniter\Frontend\Models\Slider::class,
             'title' => 'lang:igniter.frontend::default.slider.text_title',
@@ -21,7 +21,7 @@ class Sliders extends \Igniter\Admin\Classes\AdminController
         ],
     ];
 
-    public $formConfig = [
+    public array $formConfig = [
         'name' => 'lang:igniter.frontend::default.slider.text_form_name',
         'model' => \Igniter\Frontend\Models\Slider::class,
         'create' => [
@@ -46,7 +46,7 @@ class Sliders extends \Igniter\Admin\Classes\AdminController
         'configFile' => 'slider',
     ];
 
-    protected $requiredPermissions = 'Igniter.FrontEnd.ManageSlideshow';
+    protected null|string|array $requiredPermissions = 'Igniter.FrontEnd.ManageSlideshow';
 
     public function __construct()
     {
