@@ -61,7 +61,7 @@ class Banners extends \Igniter\Admin\Classes\AdminController
         $namedRules = [
             ['name', 'lang:admin::lang.label_name', 'required|min:2|max:255'],
             ['code', 'lang:admin::lang.label_code', ['required', 'alpha_dash', 'min:2', 'max:255',
-                Rule::unique($model->getTable(), 'code')->ignore($model->getKey(), 'banner_id')
+                Rule::unique($model->getTable(), 'code')->ignore($model->getKey(), 'banner_id'),
             ]],
             ['type', 'lang:igniter.frontend::default.banners.label_type', 'required|alpha|max:8'],
             ['click_url', 'lang:igniter.frontend::default.banners.label_click_url', 'required|url|min:2|max:255'],
