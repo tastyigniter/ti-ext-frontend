@@ -3,6 +3,7 @@
 namespace Igniter\Frontend\Http\Controllers;
 
 use Igniter\Admin\Facades\AdminMenu;
+use Illuminate\Validation\Rule;
 
 class Banners extends \Igniter\Admin\Classes\AdminController
 {
@@ -59,8 +60,11 @@ class Banners extends \Igniter\Admin\Classes\AdminController
     {
         $namedRules = [
             ['name', 'lang:admin::lang.label_name', 'required|min:2|max:255'],
+            ['code', 'lang:admin::lang.label_code', ['required', 'alpha_dash', 'min:2', 'max:255',
+                Rule::unique($model->getTable(), 'code')->ignore($model->getKey(), 'banner_id')
+            ]],
             ['type', 'lang:igniter.frontend::default.banners.label_type', 'required|alpha|max:8'],
-            ['click_url', 'lang:igniter.frontend::default.banners.label_click_url', 'required|min:2|max:255'],
+            ['click_url', 'lang:igniter.frontend::default.banners.label_click_url', 'required|url|min:2|max:255'],
             ['custom_code', 'lang:igniter.frontend::default.banners.label_custom_code', 'required_if:type,custom'],
             ['alt_text', 'lang:igniter.frontend::default.banners.label_alt_text', 'required_if:type,image|min:2|max:255'],
             ['image_code', 'lang:igniter.frontend::default.banners.label_image', 'required_if:type,image'],
@@ -68,6 +72,6 @@ class Banners extends \Igniter\Admin\Classes\AdminController
             ['status', 'lang:admin::lang.label_status', 'required|integer'],
         ];
 
-        return $this->validatePasses(post($form->arrayName), $namedRules);
+        return $this->validate(post($form->arrayName), $namedRules);
     }
 }

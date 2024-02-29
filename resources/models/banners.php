@@ -70,6 +70,11 @@ $config['list']['columns'] = [
         'type' => 'text',
         'searchable' => true,
     ],
+    'code' => [
+        'label' => 'lang:admin::lang.label_code',
+        'type' => 'text',
+        'searchable' => true,
+    ],
     'type_label' => [
         'label' => 'lang:admin::lang.label_type',
         'type' => 'text',
@@ -111,10 +116,32 @@ $config['form']['fields'] = [
     'name' => [
         'label' => 'lang:admin::lang.label_name',
         'type' => 'text',
+        'span' => 'left',
+    ],
+    'code' => [
+        'label' => 'lang:admin::lang.label_code',
+        'type' => 'text',
+        'span' => 'right',
+        'cssClass' => 'flex-width',
+    ],
+    'status' => [
+        'label' => 'lang:admin::lang.label_status',
+        'type' => 'switch',
+        'span' => 'right',
+        'cssClass' => 'flex-width',
+        'default' => true,
+    ],
+    'language_id' => [
+        'label' => 'lang:igniter.frontend::default.banners.label_language',
+        'type' => 'relation',
+        'span' => 'left',
+        'relationFrom' => 'language',
+        'placeholder' => 'lang:admin::lang.text_please_select',
     ],
     'type' => [
         'label' => 'lang:igniter.frontend::default.banners.label_type',
         'type' => 'radiotoggle',
+        'span' => 'right',
         'default' => 'image',
         'options' => [
             'image' => 'lang:igniter.frontend::default.banners.text_image',
@@ -135,7 +162,7 @@ $config['form']['fields'] = [
     ],
     'custom_code' => [
         'label' => 'lang:igniter.frontend::default.banners.label_custom_code',
-        'type' => 'textarea',
+        'type' => 'codeeditor',
         'trigger' => [
             'action' => 'show',
             'field' => 'type',
@@ -145,22 +172,21 @@ $config['form']['fields'] = [
     'alt_text' => [
         'label' => 'lang:igniter.frontend::default.banners.label_alt_text',
         'type' => 'text',
+        'trigger' => [
+            'action' => 'hide',
+            'field' => 'type',
+            'condition' => 'value[custom]',
+        ],
     ],
     'click_url' => [
         'label' => 'lang:igniter.frontend::default.banners.label_click_url',
-        'type' => 'text',
+        'type' => 'url',
         'comment' => 'lang:igniter.frontend::default.banners.help_click_url',
-    ],
-    'language_id' => [
-        'label' => 'lang:igniter.frontend::default.banners.label_language',
-        'type' => 'relation',
-        'relationFrom' => 'language',
-        'placeholder' => 'lang:admin::lang.text_please_select',
-    ],
-    'status' => [
-        'label' => 'lang:admin::lang.label_status',
-        'type' => 'switch',
-        'default' => true,
+        'trigger' => [
+            'action' => 'hide',
+            'field' => 'type',
+            'condition' => 'value[custom]',
+        ],
     ],
 ];
 
