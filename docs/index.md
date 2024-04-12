@@ -38,12 +38,12 @@ language is optional. Please follow the instructions on the settings page to get
 
 | Name     | Page variable                | Description                                      |
 | -------- | ---------------------------- | ------------------------------------------------ |
-| Banners  | `@componentPartial('banners')` | Displays banners |
-| Contact | `@componentPartial('contact')` | Displays Contact form              |
-| FeaturedItems | `@componentPartial('featuredItems')` | Displays featured menu items               |
-| Newsletter | `@componentPartial('newsletter')` | Displays newsletter subscribe form               |
-| Slider | `@componentPartial('slider')` | Displays carousel slider              |
-| Captcha | `@componentPartial('captcha')` | Displays Google reCAPTCHA             |
+| Banners  | `@themeComponent('banners')` | Displays banners |
+| Contact | `@themeComponent('contact')` | Displays Contact form              |
+| FeaturedItems | `@themeComponent('featuredItems')` | Displays featured menu items               |
+| Newsletter | `@themeComponent('newsletter')` | Displays newsletter subscribe form               |
+| Slider | `@themeComponent('slider')` | Displays carousel slider              |
+| Captcha | `@themeComponent('captcha')` | Displays Google reCAPTCHA             |
 
 ### Banners Component
 
@@ -70,7 +70,7 @@ language is optional. Please follow the instructions on the settings page to get
     height: 360
 ---
 ...
-@componentPartial('banners')
+@themeComponent('banners')
 ...
 ```
 
@@ -94,9 +94,9 @@ language is optional. Please follow the instructions on the settings page to get
     height: 360
 ---
 ...
-@componentPartial('bannerOne')
-@componentPartial('bannerTwo')
-@componentPartial('bannerThree')
+@themeComponent('bannerOne')
+@themeComponent('bannerTwo')
+@themeComponent('bannerThree')
 ...
 ```
 
@@ -118,7 +118,7 @@ permalink: /contact
 '[contact]':
 ---
 ...
-@componentPartial('contact')
+@themeComponent('contact')
 ...
 ```
 
@@ -160,7 +160,7 @@ permalink: /
     itemHeight: 300
 ---
 ...
-@componentPartial('featuredItems')
+@themeComponent('featuredItems')
 ...
 ```
 
@@ -173,7 +173,7 @@ permalink: /
 '[newsletter]': {  }
 ---
 ...
-@componentPartial('newsletter')
+@themeComponent('newsletter')
 ...
 ```
 
@@ -186,7 +186,7 @@ permalink: /
 '[slider]': {  }
 ---
 ...
-@componentPartial('slider')
+@themeComponent('slider')
 ...
 ```
 
@@ -203,7 +203,7 @@ on your pages. Of course, you can also use the captcha component on multiple pag
 ---
 <form>
 ...
-@componentPartial('captcha')
+@themeComponent('captcha')
 ...
 </form>
 ```
