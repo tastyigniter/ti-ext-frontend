@@ -21,6 +21,11 @@ parameters:
 			path: database/migrations/2022_06_30_010000_drop_foreign_key_constraints.php
 
 		-
+			message: "#^Call to an undefined static method Illuminate\\\\Support\\\\Facades\\\\Mail\\:\\:queueTemplate\\(\\)\\.$#"
+			count: 1
+			path: src/Actions/SendContactMail.php
+
+		-
 			message: "#^Call to an undefined static method Igniter\\\\Frontend\\\\Models\\\\CaptchaSettings\\:\\:instance\\(\\)\\.$#"
 			count: 1
 			path: src/Extension.php
