@@ -9,7 +9,7 @@ use Igniter\System\Models\Concerns\Switchable;
 /**
  * Banners Model Class
  */
-class Banners extends Model
+class Banner extends Model
 {
     use Switchable;
 

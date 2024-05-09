@@ -54,4 +54,16 @@ class Sliders extends \Igniter\Admin\Classes\AdminController
 
         AdminMenu::setContext('sliders', 'design');
     }
+
+    public function formValidate($model, $form)
+    {
+        $rules = [
+            ['name', 'admin::lang.label_name', 'required|string'],
+            ['code', 'igniter.frontend::default.slider.label_code', 'required|alpha_dash'],
+            ['images', 'igniter.frontend::default.slider.label_images', 'sometimes|required|array'],
+            ['images.*', 'igniter.frontend::default.slider.label_image', 'required|string'],
+        ];
+
+        return $this->validate(post($form->arrayName), $rules);
+    }
 }
