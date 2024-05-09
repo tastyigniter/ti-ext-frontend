@@ -14,17 +14,17 @@ class Banners extends \Igniter\Admin\Classes\AdminController
 
     public array $listConfig = [
         'list' => [
-            'model' => \Igniter\Frontend\Models\Banners::class,
+            'model' => \Igniter\Frontend\Models\Banner::class,
             'title' => 'lang:igniter.frontend::default.banners.text_title',
             'emptyMessage' => 'lang:igniter.frontend::default.banners.text_empty',
             'defaultSort' => ['banner_id', 'DESC'],
-            'configFile' => 'banners',
+            'configFile' => 'banner',
         ],
     ];
 
     public array $formConfig = [
         'name' => 'lang:igniter.frontend::default.banners.text_form_name',
-        'model' => \Igniter\Frontend\Models\Banners::class,
+        'model' => \Igniter\Frontend\Models\Banner::class,
         'create' => [
             'title' => 'lang:admin::lang.form.create_title',
             'redirect' => 'igniter/frontend/banners/edit/{banner_id}',
@@ -44,7 +44,7 @@ class Banners extends \Igniter\Admin\Classes\AdminController
         'delete' => [
             'redirect' => 'igniter/frontend/banners',
         ],
-        'configFile' => 'banners',
+        'configFile' => 'banner',
     ];
 
     protected null|string|array $requiredPermissions = 'Igniter.FrontEnd.ManageBanners';
@@ -63,9 +63,9 @@ class Banners extends \Igniter\Admin\Classes\AdminController
             ['code', 'lang:admin::lang.label_code', ['required', 'alpha_dash', 'min:2', 'max:255',
                 Rule::unique($model->getTable(), 'code')->ignore($model->getKey(), 'banner_id'),
             ]],
-            ['type', 'lang:igniter.frontend::default.banners.label_type', 'required|alpha|max:8'],
-            ['click_url', 'lang:igniter.frontend::default.banners.label_click_url', 'required|url|min:2|max:255'],
+            ['type', 'lang:igniter.frontend::default.banners.label_type', 'sometimes|required|alpha|max:8'],
             ['custom_code', 'lang:igniter.frontend::default.banners.label_custom_code', 'required_if:type,custom'],
+            ['click_url', 'lang:igniter.frontend::default.banners.label_click_url', 'required_if:type,image|url|min:2|max:255'],
             ['alt_text', 'lang:igniter.frontend::default.banners.label_alt_text', 'required_if:type,image|min:2|max:255'],
             ['image_code', 'lang:igniter.frontend::default.banners.label_image', 'required_if:type,image'],
             ['language_id', 'lang:igniter.frontend::default.banners.label_language', 'required|integer'],
