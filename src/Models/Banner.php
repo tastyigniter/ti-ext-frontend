@@ -74,16 +74,16 @@ class Banner extends Model
 
     public function getCarouselThumbs($options = [])
     {
-        $defaults = [];
+        $images = [];
 
         if (empty($this->image_code)) {
-            return $defaults;
+            return $images;
         }
 
         $image = unserialize($this->image_code);
 
         if (!is_array($image['paths'])) {
-            return $defaults;
+            return $images;
         }
 
         foreach ($image['paths'] as $path) {
