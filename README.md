@@ -166,6 +166,24 @@ $subscribe->subscribeToMailchimp($listId, $options);
 
 ### reCaptcha
 
+#### Displaying reCaptcha
+
+To display a reCaptcha on your front-end pages, you can use the `recaptcha` component in your theme:
+
+```blade
+@php
+    $captchaSettings = \Igniter\Frontend\Models\CaptchaSettings::instance();
+@endphp
+
+<div class="g-recaptcha" data-sitekey="{{ $captchaSettings->api_site_key }}"></div>
+<div class="text-danger">{{ $errors->first('g-recaptcha-response') }}</div>
+<script
+    type="text/javascript"
+    src="https://www.google.com/recaptcha/api.js?hl={{ $captchaSettings->lang }}"
+    async defer
+></script>
+```
+
 #### Validating reCaptcha
 
 You can validate a reCaptcha token using the `recaptcha` validation rule:
