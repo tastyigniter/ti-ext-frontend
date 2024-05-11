@@ -45,10 +45,10 @@ The Orange theme provides frontend components to display the banners, subscribe 
 
 #### Creating banners
 
-You can programmatically create a banner using the `Igniter\Frontend\Models\Banners` model:
+You can programmatically create a banner using the `Igniter\Frontend\Models\Banner` model:
 
 ```php
-use Igniter\Frontend\Models\Banners;
+use Igniter\Frontend\Models\Banner;
 
 $banner = Banners::create([
     'name' => 'Banner Name',
@@ -61,7 +61,7 @@ $banner = Banners::create([
 ]);
 ```
 
-The following attributes are available on the `Igniter\Frontend\Models\Banners` model:
+The following attributes are available on the `Igniter\Frontend\Models\Banner` model:
 
 - `name`: _(string)_ The name of the banner. **Required.**
 - `code`: _(string)_ A unique code for the banner. **Required.**
@@ -75,10 +75,10 @@ The following attributes are available on the `Igniter\Frontend\Models\Banners` 
 
 #### Displaying banners
 
-You can display banners on your front-end pages using the `Igniter\Frontend\Models\Banners` model to fetch the banner by code:
+You can display banners on your front-end pages using the `Igniter\Frontend\Models\Banner` model to fetch the banner by code:
     
 ```php
-use Igniter\Frontend\Models\Banners;
+use Igniter\Frontend\Models\Banner;
 
 $banner = Banners::isEnabled()->whereCode('unique-code')->first();
 ```
