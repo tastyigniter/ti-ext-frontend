@@ -69,3 +69,8 @@ parameters:
 			message: "#^Call to an undefined static method Igniter\\\\Frontend\\\\Models\\\\MailchimpSettings\\:\\:get\\(\\)\\.$#"
 			count: 1
 			path: src/Models/Subscriber.php
+
+		-
+			message: "#^Call to an undefined static method Igniter\\\\Frontend\\\\Models\\\\Subscriber\\:\\:firstOrCreate\\(\\)\\.$#"
+			count: 1
+			path: src/Models/Subscriber.php
