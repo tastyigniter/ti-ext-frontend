@@ -5,6 +5,7 @@ namespace Igniter\Frontend\Models;
 use DrewM\MailChimp\MailChimp;
 use Igniter\Flame\Database\Model;
 use Igniter\Flame\Exception\ApplicationException;
+use Illuminate\Support\Facades\Event;
 
 class Subscriber extends Model
 {
@@ -13,6 +14,21 @@ class Subscriber extends Model
     protected $primaryKey = 'id';
 
     protected $fillable = ['email'];
+
+    public static function subscribe(string $listId, string $email): static
+    {
+        $data = ['email' => $email];
+
+        $subscribe = self::firstOrCreate($data);
+
+        if (MailchimpSettings::isConfigured()) {
+            $subscribe->subscribeToMailchimp($listId);
+        }
+
+        Event::dispatch('igniter.frontend.subscribed', [$subscribe, $data]);
+
+        return $subscribe;
+    }
 
     public function subscribeToMailchimp(?string $listId = null, array $options = [])
     {
@@ -31,5 +47,7 @@ class Subscriber extends Model
         $errorMessage = array_get($response, 'detail', '');
 
         throw_if(strlen($errorMessage) && array_get($response, 'status') !== 200, new ApplicationException($errorMessage));
+
+        return $response;
     }
 }
