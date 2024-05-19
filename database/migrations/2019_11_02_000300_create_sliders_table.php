@@ -11,7 +11,7 @@ return new class extends Migration
 {
     public function up()
     {
-        Schema::create('igniter_frontend_sliders', function (Blueprint $table) {
+        Schema::create('igniter_frontend_sliders', function(Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('name');
@@ -45,7 +45,7 @@ return new class extends Migration
             return;
         }
 
-        optional($model->images)->each(function ($media) {
+        optional($model->images)->each(function($media) {
             $media->delete();
         });
 

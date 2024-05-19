@@ -17,7 +17,7 @@ class Extension extends \Igniter\System\Classes\BaseExtension
     {
         $this->registerReCaptcha();
 
-        $this->app->singleton(MailChimp::class, function () {
+        $this->app->singleton(MailChimp::class, function() {
             return new MailChimp(MailChimpSettings::get('api_key'));
         });
     }
@@ -86,7 +86,7 @@ class Extension extends \Igniter\System\Classes\BaseExtension
 
     protected function registerReCaptcha()
     {
-        $this->app->singleton('recaptcha', function ($app) {
+        $this->app->singleton('recaptcha', function($app) {
             $settings = Models\CaptchaSettings::instance();
 
             return new Classes\ReCaptcha(
@@ -101,7 +101,7 @@ class Extension extends \Igniter\System\Classes\BaseExtension
      */
     protected function addCaptchaValidationRule()
     {
-        Validator::extendImplicit('recaptcha', function ($attribute, $value, $parameters, $validator) {
+        Validator::extendImplicit('recaptcha', function($attribute, $value, $parameters, $validator) {
             return app('recaptcha')->verifyResponse($value);
         }, lang('igniter.frontend::default.captcha.error_recaptcha'));
     }
