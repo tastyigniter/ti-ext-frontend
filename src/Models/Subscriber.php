@@ -30,7 +30,7 @@ class Subscriber extends Model
         return $subscribe;
     }
 
-    public function subscribeToMailchimp(string $listId = null, array $options = [])
+    public function subscribeToMailchimp(?string $listId = null, array $options = [])
     {
         throw_unless(MailchimpSettings::isConfigured(), new ApplicationException(
             'MailChimp List ID is missing. Enter your mailchimp api key and list ID from the admin settings page'
