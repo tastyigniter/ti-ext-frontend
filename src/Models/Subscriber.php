@@ -15,13 +15,13 @@ class Subscriber extends Model
 
     protected $fillable = ['email'];
 
-    public static function subscribe(string $listId, string $email): static
+    public static function subscribe(string $email, ?string $listId = null): static
     {
         $data = ['email' => $email];
 
         $subscribe = self::firstOrCreate($data);
 
-        if (MailchimpSettings::isConfigured()) {
+        if ($listId && MailchimpSettings::isConfigured()) {
             $subscribe->subscribeToMailchimp($listId);
         }
 
@@ -30,7 +30,7 @@ class Subscriber extends Model
         return $subscribe;
     }
 
-    public function subscribeToMailchimp(?string $listId = null, array $options = [])
+    public function subscribeToMailchimp(string $listId = null, array $options = [])
     {
         throw_unless(MailchimpSettings::isConfigured(), new ApplicationException(
             'MailChimp List ID is missing. Enter your mailchimp api key and list ID from the admin settings page'
