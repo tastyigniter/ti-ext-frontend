@@ -10,7 +10,7 @@ return new class extends Migration
 {
     public function up()
     {
-        Schema::table('igniter_frontend_banners', function (Blueprint $table) {
+        Schema::table('igniter_frontend_banners', function(Blueprint $table) {
             $table->string('code')->nullable()->after('name');
         });
     }

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::disableForeignKeyConstraints();
 
-        Schema::table('igniter_frontend_banners', function (Blueprint $table) {
+        Schema::table('igniter_frontend_banners', function(Blueprint $table) {
             $table->dropForeignKeyIfExists('language_id');
             $table->dropIndexIfExists(DB::getTablePrefix().'igniter_frontend_banners_language_id_foreign');
         });

@@ -14,8 +14,8 @@ return new class extends Migration
             return;
         }
 
-        rescue(function () {
-            Schema::table('igniter_frontend_banners', function (Blueprint $table) {
+        rescue(function() {
+            Schema::table('igniter_frontend_banners', function(Blueprint $table) {
                 $table->foreignId('language_id')->nullable()->change();
                 $table->foreign('language_id')
                     ->references('language_id')
@@ -31,7 +31,7 @@ return new class extends Migration
     public function down()
     {
         try {
-            Schema::table('igniter_frontend_banners', function (Blueprint $table) {
+            Schema::table('igniter_frontend_banners', function(Blueprint $table) {
                 $table->dropForeignKeyIfExists('language_id');
             });
         } catch (\Exception $e) {
@@ -42,7 +42,7 @@ return new class extends Migration
     {
         $conn = Schema::getConnection()->getDoctrineSchemaManager();
 
-        $foreignKeys = array_map(function ($key) {
+        $foreignKeys = array_map(function($key) {
             return $key->getName();
         }, $conn->listTableForeignKeys('igniter_frontend_banners'));
 

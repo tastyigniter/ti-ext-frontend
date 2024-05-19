@@ -12,7 +12,7 @@ return new class extends Migration
             return;
         }
 
-        Schema::create('banners', function (Blueprint $table) {
+        Schema::create('banners', function(Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('banner_id');
             $table->string('name');

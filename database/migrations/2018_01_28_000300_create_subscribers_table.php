@@ -16,7 +16,7 @@ return new class extends Migration
             return;
         }
 
-        Schema::create('igniter_frontend_subscribers', function (Blueprint $table) {
+        Schema::create('igniter_frontend_subscribers', function(Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('name', 255)->nullable();
