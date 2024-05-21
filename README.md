@@ -28,16 +28,16 @@ php artisan igniter:up
 
 #### reCaptcha
 
-Navigate to the _System > Settings > reCaptcha Settings_ admin settings page to enter your `Site Key` and `Secret Key`. Selecting a
+Navigate to the _Manage > Settings > reCaptcha Settings_ admin settings page to enter your `Site Key` and `Secret Key`. Selecting a
 language is optional. Please follow the on-page instructions to get these keys.
 
 #### MailChimp
 
-Navigate to the _System > Settings > MailChimp Settings_ admin settings page to enter your `API Key` and `List ID`. Please follow the on-page instructions to get these keys.
+Navigate to the _Manage > Settings > MailChimp Settings_ admin settings page to enter your `API Key` and `List ID`. Please follow the on-page instructions to get these keys.
 
 ## Usage
 
-In the admin user interface you can manage banners and images for the slider. Manage banners on the _Design > Banners & Sliders_ page and slider on the _System > Settings > Slider Settings_ page. 
+In the admin user interface you can manage banners and images for the slider. Manage banners on the _Design > Banners & Sliders_ page and slider on the _Manage > Settings > Slider Settings_ page. 
 
 The Orange theme provides frontend components to display the banners, subscribe form, and contact form, and reCAPTCHA. You can use these components in your theme to display the respective content. Learn more about the available components in the [Orange theme documentation](https://tastyigniter.com/marketplace/item/tastyigniter-orange).
 
