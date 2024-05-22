@@ -52,15 +52,15 @@ return [
 
         'column_updated_at' => 'Updated',
 
-        'label_code' => 'Code',
+        'label_code' => 'The unique slider code to display.',
         'label_slider' => 'Slider code',
-        'label_effect' => 'Effects',
-        'label_interval' => 'Delay interval between slides',
+        'label_effect' => 'The effect to use when transitioning between slides.',
+        'label_interval' => 'The delay interval between slides in milliseconds.',
         'label_caption' => 'Caption',
         'label_images' => 'Images',
-        'label_hide_controls' => 'Hide Controls',
-        'label_hide_indicators' => 'Hide Indicators',
-        'label_hide_captions' => 'Hide Captions',
+        'label_hide_controls' => 'Hide the slider controls.',
+        'label_hide_indicators' => 'Hide the slider indicators.',
+        'label_hide_captions' => 'Hide the slider captions.',
     ],
 
     'newsletter' => [
@@ -77,7 +77,6 @@ return [
 
     'featured' => [
         'text_tab_general' => 'General',
-        'text_subscribe' => 'Subscribe to our newsletter',
         'text_featured_menus' => 'Featured Menu',
 
         'column_menu_name' => 'Menu Name',
