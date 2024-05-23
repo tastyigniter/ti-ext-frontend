@@ -37,7 +37,7 @@ Navigate to the _Manage > Settings > MailChimp Settings_ admin settings page to 
 
 ## Usage
 
-In the admin user interface you can manage banners and images for the slider. Manage banners on the _Design > Banners & Sliders_ page and slider on the _Manage > Settings > Slider Settings_ page. 
+In the admin user interface you can manage banners and images for the slider. Manage banners on the _Design > Banners & Sliders_ page and slider on the _Manage > Settings > Slider Settings_ page.
 
 The Orange theme provides frontend components to display the banners, subscribe form, and contact form, and reCAPTCHA. You can use these components in your theme to display the respective content. Learn more about the available components in the [Orange theme documentation](https://tastyigniter.com/marketplace/item/tastyigniter-orange).
 
@@ -76,7 +76,7 @@ The following attributes are available on the `Igniter\Frontend\Models\Banner` m
 #### Displaying banners
 
 You can display banners on your front-end pages using the `Igniter\Frontend\Models\Banner` model to fetch the banner by code:
-    
+
 ```php
 use Igniter\Frontend\Models\Banner;
 
@@ -129,7 +129,7 @@ The following attributes are available on the `Igniter\Frontend\Models\Slider` m
 #### Displaying sliders
 
 You can display sliders on your front-end pages using the `Igniter\Frontend\Models\Slider` model to fetch the slider by code:
-    
+
 ```php
 use Igniter\Frontend\Models\Slider;
 
