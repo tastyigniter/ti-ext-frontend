@@ -37,7 +37,7 @@ return [
                 'label' => 'admin::lang.label_name',
             ],
             'code' => [
-                'label' => 'igniter.frontend::default.slider.label_code',
+                'label' => 'igniter.frontend::default.slider.label_slider',
             ],
             'updated_at' => [
                 'label' => 'igniter.frontend::default.slider.column_updated_at',
@@ -71,7 +71,7 @@ return [
                 'span' => 'left',
             ],
             'code' => [
-                'label' => 'igniter.frontend::default.slider.label_code',
+                'label' => 'igniter.frontend::default.slider.label_slider',
                 'type' => 'text',
                 'span' => 'right',
             ],
