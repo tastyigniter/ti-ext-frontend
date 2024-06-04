@@ -82,4 +82,3 @@ it('deletes banner', function() {
     expect(Banner::find($banner->getKey()))->toBeNull();
 });
 
-

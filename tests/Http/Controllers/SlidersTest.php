@@ -41,7 +41,7 @@ it('creates slider', function() {
                 'code' => 'slider-code',
                 'images' => [
                     'path/to/image.jpg',
-                ]
+                ],
             ],
         ], [
             'X-Requested-With' => 'XMLHttpRequest',
@@ -61,7 +61,7 @@ it('updates slider', function() {
                 'code' => 'slider-code',
                 'images' => [
                     'path/to/image.jpg',
-                ]
+                ],
             ],
         ], [
             'X-Requested-With' => 'XMLHttpRequest',
