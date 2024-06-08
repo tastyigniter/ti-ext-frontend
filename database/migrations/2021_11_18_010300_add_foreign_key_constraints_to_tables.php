@@ -40,11 +40,9 @@ return new class extends Migration
 
     protected function hasLanguageIdForeignKey()
     {
-        $conn = Schema::getConnection()->getDoctrineSchemaManager();
-
         $foreignKeys = array_map(function($key) {
-            return $key->getName();
-        }, $conn->listTableForeignKeys('igniter_frontend_banners'));
+            return array_get($key, 'name');
+        }, Schema::getForeignKeys('igniter_frontend_banners'));
 
         $prefix = Schema::getConnection()->getTablePrefix();
 
