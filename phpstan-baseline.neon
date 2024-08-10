@@ -1,6 +1,11 @@
 parameters:
 	ignoreErrors:
 		-
+			message: "#^Call to an undefined method Illuminate\\\\Support\\\\Optional\\:\\:each\\(\\)\\.$#"
+			count: 1
+			path: database/migrations/2019_11_02_000300_create_sliders_table.php
+
+		-
 			message: "#^Call to an undefined static method Igniter\\\\Frontend\\\\Models\\\\Slider\\:\\:create\\(\\)\\.$#"
 			count: 1
 			path: database/migrations/2019_11_02_000300_create_sliders_table.php
