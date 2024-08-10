@@ -48,7 +48,7 @@ class ReCaptcha
      */
     public function getHttpClient()
     {
-        return $this->httpClient ?? new Client();
+        return $this->httpClient ?? new Client;
     }
 
     /**
