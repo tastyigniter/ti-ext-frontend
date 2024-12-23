@@ -1,0 +1,58 @@
+<?php
+
+namespace Igniter\Frontend\Tests\Models;
+
+use Igniter\Frontend\Models\MailchimpSettings;
+use Igniter\System\Actions\SettingsModel;
+
+it('returns true when api_key and list_id are configured', function() {
+    MailchimpSettings::set([
+        'api_key' => 'some-api-key',
+        'list_id' => 'some-list-id',
+    ]);
+
+    $result = MailchimpSettings::isConfigured();
+
+    expect($result)->toBeTrue();
+});
+
+it('returns false when api_key is not configured', function() {
+    MailchimpSettings::set([
+        'api_key' => '',
+        'list_id' => 'some-list-id',
+    ]);
+
+    $result = MailchimpSettings::isConfigured();
+
+    expect($result)->toBeFalse();
+});
+
+it('returns false when list_id is not configured', function() {
+    MailchimpSettings::set([
+        'api_key' => 'some-api-key',
+        'list_id' => '',
+    ]);
+
+    $result = MailchimpSettings::isConfigured();
+
+    expect($result)->toBeFalse();
+});
+
+it('returns false when both api_key and list_id are not configured', function() {
+    MailchimpSettings::set([
+        'api_key' => '',
+        'list_id' => '',
+    ]);
+
+    $result = MailchimpSettings::isConfigured();
+
+    expect($result)->toBeFalse();
+});
+
+it('configures captcha settings model correctly', function() {
+    $model = new MailchimpSettings;
+
+    expect($model->implement)->toContain(SettingsModel::class)
+        ->and($model->settingsCode)->toEqual('igniter_frontend_mailchimpsettings')
+        ->and($model->settingsFieldsConfig)->toEqual('mailchimpsettings');
+});
