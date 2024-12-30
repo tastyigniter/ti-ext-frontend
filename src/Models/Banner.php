@@ -23,7 +23,7 @@ class Banner extends Model
      */
     protected $primaryKey = 'banner_id';
 
-    protected $fillable = ['name', 'type', 'click_url', 'language_id', 'alt_text', 'image_code', 'custom_code', 'status'];
+    protected $fillable = ['name', 'code', 'type', 'click_url', 'language_id', 'alt_text', 'image_code', 'custom_code', 'status'];
 
     public $relation = [
         'belongsTo' => [

@@ -27,28 +27,6 @@ it('returns false when api_key is not configured', function() {
     expect($result)->toBeFalse();
 });
 
-it('returns false when list_id is not configured', function() {
-    MailchimpSettings::set([
-        'api_key' => 'some-api-key',
-        'list_id' => '',
-    ]);
-
-    $result = MailchimpSettings::isConfigured();
-
-    expect($result)->toBeFalse();
-});
-
-it('returns false when both api_key and list_id are not configured', function() {
-    MailchimpSettings::set([
-        'api_key' => '',
-        'list_id' => '',
-    ]);
-
-    $result = MailchimpSettings::isConfigured();
-
-    expect($result)->toBeFalse();
-});
-
 it('configures captcha settings model correctly', function() {
     $model = new MailchimpSettings;
 

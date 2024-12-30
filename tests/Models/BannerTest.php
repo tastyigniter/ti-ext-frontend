@@ -75,7 +75,7 @@ it('configures banner model correctly', function() {
         ->toContain(Switchable::class)
         ->and($banner->getTable())->toBe('igniter_frontend_banners')
         ->and($banner->getKeyName())->toBe('banner_id')
-        ->and($banner->getFillable())->toContain('name', 'type', 'click_url', 'language_id', 'alt_text', 'image_code', 'custom_code', 'status')
+        ->and($banner->getFillable())->toContain('name', 'code', 'type', 'click_url', 'language_id', 'alt_text', 'image_code', 'custom_code', 'status')
         ->and($banner->relation['belongsTo'])->toBe([
             'language' => \Igniter\System\Models\Language::class,
         ])
