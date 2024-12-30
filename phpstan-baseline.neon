@@ -57,7 +57,7 @@ parameters:
 
 		-
 			message: "#^Call to an undefined static method Igniter\\\\Frontend\\\\Models\\\\MailchimpSettings\\:\\:get\\(\\)\\.$#"
-			count: 2
+			count: 1
 			path: src/Models/MailchimpSettings.php
 
 		-
