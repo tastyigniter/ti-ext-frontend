@@ -7,6 +7,17 @@ use Igniter\Flame\Database\Model;
 use Igniter\Flame\Exception\ApplicationException;
 use Illuminate\Support\Facades\Event;
 
+/**
+ * Subscriber Model Class
+ *
+ * @property int $id
+ * @property string|null $name
+ * @property string $email
+ * @property int $statistics
+ * @property string|null $created_at
+ * @property string|null $updated_at
+ * @mixin \Igniter\Flame\Database\Model
+ */
 class Subscriber extends Model
 {
     protected $table = 'igniter_frontend_subscribers';

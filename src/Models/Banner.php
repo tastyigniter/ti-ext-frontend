@@ -8,6 +8,19 @@ use Igniter\System\Models\Concerns\Switchable;
 
 /**
  * Banners Model Class
+ *
+ * @property int $banner_id
+ * @property string $name
+ * @property string|null $code
+ * @property string $type
+ * @property string|null $click_url
+ * @property int|null $language_id
+ * @property string|null $alt_text
+ * @property mixed|null $image_code
+ * @property string|null $custom_code
+ * @property bool $status
+ * @property-read mixed $type_label
+ * @mixin \Igniter\Flame\Database\Model
  */
 class Banner extends Model
 {

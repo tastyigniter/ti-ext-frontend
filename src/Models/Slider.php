@@ -8,6 +8,16 @@ use Igniter\Flame\Database\Traits\Validation;
 
 /**
  * Slider Model
+ *
+ * @property int $id
+ * @property string $name
+ * @property string $code
+ * @property string|null $metadata
+ * @property \Illuminate\Support\Carbon|null $created_at
+ * @property \Illuminate\Support\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection<int, \Igniter\Flame\Database\Attach\Media> $media
+ * @property-read int|null $media_count
+ * @mixin \Igniter\Flame\Database\Model
  */
 class Slider extends Model
 {
