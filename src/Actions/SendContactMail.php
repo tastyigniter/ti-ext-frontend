@@ -2,7 +2,7 @@
 
 namespace Igniter\Frontend\Actions;
 
-use Igniter\System\Helpers\MailHelper;
+use Facades\Igniter\System\Helpers\MailHelper;
 
 class SendContactMail
 {
