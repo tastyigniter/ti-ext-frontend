@@ -1,22 +1,24 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Igniter\Frontend\Tests\Http\Controllers;
 
 use Igniter\Frontend\Models\Banner;
 
-it('loads banners page', function() {
+it('loads banners page', function(): void {
     actingAsSuperUser()
         ->get(route('igniter.frontend.banners'))
         ->assertOk();
 });
 
-it('loads create banner page', function() {
+it('loads create banner page', function(): void {
     actingAsSuperUser()
         ->get(route('igniter.frontend.banners', ['slug' => 'create']))
         ->assertOk();
 });
 
-it('loads edit banner page', function() {
+it('loads edit banner page', function(): void {
     $banner = Banner::create();
 
     actingAsSuperUser()
@@ -24,7 +26,7 @@ it('loads edit banner page', function() {
         ->assertOk();
 });
 
-it('loads banner preview page', function() {
+it('loads banner preview page', function(): void {
     $banner = Banner::create();
 
     actingAsSuperUser()
@@ -32,7 +34,7 @@ it('loads banner preview page', function() {
         ->assertOk();
 });
 
-it('creates banner', function() {
+it('creates banner', function(): void {
     actingAsSuperUser()
         ->post(route('igniter.frontend.banners', ['slug' => 'create']), [
             'Banner' => [
@@ -50,7 +52,7 @@ it('creates banner', function() {
     expect(Banner::where('name', 'Created Banner')->exists())->toBeTrue();
 });
 
-it('updates banner', function() {
+it('updates banner', function(): void {
     $banner = Banner::create();
 
     actingAsSuperUser()
@@ -70,7 +72,7 @@ it('updates banner', function() {
     expect(Banner::where('name', 'Updated Banner')->exists())->toBeTrue();
 });
 
-it('deletes banner', function() {
+it('deletes banner', function(): void {
     $banner = Banner::create();
 
     actingAsSuperUser()
@@ -81,4 +83,3 @@ it('deletes banner', function() {
 
     expect(Banner::find($banner->getKey()))->toBeNull();
 });
-

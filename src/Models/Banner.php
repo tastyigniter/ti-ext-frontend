@@ -1,10 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Igniter\Frontend\Models;
 
 use Igniter\Flame\Database\Model;
 use Igniter\Main\Helpers\ImageHelper;
 use Igniter\System\Models\Concerns\Switchable;
+use Igniter\System\Models\Language;
 
 /**
  * Banners Model Class
@@ -20,7 +23,7 @@ use Igniter\System\Models\Concerns\Switchable;
  * @property string|null $custom_code
  * @property bool $status
  * @property-read mixed $type_label
- * @mixin \Igniter\Flame\Database\Model
+ * @mixin Model
  */
 class Banner extends Model
 {
@@ -40,7 +43,7 @@ class Banner extends Model
 
     public $relation = [
         'belongsTo' => [
-            'language' => \Igniter\System\Models\Language::class,
+            'language' => Language::class,
         ],
     ];
 
@@ -54,7 +57,7 @@ class Banner extends Model
     // Accessors & Mutators
     //
 
-    public function getTypeLabelAttribute()
+    public function getTypeLabelAttribute(): string
     {
         return ucwords($this->type);
     }
@@ -68,7 +71,7 @@ class Banner extends Model
         return $this->dropdown('name');
     }
 
-    public function getImageThumb($options = [])
+    public function getImageThumb(array $options = []): array
     {
         $defaults = ['name' => 'no_photo.png', 'path' => 'data/no_photo.png', 'url' => $options['no_photo']];
 
@@ -82,7 +85,7 @@ class Banner extends Model
             return $defaults;
         }
 
-        return $this->getThumbArray($image['path'], 120, 120);
+        return $this->getThumbArray($image['path']);
     }
 
     public function getCarouselThumbs($options = [])
@@ -106,7 +109,7 @@ class Banner extends Model
         return $images;
     }
 
-    public function getThumbArray($file_path, $width = 120, $height = 120)
+    public function getThumbArray(string $file_path, int|array $width = 120, int $height = 120): array
     {
         return [
             'name' => basename($file_path),

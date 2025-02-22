@@ -1,24 +1,29 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Igniter\Frontend;
 
 use DrewM\MailChimp\MailChimp;
+use Igniter\Frontend\Classes\ReCaptcha;
+use Igniter\Frontend\Models\CaptchaSettings;
 use Igniter\Frontend\Models\MailchimpSettings;
+use Igniter\System\Classes\BaseExtension;
 use Illuminate\Support\Facades\Validator;
 
-class Extension extends \Igniter\System\Classes\BaseExtension
+class Extension extends BaseExtension
 {
-    public function boot()
+    public function boot(): void
     {
         $this->addCaptchaValidationRule();
     }
 
-    public function register()
+    public function register(): void
     {
         $this->registerReCaptcha();
 
-        $this->app->singleton(MailChimp::class, function() {
-            return new MailChimp(MailChimpSettings::get('api_key'));
+        $this->app->singleton(MailChimp::class, function(): MailChimp {
+            return new MailChimp(MailChimpSettings::getApiKey());
         });
     }
 
@@ -64,14 +69,14 @@ class Extension extends \Igniter\System\Classes\BaseExtension
                 'label' => 'reCaptcha Settings',
                 'description' => 'Manage google reCAPTCHA settings.',
                 'icon' => 'fa fa-gear',
-                'model' => \Igniter\Frontend\Models\CaptchaSettings::class,
+                'model' => CaptchaSettings::class,
                 'permissions' => ['Igniter.FrontEnd.ManageSettings'],
             ],
             'mailchimpsettings' => [
                 'label' => 'Mailchimp Settings',
                 'description' => 'Manage Mailchimp API settings.',
                 'icon' => 'fa fa-gear',
-                'model' => \Igniter\Frontend\Models\MailchimpSettings::class,
+                'model' => MailchimpSettings::class,
                 'permissions' => ['Igniter.FrontEnd.ManageSettings'],
             ],
         ];
@@ -86,13 +91,8 @@ class Extension extends \Igniter\System\Classes\BaseExtension
 
     protected function registerReCaptcha()
     {
-        $this->app->singleton('recaptcha', function($app) {
-            $settings = Models\CaptchaSettings::instance();
-
-            return new Classes\ReCaptcha(
-                $settings->get('api_secret_key'),
-                $settings->get('version')
-            );
+        $this->app->singleton('recaptcha', function($app): ReCaptcha {
+            return new ReCaptcha(CaptchaSettings::getApiSecretKey(), CaptchaSettings::getVersion());
         });
     }
 

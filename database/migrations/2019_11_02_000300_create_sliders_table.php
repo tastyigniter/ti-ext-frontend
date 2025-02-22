@@ -36,6 +36,7 @@ return new class extends Migration
             $data = unserialize($data);
         }
 
+        /** @var Slider $model */
         $model = Slider::create([
             'name' => array_get($slider, 'name', 'Homepage slider'),
             'code' => array_get($slider, 'code', 'home-slider'),
@@ -45,7 +46,7 @@ return new class extends Migration
             return;
         }
 
-        optional($model->images)->each(function($media) {
+        $model->images->each(function($media) {
             $media->delete();
         });
 

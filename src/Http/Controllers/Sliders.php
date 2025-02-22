@@ -1,19 +1,25 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Igniter\Frontend\Http\Controllers;
 
+use Igniter\Admin\Classes\AdminController;
 use Igniter\Admin\Facades\AdminMenu;
+use Igniter\Admin\Http\Actions\FormController;
+use Igniter\Admin\Http\Actions\ListController;
+use Igniter\Frontend\Models\Slider;
 
-class Sliders extends \Igniter\Admin\Classes\AdminController
+class Sliders extends AdminController
 {
     public array $implement = [
-        \Igniter\Admin\Http\Actions\ListController::class,
-        \Igniter\Admin\Http\Actions\FormController::class,
+        ListController::class,
+        FormController::class,
     ];
 
     public array $listConfig = [
         'list' => [
-            'model' => \Igniter\Frontend\Models\Slider::class,
+            'model' => Slider::class,
             'title' => 'lang:igniter.frontend::default.slider.text_title',
             'emptyMessage' => 'lang:igniter.frontend::default.slider.text_empty',
             'defaultSort' => ['id', 'DESC'],
@@ -23,7 +29,7 @@ class Sliders extends \Igniter\Admin\Classes\AdminController
 
     public array $formConfig = [
         'name' => 'lang:igniter.frontend::default.slider.text_form_name',
-        'model' => \Igniter\Frontend\Models\Slider::class,
+        'model' => Slider::class,
         'create' => [
             'title' => 'lang:admin::lang.form.create_title',
             'redirect' => 'igniter/frontend/sliders/edit/{id}',
@@ -55,7 +61,7 @@ class Sliders extends \Igniter\Admin\Classes\AdminController
         AdminMenu::setContext('sliders', 'design');
     }
 
-    public function formValidate($model, $form)
+    public function formValidate($model, $form): array
     {
         $rules = [
             ['name', 'admin::lang.label_name', 'required|string'],

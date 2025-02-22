@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Igniter\Frontend\Classes;
 
 use GuzzleHttp\Client;
@@ -9,7 +11,7 @@ class ReCaptcha
     /**
      * The API request URI
      */
-    const API_VERIFY_URL = 'https://www.google.com/recaptcha/api/siteverify';
+    public const string API_VERIFY_URL = 'https://www.google.com/recaptcha/api/siteverify';
 
     /**
      * @var string
@@ -73,12 +75,12 @@ class ReCaptcha
             'form_params' => $this->buildRequestQuery($response, $clientIp),
         ]);
 
-        $parsedResponse = json_decode($httpResponse->getBody(), true);
+        $parsedResponse = json_decode((string)$httpResponse->getBody(), true);
 
         return isset($parsedResponse['success']) && $parsedResponse['success'] === true;
     }
 
-    protected function buildRequestQuery($response, $clientIp)
+    protected function buildRequestQuery($response, $clientIp): array
     {
         return [
             'secret' => $this->secretKey,

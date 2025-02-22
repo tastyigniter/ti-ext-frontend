@@ -1,23 +1,25 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Igniter\Frontend\Tests\Http\Controllers;
 
 use Igniter\Frontend\Models\Slider;
 use Igniter\User\Models\User;
 
-it('loads sliders page', function() {
+it('loads sliders page', function(): void {
     actingAsSuperUser()
         ->get(route('igniter.frontend.sliders'))
         ->assertOk();
 });
 
-it('loads create slider page', function() {
+it('loads create slider page', function(): void {
     actingAsSuperUser()
         ->get(route('igniter.frontend.sliders', ['slug' => 'create']))
         ->assertOk();
 });
 
-it('loads edit slider page', function() {
+it('loads edit slider page', function(): void {
     $slider = Slider::create();
 
     actingAsSuperUser()
@@ -25,7 +27,7 @@ it('loads edit slider page', function() {
         ->assertOk();
 });
 
-it('loads slider preview page', function() {
+it('loads slider preview page', function(): void {
     $slider = Slider::create();
 
     actingAsSuperUser()
@@ -33,7 +35,7 @@ it('loads slider preview page', function() {
         ->assertOk();
 });
 
-it('creates slider', function() {
+it('creates slider', function(): void {
     actingAsSuperUser()
         ->post(route('igniter.frontend.sliders', ['slug' => 'create']), [
             'Slider' => [
@@ -51,7 +53,7 @@ it('creates slider', function() {
     expect(Slider::where('name', 'Created Slider')->exists())->toBeTrue();
 });
 
-it('updates slider', function() {
+it('updates slider', function(): void {
     $slider = Slider::create();
 
     actingAsSuperUser()
@@ -71,7 +73,7 @@ it('updates slider', function() {
     expect(Slider::where('name', 'Updated Slider')->exists())->toBeTrue();
 });
 
-it('deletes slider', function() {
+it('deletes slider', function(): void {
     $slider = Slider::create();
 
     actingAsSuperUser()

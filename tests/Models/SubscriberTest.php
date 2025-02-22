@@ -1,12 +1,14 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Igniter\Frontend\Tests\Models;
 
 use Igniter\Frontend\Models\MailchimpSettings;
 use Igniter\Frontend\Models\Subscriber;
 use Illuminate\Support\Facades\Event;
 
-it('subscribes an email to the database', function() {
+it('subscribes an email to the database', function(): void {
     Event::fake();
 
     $email = 'email@example.com';
@@ -16,7 +18,7 @@ it('subscribes an email to the database', function() {
     Event::assertDispatched('igniter.frontend.subscribed');
 });
 
-it('subscribes to Mailchimp when listId is provided and configured', function() {
+it('subscribes to Mailchimp when listId is provided and configured', function(): void {
     Event::fake();
     MailchimpSettings::set([
         'api_key' => 'some-api-key',
@@ -30,8 +32,8 @@ it('subscribes to Mailchimp when listId is provided and configured', function() 
     Event::assertDispatched('igniter.frontend.subscribed');
 });
 
-it('configures subscriber model correctly', function() {
-    $slider = new Subscriber();
+it('configures subscriber model correctly', function(): void {
+    $slider = new Subscriber;
 
     expect($slider->getTable())->toBe('igniter_frontend_subscribers')
         ->and($slider->getKeyName())->toBe('id')

@@ -1,13 +1,15 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Igniter\Frontend\Tests\Models;
 
 use Igniter\Flame\Database\Attach\HasMedia;
 use Igniter\Flame\Database\Traits\Validation;
 use Igniter\Frontend\Models\Slider;
 
-it('configures slider model correctly', function() {
-    $slider = new Slider();
+it('configures slider model correctly', function(): void {
+    $slider = new Slider;
 
     expect(class_uses_recursive($slider))
         ->toContain(HasMedia::class)

@@ -1,20 +1,26 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Igniter\Frontend\Http\Controllers;
 
+use Igniter\Admin\Classes\AdminController;
 use Igniter\Admin\Facades\AdminMenu;
+use Igniter\Admin\Http\Actions\FormController;
+use Igniter\Admin\Http\Actions\ListController;
+use Igniter\Frontend\Models\Banner;
 use Illuminate\Validation\Rule;
 
-class Banners extends \Igniter\Admin\Classes\AdminController
+class Banners extends AdminController
 {
     public array $implement = [
-        \Igniter\Admin\Http\Actions\ListController::class,
-        \Igniter\Admin\Http\Actions\FormController::class,
+        ListController::class,
+        FormController::class,
     ];
 
     public array $listConfig = [
         'list' => [
-            'model' => \Igniter\Frontend\Models\Banner::class,
+            'model' => Banner::class,
             'title' => 'lang:igniter.frontend::default.banners.text_title',
             'emptyMessage' => 'lang:igniter.frontend::default.banners.text_empty',
             'defaultSort' => ['banner_id', 'DESC'],
@@ -24,7 +30,7 @@ class Banners extends \Igniter\Admin\Classes\AdminController
 
     public array $formConfig = [
         'name' => 'lang:igniter.frontend::default.banners.text_form_name',
-        'model' => \Igniter\Frontend\Models\Banner::class,
+        'model' => Banner::class,
         'create' => [
             'title' => 'lang:admin::lang.form.create_title',
             'redirect' => 'igniter/frontend/banners/edit/{banner_id}',
@@ -56,7 +62,7 @@ class Banners extends \Igniter\Admin\Classes\AdminController
         AdminMenu::setContext('sliders', 'design');
     }
 
-    public function formValidate($model, $form)
+    public function formValidate($model, $form): array
     {
         $namedRules = [
             ['name', 'lang:admin::lang.label_name', 'required|min:2|max:255'],

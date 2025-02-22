@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Igniter\Frontend\Models;
 
 use DrewM\MailChimp\MailChimp;
@@ -16,7 +18,7 @@ use Illuminate\Support\Facades\Event;
  * @property int $statistics
  * @property string|null $created_at
  * @property string|null $updated_at
- * @mixin \Igniter\Flame\Database\Model
+ * @mixin Model
  */
 class Subscriber extends Model
 {
@@ -30,6 +32,7 @@ class Subscriber extends Model
     {
         $data = ['email' => $email];
 
+        /** @var static $subscribe */
         $subscribe = self::firstOrCreate($data);
 
         if ($listId && MailchimpSettings::isConfigured()) {
@@ -49,7 +52,7 @@ class Subscriber extends Model
 
         $listId = $listId ?? (string)MailchimpSettings::get('list_id');
 
-        $response = resolve(MailChimp::class)->post("lists/$listId/members", array_merge([
+        $response = resolve(MailChimp::class)->post(sprintf('lists/%s/members', $listId), array_merge([
             'email_address' => $this->email,
             'status' => 'subscribed',
             'email_type' => 'html',
