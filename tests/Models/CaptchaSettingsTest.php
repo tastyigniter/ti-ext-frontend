@@ -12,5 +12,6 @@ it('configures captcha settings model correctly', function(): void {
 
     expect($model->implement)->toContain(SettingsModel::class)
         ->and($model->settingsCode)->toEqual('igniter_frontend_captchasettings')
-        ->and($model->settingsFieldsConfig)->toEqual('captchasettings');
+        ->and($model->settingsFieldsConfig)->toEqual('captchasettings')
+        ->and(CaptchaSettings::getLang())->toBe('en');
 });
