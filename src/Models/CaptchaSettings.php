@@ -29,4 +29,9 @@ class CaptchaSettings extends Model
     {
         return self::get('version', ''); // @phpstan-ignore-line arguments.count
     }
+
+    public static function getLang(): string
+    {
+        return self::get('lang', 'en'); // @phpstan-ignore-line arguments.count
+    }
 }
