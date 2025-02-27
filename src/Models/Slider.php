@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Igniter\Frontend\Models;
 
-use Override;
 use Igniter\Flame\Database\Attach\HasMedia;
 use Igniter\Flame\Database\Attach\Media;
 use Igniter\Flame\Database\Model;
 use Igniter\Flame\Database\Traits\Validation;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Support\Carbon;
+use Override;
 
 /**
  * Slider Model

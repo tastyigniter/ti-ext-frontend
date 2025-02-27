@@ -4,13 +4,13 @@ declare(strict_types=1);
 
 namespace Igniter\Frontend;
 
-use Override;
 use DrewM\MailChimp\MailChimp;
 use Igniter\Frontend\Classes\ReCaptcha;
 use Igniter\Frontend\Models\CaptchaSettings;
 use Igniter\Frontend\Models\MailchimpSettings;
 use Igniter\System\Classes\BaseExtension;
 use Illuminate\Support\Facades\Validator;
+use Override;
 
 class Extension extends BaseExtension
 {

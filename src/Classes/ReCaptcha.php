@@ -21,9 +21,7 @@ class ReCaptcha
      * @param string $secretKey
      * @param string $version
      */
-    public function __construct(protected $secretKey, protected $version = 'v2')
-    {
-    }
+    public function __construct(protected $secretKey, protected $version = 'v2') {}
 
     public function setHttpClient(mixed $httpClient): void
     {
