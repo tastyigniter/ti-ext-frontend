@@ -50,7 +50,7 @@ class Subscriber extends Model
             'MailChimp List ID is missing. Enter your mailchimp api key and list ID from the admin settings page',
         ));
 
-        $listId = $listId ?? (string)MailchimpSettings::get('list_id');
+        $listId ??= (string)MailchimpSettings::get('list_id');
 
         $response = resolve(MailChimp::class)->post(sprintf('lists/%s/members', $listId), array_merge([
             'email_address' => $this->email,
@@ -60,7 +60,7 @@ class Subscriber extends Model
 
         $errorMessage = array_get($response, 'detail', '');
 
-        throw_if(strlen($errorMessage) && array_get($response, 'status') !== 200, new ApplicationException($errorMessage));
+        throw_if(strlen((string) $errorMessage) && array_get($response, 'status') !== 200, new ApplicationException($errorMessage));
 
         return $response;
     }

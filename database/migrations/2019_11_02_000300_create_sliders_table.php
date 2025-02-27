@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use Igniter\Frontend\Models\Slider;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -9,9 +11,9 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    public function up()
+    public function up(): void
     {
-        Schema::create('igniter_frontend_sliders', function(Blueprint $table) {
+        Schema::create('igniter_frontend_sliders', function(Blueprint $table): void {
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('name');
@@ -23,12 +25,12 @@ return new class extends Migration
         $this->seedSlider();
     }
 
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('igniter_frontend_sliders');
     }
 
-    protected function seedSlider()
+    protected function seedSlider(): void
     {
         $slider = $this->getSlider();
         $data = array_get((array)$slider, 'data');
@@ -46,7 +48,7 @@ return new class extends Migration
             return;
         }
 
-        $model->images->each(function($media) {
+        $model->images->each(function($media): void {
             $media->delete();
         });
 
@@ -74,7 +76,7 @@ return new class extends Migration
         return $existingSlider;
     }
 
-    protected function createMediaAttachment($path, $model, $tagName)
+    protected function createMediaAttachment($path, $model, $tagName): void
     {
         try {
             if (!starts_with($path, base_path())) {
@@ -90,8 +92,8 @@ return new class extends Migration
 
             $media->save();
             $model->media()->save($media);
-        } catch (\Exception $ex) {
-            Log::error($ex);
+        } catch (Exception $ex) {
+            Log::error($ex->getMessage());
         }
     }
 };

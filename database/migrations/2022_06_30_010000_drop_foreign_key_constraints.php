@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Igniter\Frontend\Database\Migrations;
 
 use Illuminate\Database\Migrations\Migration;
@@ -9,11 +11,11 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    public function up()
+    public function up(): void
     {
         Schema::disableForeignKeyConstraints();
 
-        Schema::table('igniter_frontend_banners', function(Blueprint $table) {
+        Schema::table('igniter_frontend_banners', function(Blueprint $table): void {
             $table->dropForeignKeyIfExists('language_id');
             $table->dropIndexIfExists(DB::getTablePrefix().'igniter_frontend_banners_language_id_foreign');
         });
@@ -21,5 +23,5 @@ return new class extends Migration
         Schema::enableForeignKeyConstraints();
     }
 
-    public function down() {}
+    public function down(): void {}
 };

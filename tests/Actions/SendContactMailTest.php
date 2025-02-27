@@ -17,7 +17,5 @@ it('queues contact mail with correct data', function(): void {
 
     (new SendContactMail)($this->data);
 
-    Mail::assertQueued(AnonymousTemplateMailable::class, function($mail): bool {
-        return $mail->getTemplateCode() === 'igniter.frontend::mail.contact';
-    });
+    Mail::assertQueued(AnonymousTemplateMailable::class, fn($mail): bool => $mail->getTemplateCode() === 'igniter.frontend::mail.contact');
 });

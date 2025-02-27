@@ -1,18 +1,20 @@
 <?php
 
+declare(strict_types=1);
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    public function up()
+    public function up(): void
     {
         if (Schema::hasTable('banners')) {
             return;
         }
 
-        Schema::create('banners', function(Blueprint $table) {
+        Schema::create('banners', function(Blueprint $table): void {
             $table->engine = 'InnoDB';
             $table->increments('banner_id');
             $table->string('name');
@@ -26,7 +28,7 @@ return new class extends Migration
         });
     }
 
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('banners');
     }

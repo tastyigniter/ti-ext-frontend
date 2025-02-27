@@ -13,16 +13,6 @@ class ReCaptcha
      */
     public const string API_VERIFY_URL = 'https://www.google.com/recaptcha/api/siteverify';
 
-    /**
-     * @var string
-     */
-    protected $secretKey;
-
-    /**
-     * @var string
-     */
-    protected $version;
-
     protected $httpClient;
 
     /**
@@ -31,16 +21,11 @@ class ReCaptcha
      * @param string $secretKey
      * @param string $version
      */
-    public function __construct($secretKey, $version = 'v2')
+    public function __construct(protected $secretKey, protected $version = 'v2')
     {
-        $this->secretKey = $secretKey;
-        $this->version = $version;
     }
 
-    /**
-     * @param mixed $httpClient
-     */
-    public function setHttpClient($httpClient): void
+    public function setHttpClient(mixed $httpClient): void
     {
         $this->httpClient = $httpClient;
     }

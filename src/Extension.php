@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Igniter\Frontend;
 
+use Override;
 use DrewM\MailChimp\MailChimp;
 use Igniter\Frontend\Classes\ReCaptcha;
 use Igniter\Frontend\Models\CaptchaSettings;
@@ -13,20 +14,21 @@ use Illuminate\Support\Facades\Validator;
 
 class Extension extends BaseExtension
 {
+    #[Override]
     public function boot(): void
     {
         $this->addCaptchaValidationRule();
     }
 
+    #[Override]
     public function register(): void
     {
         $this->registerReCaptcha();
 
-        $this->app->singleton(MailChimp::class, function(): MailChimp {
-            return new MailChimp(MailChimpSettings::getApiKey());
-        });
+        $this->app->singleton(MailChimp::class, fn(): MailChimp => new MailChimp(MailChimpSettings::getApiKey()));
     }
 
+    #[Override]
     public function registerNavigation(): array
     {
         return [
@@ -44,6 +46,7 @@ class Extension extends BaseExtension
         ];
     }
 
+    #[Override]
     public function registerPermissions(): array
     {
         return [
@@ -62,6 +65,7 @@ class Extension extends BaseExtension
         ];
     }
 
+    #[Override]
     public function registerSettings(): array
     {
         return [
@@ -82,6 +86,7 @@ class Extension extends BaseExtension
         ];
     }
 
+    #[Override]
     public function registerMailTemplates(): array
     {
         return [
@@ -91,9 +96,7 @@ class Extension extends BaseExtension
 
     protected function registerReCaptcha()
     {
-        $this->app->singleton('recaptcha', function($app): ReCaptcha {
-            return new ReCaptcha(CaptchaSettings::getApiSecretKey(), CaptchaSettings::getVersion());
-        });
+        $this->app->singleton('recaptcha', fn($app): ReCaptcha => new ReCaptcha(CaptchaSettings::getApiSecretKey(), CaptchaSettings::getVersion()));
     }
 
     /**
@@ -101,8 +104,6 @@ class Extension extends BaseExtension
      */
     protected function addCaptchaValidationRule()
     {
-        Validator::extendImplicit('recaptcha', function($attribute, $value, $parameters, $validator) {
-            return app('recaptcha')->verifyResponse($value);
-        }, lang('igniter.frontend::default.captcha.error_recaptcha'));
+        Validator::extendImplicit('recaptcha', fn($attribute, $value, $parameters, $validator) => app('recaptcha')->verifyResponse($value), lang('igniter.frontend::default.captcha.error_recaptcha'));
     }
 }
