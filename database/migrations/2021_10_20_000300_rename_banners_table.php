@@ -1,21 +1,25 @@
 <?php
 
-namespace Igniter\FrontEnd\Database\Migrations;
+declare(strict_types=1);
 
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Support\Facades\Schema;
 
-class RenameBannersTable extends Migration
+return new class extends Migration
 {
-    public function up()
+    public function up(): void
     {
-        if (Schema::hasTable('igniter_frontend_banners'))
+        if (Schema::hasTable('igniter_frontend_banners')) {
             return;
+        }
 
-        Schema::rename('banners', 'igniter_frontend_banners');
+        if (Schema::hasTable('banners')) {
+            Schema::rename('banners', 'igniter_frontend_banners');
+        }
     }
 
-    public function down()
+    public function down(): void
     {
+        Schema::dropIfExists('igniter_frontend_banners');
     }
-}
+};

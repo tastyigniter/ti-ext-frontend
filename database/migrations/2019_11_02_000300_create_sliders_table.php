@@ -1,6 +1,6 @@
 <?php
 
-namespace Igniter\FrontEnd\Database\Migrations;
+declare(strict_types=1);
 
 use Igniter\Frontend\Models\Slider;
 use Illuminate\Database\Migrations\Migration;
@@ -9,11 +9,11 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSlidersTable extends Migration
+return new class extends Migration
 {
-    public function up()
+    public function up(): void
     {
-        Schema::create('igniter_frontend_sliders', function (Blueprint $table) {
+        Schema::create('igniter_frontend_sliders', function(Blueprint $table): void {
             $table->engine = 'InnoDB';
             $table->increments('id');
             $table->string('name');
@@ -25,27 +25,30 @@ class CreateSlidersTable extends Migration
         $this->seedSlider();
     }
 
-    public function down()
+    public function down(): void
     {
         Schema::dropIfExists('igniter_frontend_sliders');
     }
 
-    protected function seedSlider()
+    protected function seedSlider(): void
     {
         $slider = $this->getSlider();
         $data = array_get((array)$slider, 'data');
-        if (!is_array($data))
+        if (!is_array($data)) {
             $data = unserialize($data);
+        }
 
+        /** @var Slider $model */
         $model = Slider::create([
             'name' => array_get($slider, 'name', 'Homepage slider'),
             'code' => array_get($slider, 'code', 'home-slider'),
         ]);
 
-        if (!$items = array_get($data, 'images', []))
+        if (!$items = array_get($data, 'images', [])) {
             return;
+        }
 
-        optional($model->images)->each(function ($media) {
+        $model->images->each(function($media): void {
             $media->delete();
         });
 
@@ -58,37 +61,39 @@ class CreateSlidersTable extends Migration
     {
         $existingSlider = DB::table('extension_settings')->select('data')
             ->where('item', 'igniter_frontend_slidersettings')->first();
-        if (!$existingSlider)
+        if (!$existingSlider) {
             return [
                 'name' => 'Homepage slider',
                 'code' => 'home-slider',
                 'data' => [
                     'images' => [
-                        dirname(__DIR__, 2).'/assets/images/slide.png',
+                        dirname(__DIR__, 2).'/resources/images/slide.png',
                     ],
                 ],
             ];
+        }
 
         return $existingSlider;
     }
 
-    protected function createMediaAttachment($path, $model, $tagName)
+    protected function createMediaAttachment($path, $model, $tagName): void
     {
         try {
-            if (!starts_with($path, base_path()))
+            if (!starts_with($path, base_path())) {
                 $path = uploads_path($path);
+            }
 
-            if (!file_exists($path))
-                $path = dirname(__DIR__, 2).'/assets/images/slide.png';
+            if (!file_exists($path)) {
+                $path = dirname(__DIR__, 2).'/resources/images/slide.png';
+            }
 
             $media = $model->newMediaInstance();
             $media->addFromFile($path, $tagName);
 
             $media->save();
             $model->media()->save($media);
-        }
-        catch (\Exception $ex) {
-            Log::error($ex);
+        } catch (Exception $ex) {
+            Log::error($ex->getMessage());
         }
     }
-}
+};
