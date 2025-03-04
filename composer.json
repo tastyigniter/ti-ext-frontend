@@ -1,67 +1,72 @@
 {
-  "name": "tastyigniter/ti-ext-frontend",
-  "type": "tastyigniter-package",
-  "description": "Manage basic components like Slider, Featured Menu Items, Banners and Newsletter",
-  "license": "MIT",
-  "authors": [
-    {
-      "name": "Sam Poyigi",
-      "email": "sam@sampoyigi.com"
-    }
-  ],
-  "require": {
-    "tastyigniter/core": "^v4.0",
-    "tastyigniter/ti-ext-cart": "^v4.0",
-    "drewm/mailchimp-api": "^2.4"
-  },
-  "require-dev": {
-    "larastan/larastan": "^2.4",
-    "laravel/pint": "^1.2",
-    "pestphp/pest-plugin-laravel": "^3.0",
-    "rector/rector": "^1.2",
-    "sampoyigi/testbench": "^1.0"
-  },
-  "autoload": {
-    "psr-4": {
-      "Igniter\\Frontend\\": "src/"
-    }
-  },
-  "autoload-dev": {
-    "psr-4": {
-      "Igniter\\Frontend\\Tests\\": "tests/"
-    }
-  },
-  "extra": {
-    "tastyigniter-extension": {
-      "code": "igniter.frontend",
-      "name": "FrontEnd",
-      "icon": {
-        "image": "icon.svg",
-        "color": "#664500",
-        "backgroundColor": "#FECC4D"
-      },
-      "homepage": "https://tastyigniter.com/marketplace/item/igniter-frontend"
-    }
-  },
-  "scripts": {
-    "test": "vendor/bin/pest",
-    "test-coverage": "vendor/bin/pest --coverage --exactly=100 --compact",
-    "type-coverage": "vendor/bin/pest --type-coverage --min=100",
-    "format": "vendor/bin/pint",
-    "refactor": "vendor/bin/rector process --dry-run",
-    "static": "vendor/bin/phpstan analyse --ansi --memory-limit 1056M",
-    "test-suite": [
-      "@refactor",
-      "@static",
-      "@test-coverage"
-    ]
-  },
-  "config": {
-    "allow-plugins": {
-      "pestphp/pest-plugin": true,
-      "php-http/discovery": true,
-      "composer/installers": true
+    "name": "tastyigniter/ti-ext-frontend",
+    "type": "tastyigniter-package",
+    "description": "Manage basic components like Slider, Featured Menu Items, Banners and Newsletter",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sam Poyigi",
+            "email": "sam@sampoyigi.com"
+        }
+    ],
+    "require": {
+        "tastyigniter/core": "^v4.0",
+        "tastyigniter/ti-ext-cart": "^v4.0",
+        "drewm/mailchimp-api": "^2.4"
     },
-    "sort-packages": true
-  }
+    "require-dev": {
+        "larastan/larastan": "^2.4",
+        "laravel/pint": "^1.2",
+        "pestphp/pest-plugin-laravel": "^3.0",
+        "rector/rector": "^1.2",
+        "sampoyigi/testbench": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Igniter\\Frontend\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Igniter\\Frontend\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "tastyigniter-extension": {
+            "code": "igniter.frontend",
+            "name": "FrontEnd",
+            "icon": {
+                "image": "icon.svg",
+                "color": "#664500",
+                "backgroundColor": "#FECC4D"
+            },
+            "homepage": "https://tastyigniter.com/marketplace/item/igniter-frontend"
+        },
+        "branch-alias": {
+            "dev-master": "4.0.x-dev"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "php-http/discovery": true,
+            "composer/installers": true
+        },
+        "sort-packages": true
+    },
+    "scripts": {
+        "test": "vendor/bin/pest",
+        "test-coverage": "vendor/bin/pest --coverage --exactly=100 --compact",
+        "type-coverage": "vendor/bin/pest --type-coverage --min=100",
+        "format": "vendor/bin/pint",
+        "refactor": "vendor/bin/rector process --dry-run",
+        "static": "vendor/bin/phpstan analyse --ansi --memory-limit 1056M",
+        "test-suite": [
+            "@refactor",
+            "@static",
+            "@test-coverage"
+        ]
+    }
 }
