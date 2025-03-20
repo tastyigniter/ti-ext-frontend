@@ -1,3 +1,9 @@
+---
+title: "Frontend"
+section: "extensions"
+sortOrder: 50
+---
+
 ## Installation
 
 You can install the extension via composer using the following command:
