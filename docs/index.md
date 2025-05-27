@@ -20,20 +20,30 @@ php artisan igniter:up
 
 ## Getting started
 
-#### reCaptcha
+### Homepage Slider and Banners
+
+From your TastyIgniter Admin, you can manage banners and images for the slider. Manage sliders on the _Design > Sliders & Banners_ page and banners on the _Design > Sliders & Banners > Banners_ page.
+
+### reCaptcha
 
 Navigate to the _Manage > Settings > reCaptcha Settings_ admin settings page to enter your `Site Key` and `Secret Key`. Selecting a
 language is optional. Please follow the on-page instructions to get these keys.
 
-#### MailChimp
+### MailChimp
 
 Navigate to the _Manage > Settings > MailChimp Settings_ admin settings page to enter your `API Key` and `List ID`. Please follow the on-page instructions to get these keys.
 
+The Orange theme provides the following components to display:
+
+- [Slider](https://tastyigniter.com/docs/themes/orange#slider)
+- [Banner](https://tastyigniter.com/docs/themes/orange#banner-preview)
+- [Newsletter Subscribe Form](https://tastyigniter.com/docs/themes/orange#newsletter-subscribe-form)
+- [Contact Form](https://tastyigniter.com/docs/themes/orange#contact)
+- [Captcha](https://tastyigniter.com/docs/themes/orange#captcha)
+
 ## Usage
 
-In the admin user interface you can manage banners and images for the slider. Manage banners on the _Design > Banners & Sliders_ page and slider on the _Manage > Settings > Slider Settings_ page.
-
-The Orange theme provides frontend components to display the banners, subscribe form, and contact form, and reCAPTCHA. You can use these components in your theme to display the respective content. Learn more about the available components in the [Orange theme documentation](https://tastyigniter.com/marketplace/item/tastyigniter-orange).
+This section explains how to integrate the Frontend extension API into your own extension if you need to create banners, sliders, subscribe to MailChimp, display reCaptcha, or send contact form emails. The Frontend extension provides a simple API for managing banners, sliders, and other front-end features.
 
 ### Banners
 
@@ -222,4 +232,4 @@ The Frontend extension registers the following permissions:
 - `Igniter.FrontEnd.ManageBanners`: Control who can manage banners in the admin area.
 - `Igniter.FrontEnd.ManageSlideshow`: Control who can manage sliders in the admin area.
 
-For more on restricting access to the admin area, see the [TastyIgniter Permissions](https://tastyigniter.com/docs/extend/permissions) documentation.
+For more on restricting access to the admin area, see the [TastyIgniter Permissions](https://tastyigniter.com/docs/customize/permissions) documentation.
