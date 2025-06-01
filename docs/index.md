@@ -43,7 +43,7 @@ The Orange theme provides the following components to display:
 
 ## Usage
 
-This section explains how to integrate the Frontend extension API into your own extension if you need to create banners, sliders, subscribe to MailChimp, display reCaptcha, or send contact form emails. The Frontend extension provides a simple API for managing banners, sliders, and other front-end features.
+This section covers how to integrate the Frontend extension API into your own extension if you need to create banners, sliders, subscribe to MailChimp, display reCaptcha, or send contact form emails. The Frontend extension provides a simple API for managing banners, sliders, and other front-end features.
 
 ### Banners
 
