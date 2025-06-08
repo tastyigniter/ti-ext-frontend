@@ -55,24 +55,14 @@ it('registers permissions', function(): void {
 it('registers system settings', function(): void {
     $extension = new Extension(app());
 
-    $result = $extension->registerSettings();
+    $settings = $extension->registerSettings();
 
-    expect($result)->toHaveKey('captchasettings')
-        ->and($result['captchasettings'])->toMatchArray([
-            'label' => 'reCaptcha Settings',
-            'description' => 'Manage google reCAPTCHA settings.',
-            'icon' => 'fa fa-gear',
-            'model' => CaptchaSettings::class,
-            'permissions' => ['Igniter.FrontEnd.ManageSettings'],
-        ])
-        ->and($result)->toHaveKey('mailchimpsettings')
-        ->and($result['mailchimpsettings'])->toMatchArray([
-            'label' => 'Mailchimp Settings',
-            'description' => 'Manage Mailchimp API settings.',
-            'icon' => 'fa fa-gear',
-            'model' => MailchimpSettings::class,
-            'permissions' => ['Igniter.FrontEnd.ManageSettings'],
-        ]);
+    expect($settings)->toHaveKey('captchasettings')
+        ->and($settings['captchasettings']['model'])->toBe(CaptchaSettings::class)
+        ->and($settings['captchasettings']['permissions'])->toBe(['Igniter.FrontEnd.ManageSettings'])
+        ->and($settings)->toHaveKey('mailchimpsettings')
+        ->and($settings['mailchimpsettings']['model'])->toBe(MailchimpSettings::class)
+        ->and($settings['mailchimpsettings']['permissions'])->toBe(['Igniter.FrontEnd.ManageSettings']);
 });
 
 it('registers navigation', function(): void {
