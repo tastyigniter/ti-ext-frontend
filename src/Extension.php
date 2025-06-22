@@ -72,14 +72,14 @@ class Extension extends BaseExtension
             'captchasettings' => [
                 'label' => 'reCaptcha Settings',
                 'description' => 'Manage google reCAPTCHA settings.',
-                'icon' => 'fa fa-gear',
+                'icon' => 'fa fa-robot',
                 'model' => CaptchaSettings::class,
                 'permissions' => ['Igniter.FrontEnd.ManageSettings'],
             ],
             'mailchimpsettings' => [
                 'label' => 'Mailchimp Settings',
                 'description' => 'Manage Mailchimp API settings.',
-                'icon' => 'fa fa-gear',
+                'icon' => 'fab fa-mailchimp',
                 'model' => MailchimpSettings::class,
                 'permissions' => ['Igniter.FrontEnd.ManageSettings'],
             ],
