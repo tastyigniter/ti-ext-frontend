@@ -37,8 +37,8 @@
             "name": "FrontEnd",
             "icon": {
                 "image": "icon.svg",
-                "color": "#664500",
-                "backgroundColor": "#FECC4D"
+                "color": "#FFFFFF",
+                "backgroundColor": "#FF4900"
             },
             "homepage": "https://tastyigniter.com/marketplace/item/igniter-frontend"
         },
