@@ -63,18 +63,6 @@ return [
         'label_hide_captions' => 'Hide the slider captions.',
     ],
 
-    'newsletter' => [
-        'text_tab_general' => 'General',
-
-        'text_subscribe' => 'Subscribe to our newsletter',
-
-        'label_status' => 'Status:',
-        'label_email' => 'Email',
-
-        'alert_success_subscribed' => 'Thanks, Your email now subscribed for our offers',
-        'alert_success_existing' => 'Thanks, Your email already subscribed for our offers',
-    ],
-
     'featured' => [
         'text_tab_general' => 'General',
         'text_featured_menus' => 'Featured Menu',
