@@ -22,7 +22,7 @@ class MailchimpSettings extends Model
 
     public static function isConfigured(): bool
     {
-        return strlen(self::getApiKey()) > 0;
+        return self::getApiKey() !== '';
     }
 
     public static function getApiKey(): string
