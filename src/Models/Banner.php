@@ -88,7 +88,7 @@ class Banner extends Model
         return $this->getThumbArray($image['path']);
     }
 
-    public function getCarouselThumbs($options = [])
+    public function getCarouselThumbs($options = []): array
     {
         $images = [];
 

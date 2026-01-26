@@ -53,7 +53,7 @@ class Slider extends Model
     ];
 
     #[Override]
-    public function getMorphClass()
+    public function getMorphClass(): string
     {
         return 'sliders';
     }

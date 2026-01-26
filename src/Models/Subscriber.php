@@ -60,7 +60,7 @@ class Subscriber extends Model
 
         $errorMessage = array_get($response, 'detail', '');
 
-        throw_if(strlen((string) $errorMessage) && array_get($response, 'status') !== 200, new ApplicationException($errorMessage));
+        throw_if(strlen((string)$errorMessage) && array_get($response, 'status') !== 200, new ApplicationException($errorMessage));
 
         return $response;
     }
