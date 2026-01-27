@@ -31,14 +31,8 @@ class Slider extends Model
     use HasMedia;
     use Validation;
 
-    /**
-     * @var string The database table used by the model.
-     */
     public $table = 'igniter_frontend_sliders';
 
-    /**
-     * @var array<string>|bool guarded fields
-     */
     protected $guarded = [];
 
     public $timestamps = true;

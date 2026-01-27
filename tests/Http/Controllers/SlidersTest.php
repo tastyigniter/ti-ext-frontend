@@ -84,8 +84,3 @@ it('deletes slider', function(): void {
 
     expect(Slider::find($slider->getKey()))->toBeNull();
 });
-
-function actingAsSuperUser()
-{
-    return test()->actingAs(User::factory()->superUser()->create(), 'igniter-admin');
-}
