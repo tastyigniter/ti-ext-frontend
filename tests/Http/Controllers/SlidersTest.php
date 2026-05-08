@@ -5,7 +5,6 @@ declare(strict_types=1);
 namespace Igniter\Frontend\Tests\Http\Controllers;
 
 use Igniter\Frontend\Models\Slider;
-use Igniter\User\Models\User;
 
 it('loads sliders page', function(): void {
     actingAsSuperUser()
@@ -84,8 +83,3 @@ it('deletes slider', function(): void {
 
     expect(Slider::find($slider->getKey()))->toBeNull();
 });
-
-function actingAsSuperUser()
-{
-    return test()->actingAs(User::factory()->superUser()->create(), 'igniter-admin');
-}
