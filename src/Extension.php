@@ -25,7 +25,7 @@ class Extension extends BaseExtension
     {
         $this->registerReCaptcha();
 
-        $this->app->singleton(MailChimp::class, fn(): MailChimp => new MailChimp(MailChimpSettings::getApiKey()));
+        $this->app->singleton(MailChimp::class, fn(): MailChimp => new MailChimp(MailchimpSettings::getApiKey()));
     }
 
     #[Override]
