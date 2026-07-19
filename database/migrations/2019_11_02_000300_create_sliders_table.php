@@ -67,7 +67,7 @@ return new class extends Migration
                 'code' => 'home-slider',
                 'data' => [
                     'images' => [
-                        dirname(__DIR__, 2).'/resources/images/slide.png',
+                        dirname(__DIR__, 2).'/resources/images/slide.jpg',
                     ],
                 ],
             ];
@@ -84,7 +84,7 @@ return new class extends Migration
             }
 
             if (!file_exists($path)) {
-                $path = dirname(__DIR__, 2).'/resources/images/slide.png';
+                $path = dirname(__DIR__, 2).'/resources/images/slide.jpg';
             }
 
             $media = $model->newMediaInstance();
