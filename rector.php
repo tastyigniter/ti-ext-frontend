@@ -6,7 +6,7 @@ use Rector\CodingStyle\Rector\Catch_\CatchExceptionNameMatchingTypeRector;
 use Rector\CodingStyle\Rector\ClassMethod\NewlineBeforeNewAssignSetRector;
 use Rector\TypeDeclaration\Rector\ClassMethod\ReturnNeverTypeRector;
 use Rector\TypeDeclaration\Rector\ClassMethod\ReturnTypeFromStrictNewArrayRector;
-use SamPoyigi\Testbench\RectorConfig;
+use Rector\Config\RectorConfig;
 
 return RectorConfig::configure()
     ->withPhpSets(php83: true)
