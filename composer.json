@@ -17,6 +17,8 @@
     "require-dev": {
         "larastan/larastan": "^3.0",
         "laravel/pint": "^1.2",
+        "pestphp/pest-plugin-laravel": "^4.0",
+        "rector/rector": "^2.0",
         "sampoyigi/testbench": "^1.0"
     },
     "autoload": {
