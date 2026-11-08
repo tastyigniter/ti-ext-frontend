@@ -23,6 +23,7 @@ use Igniter\System\Models\Language;
  * @property string|null $custom_code
  * @property bool $status
  * @property-read mixed $type_label
+ * @method static Banner create(array $attributes = [])
  * @mixin Model
  */
 class Banner extends Model

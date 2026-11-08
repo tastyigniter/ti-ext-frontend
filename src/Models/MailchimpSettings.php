@@ -9,7 +9,7 @@ use Igniter\System\Actions\SettingsModel;
 
 /**
  * @method static mixed get(string $key, mixed $default = null)
- * @method static bool set(string|array $key, mixed $value)
+ * @method static bool set(string|array $key, mixed $value = null)
  * @mixin SettingsModel
  */
 class MailchimpSettings extends Model

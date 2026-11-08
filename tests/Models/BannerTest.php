@@ -9,13 +9,14 @@ use Igniter\System\Models\Concerns\Switchable;
 use Igniter\System\Models\Language;
 
 it('returns type label attribute', function(): void {
-    $banner = Banner::make(['type' => 'image']);
+    $banner = new Banner(['type' => 'image']);
 
     expect($banner->type_label)->toBe('Image');
 });
 
 it('returns dropdown options for language id', function(): void {
-    $banner = Banner::create(['name' => 'Banner Name', 'type' => 'image']);
+    $banner = new Banner(['name' => 'Banner Name', 'type' => 'image']);
+    $banner->save();
 
     $result = $banner->getLanguageIdOptions();
 
@@ -23,7 +24,7 @@ it('returns dropdown options for language id', function(): void {
 });
 
 it('returns image thumb', function(): void {
-    $banner = Banner::make(['image_code' => ['path' => 'banner.jpg']]);
+    $banner = new Banner(['image_code' => ['path' => 'banner.jpg']]);
 
     expect($banner->getImageThumb([
         'no_photo' => 'no_photo.jpg',
@@ -31,13 +32,13 @@ it('returns image thumb', function(): void {
 });
 
 it('returns image thumb when image_code is empty', function(): void {
-    $banner = Banner::make(['image_code' => '']);
+    $banner = new Banner(['image_code' => '']);
 
     expect($banner->getImageThumb(['no_photo' => 'no_photo.jpg']))->toContain('no_photo.jpg');
 });
 
 it('returns image thumb with no photo', function(): void {
-    $banner = Banner::make(['image_code' => ['path' => '']]);
+    $banner = new Banner(['image_code' => ['path' => '']]);
 
     expect($banner->getImageThumb(['no_photo' => 'no_photo.jpg']))->toContain('no_photo.jpg');
 });
@@ -51,30 +52,30 @@ it('does not unserialize php serialized image code', function(): void {
 });
 
 it('stores image code as json', function(): void {
-    $banner = Banner::make(['image_code' => ['path/to/image1.jpg']]);
+    $banner = new Banner(['image_code' => ['path/to/image1.jpg']]);
 
     expect($banner->getAttributes()['image_code'])->toBe('["path\\/to\\/image1.jpg"]')
         ->and($banner->image_code)->toBe(['path/to/image1.jpg']);
 });
 
 it('returns empty array when image_code is empty', function(): void {
-    $banner = Banner::make(['image_code' => '']);
+    $banner = new Banner(['image_code' => '']);
 
     $result = $banner->getCarouselThumbs();
 
-    expect($result)->toBe([]);
+    expect($result)->toBeEmpty();
 });
 
 it('returns empty array when image_code paths is not an array', function(): void {
-    $banner = Banner::make(['image_code' => ['paths' => 'not_an_array']]);
+    $banner = new Banner(['image_code' => ['paths' => 'not_an_array']]);
 
     $result = $banner->getCarouselThumbs();
 
-    expect($result)->toBe([]);
+    expect($result)->toBeEmpty();
 });
 
 it('returns array of thumbnails when image_code paths is an array', function(): void {
-    $banner = Banner::make(['image_code' => ['paths' => ['path/to/image1.jpg', 'path/to/image2.jpg']]]);
+    $banner = new Banner(['image_code' => ['paths' => ['path/to/image1.jpg', 'path/to/image2.jpg']]]);
 
     $result = $banner->getCarouselThumbs();
 

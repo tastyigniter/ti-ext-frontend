@@ -41,18 +41,14 @@ class ReCaptcha
      *
      * @param string $response
      * @param string $clientIp
-     *
-     * @return bool
      */
-    public function verifyResponse($response, $clientIp = null)
+    public function verifyResponse($response, $clientIp = null): bool
     {
         if (empty($response)) {
             return false;
         }
 
-        if (is_null($clientIp)) {
-            $clientIp = request()->getClientIp();
-        }
+        $clientIp ??= request()->getClientIp();
 
         $httpResponse = $this->getHttpClient()->post(static::API_VERIFY_URL, [
             'form_params' => $this->buildRequestQuery($response, $clientIp),
