@@ -43,6 +43,12 @@ return new class extends Migration
 
     protected function containsObject(array $value): bool
     {
-        return array_any($value, fn($item): bool => is_object($item) || (is_array($item) && $this->containsObject($item)));
+        foreach ($value as $item) {
+            if (is_object($item) || (is_array($item) && $this->containsObject($item))) {
+                return true;
+            }
+        }
+
+        return false;
     }
 };
