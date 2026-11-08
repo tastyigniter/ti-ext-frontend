@@ -17,7 +17,7 @@
     "require-dev": {
         "larastan/larastan": "^3.0",
         "laravel/pint": "^1.2",
-        "sampoyigi/testbench": "dev-main as 1.0"
+        "sampoyigi/testbench": "^1.0"
     },
     "autoload": {
         "psr-4": {
