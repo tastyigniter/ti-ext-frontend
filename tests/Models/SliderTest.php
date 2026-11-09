@@ -15,7 +15,7 @@ it('configures slider model correctly', function(): void {
         ->toContain(HasMedia::class)
         ->toContain(Validation::class)
         ->and($slider->getTable())->toBe('igniter_frontend_sliders')
-        ->and($slider->getGuarded())->toBe([])
+        ->and($slider->getGuarded())->toBeEmpty()
         ->and($slider->timestamps)->toBeTrue()
         ->and($slider->rules)->toBe([
             ['name', 'admin::lang.label_name', 'required|string'],

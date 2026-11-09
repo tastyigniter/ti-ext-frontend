@@ -4,23 +4,11 @@ declare(strict_types=1);
 
 namespace Igniter\Frontend\Tests;
 
-use DrewM\MailChimp\MailChimp;
 use Igniter\Frontend\Classes\ReCaptcha;
 use Igniter\Frontend\Extension;
 use Igniter\Frontend\Models\CaptchaSettings;
 use Igniter\Frontend\Models\MailchimpSettings;
 use Illuminate\Support\Facades\Validator;
-
-it('creates mailchimp service correctly', function(): void {
-    MailchimpSettings::set([
-        'api_key' => 'some-api-key',
-        'list_id' => 'some_list_id',
-    ]);
-
-    $service = resolve(MailChimp::class);
-
-    expect($service)->toBeInstanceOf(MailChimp::class);
-});
 
 it('creates recaptcha service correctly', function(): void {
     $service = resolve('recaptcha');

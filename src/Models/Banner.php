@@ -23,6 +23,7 @@ use Igniter\System\Models\Language;
  * @property string|null $custom_code
  * @property bool $status
  * @property-read mixed $type_label
+ * @method static Banner create(array $attributes = [])
  * @mixin Model
  */
 class Banner extends Model
@@ -48,7 +49,7 @@ class Banner extends Model
     ];
 
     protected $casts = [
-        'image_code' => 'serialize',
+        'image_code' => 'array',
         'language_id' => 'integer',
         'status' => 'boolean',
     ];
@@ -79,7 +80,7 @@ class Banner extends Model
             return $defaults;
         }
 
-        $image = unserialize($this->image_code);
+        $image = (array)$this->image_code;
 
         if (empty($image['path'])) {
             return $defaults;
@@ -96,9 +97,9 @@ class Banner extends Model
             return $images;
         }
 
-        $image = unserialize($this->image_code);
+        $image = (array)$this->image_code;
 
-        if (!is_array($image['paths'])) {
+        if (!is_array($image['paths'] ?? null)) {
             return $images;
         }
 
