@@ -90,7 +90,10 @@ class Extension extends BaseExtension
     public function registerMailTemplates(): array
     {
         return [
-            'igniter.frontend::mail.contact' => 'Contact form email to admin',
+            'igniter.frontend::mail.contact' => [
+                'label' => 'Contact form email to admin',
+                'variables' => ['igniter::system.mail_variables.text_group_contact'],
+            ],
         ];
     }
 
